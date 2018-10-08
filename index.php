@@ -1,3 +1,12 @@
+<?php
+require_once("pages/includes/functions.php");
+session_start();
+$ngo=getNGO();
+// echo "<pre>";
+// print_r($ngo);
+
+?>
+
 <html>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
