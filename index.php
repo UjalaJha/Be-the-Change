@@ -40,7 +40,7 @@ require_once("pages/includes/functions.php");
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="container">
             <div class="navbar-header margin" style="border-radius: 0px;">
-                <a class="navbar-brand" href="index.html"><img src="css/img/mylogo.png" style="margin-top:-70px;"></a>
+                <a class="navbar-brand" href="index.php"><img src="css/img/mylogo.png" style="margin-top:-70px;"></a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -479,152 +479,8 @@ require_once("pages/includes/functions.php");
     </div>
     
     <div class="clearfix"></div>
-    <div class="joining" style="background: #fda401;">
-   <div class="join-text">
-    <p class="join">Click to join Advance Workshop</p>
-    <p class="join1">Training in Advance Networking</p>
-    </div>
-    <button class="white-button">JOIN NOW</button>
- </div>
- 
-<footer id="footer">
-    <div class="footer-cover">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                
-                    <!--                   for logo-->
-                    <div class="logo-cover">
-                        <img src="css/img/logo%20(1).png" alt="">
-                    </div><!-- .heading-cover-->
-                    
-<!--                  info  -->
-               <div class="desc-cover top-padding">
-                   <div class="des">
-                       <p class="ptext">Temporibus tis reiciendis minima blanditiis qui 
-                       debitis reiciendis minima blanditiis qui possimus ut accusamus!</p>
-                   </div><!--.desc-->
-               </div><!--.desc-cover-->
-               
-<!--               office-->
-               <div class="office top-padding">
-                   <p class="header">office-address</p>
-                   <p class="ptext">london oxford street,012 United Kingdom</p>
-               </div><!--.office-->
-               
-               
-<!--               for phone numbers -->
-               <div class="col-sm-6 top-padding">
-                   <p class="header">business phone</p>
-                   <p class="ptext">+01234567890</p>
-                   
-                   
-<!--                   social-icons-->
-                       <ul class="social-list">
-                          
-                          <li><a href="" class="facebook fa fa-facebook"><i></i></a></li>
-                          
-                           <li><a href="" class="twitter fa fa-twitter"><i></i></a></li>
-                           
-                           <li><a href="" class="browser fa fa-edge"><i></i></a></li>
-                           
-                           <li><a href="" class="instagram fa fa-instagram"><i></i></a></li>
-                       </ul>
-                   
-               </div><!--col-sm-6-->
-               
-<!--               Email-->
-               <div class="col-sm-6 top-padding">
-                   <p class="header">business email</p>
-                   <p class="ptext">Business&#64;themerocket.net</p>
-               </div><!--col-sm-6-->
-                </div><!-- .col-md-4-->
-                
-                
-<!--
-                <div class="col-md-4">
-                   <div class="twitter-heading">
-                        <h1 class="twitter-head">   twitter feed
-                        </h1>
-                   </div>
-                    <div class="page-division">
-                    </div>
-                </div>
-                
--->
-               <div class="col-md-4">
-                
-                    <!--   2nd col-md-4 -->
-                    <div class="heading-cover">
-                            <h2 class="twitter-head">twitter feed</h2>
-                            <hr>
-                    </div><!-- .heading-cover-->
-                    
-<!--                  info  -->
-               <div class="desc-cover">
-                   <div class="des">
-                       <p class=" fa fa-twitter twitter  ptext"> Commondo ultricies</p>
-                       <p class="ptext">&#64;THEMEROCKET</p>
-                   </div><!--.desc-->
-               </div><!--.desc-cover-->
-               
-<!--               office-->
-               <div class="info top-padding">
-                   <p class="ptext">Lorem ipsum totam quisquam non error cupiditate earum dignissimos deserunt consequuntur dolores qui minus alias veritatis quidem ut sunt.</p>
-               </div><!--.office-->
-               
-               <a href="" class="ptext link-style">https://goo.gl/8s5TD8</a>
-               
-               <p class="ptext fa fa-clock-o date">  march 29,2018</p>
 
-                </div><!-- .col-md-4-->
-                
-               <div class="col-md-4">
-                
-                    <!-- 3rd col-md-4-->
-                    <div class="heading-cover">
-                            <h2 class="twitter-head"> Opening Hours</h2>
-                            <hr>
-                    </div><!-- .heading-cover-->
-                    
-<!--                  info  -->
-               <div class="desc-cover top-padding">
-                   <div class="des">
-                       <p class="ptext">Temporibus cupiditate, debitis reiciendis minima blanditiis qui possimus ut
-                       debitis reiciendis minima blanditiis qui possimus ut accusamus!</p>
-                   </div><!--.desc-->
-               </div><!--.desc-cover-->
-               
-<!--               for days -->
-               <div class="col-sm-6 top-padding">
-                   <p class="ptext days">Mon-Tus:</p>
-                   <p class="ptext days">wed-tur:</p>
-                   <p class="ptext days">fri:</p>
-                   <p class="ptext days">sun:</p>
-               </div><!--col-sm-6-->
-               
-<!--               timmings-->
-               <div class="col-sm-6 top-padding">
-                   <p class="ptext time">6.00am-10.00pm</p>
-                   
-                   <p class="ptext time">8.00am-6.00pm</p>
-                   
-                   <p class="ptext time">3.00pm-8.00pm</p>
-                   
-                   <p class="ptext ytext">closed</p>
-               </div><!--col-sm-6-->
-                </div><!-- .col-md-4-->
-                
-                
-            </div><!-- .row-->
-            
-            
-            <div class="row">
-                <p class="copyright-text">copyright &copy; 2018  <span class="footer-span">edification</span>-all rights reserved.made by <span class="footer-span">themerocket</span ></p>
-            </div>
-        </div><!--. container-->
-     </div><!--.footer-cover --> 
-</footer>
+
     
     <!--TOUR END OF SECTION-->
     <script src="vendors/jquery/jquery-3.3.1.min.js"></script>

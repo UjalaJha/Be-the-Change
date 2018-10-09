@@ -168,13 +168,13 @@ all{
     font-weight: bold;
     margin-top:15px;
 }
-.three-containers{
+.left-container{
     float:left;
-    display:inline-block;
-    margin-top:10%;
-    margin-left:13%;
-    margin-bottom:80px;
-/*    width:33.33%;*/
+}
+.sidebar-wala{
+    background:#fda401;
+    width:30%;
+    height:70%;
 }
 .first1{
 
@@ -198,7 +198,7 @@ all{
 }
 .bottom-container{
     background:white;
-    width:360px;
+    width:330px;
     height:192px;
     
 }
@@ -237,86 +237,110 @@ TEXT(PARAGRAPHS)       : #fff
 headings fontsize 20
 text font size : 16
 */
-.top-padding{
-    padding-top: 20px;
+.new-section{
+    background:#eee;
+    width:100%;
+    height:950px;
+    
 }
-.footer-cover{
-/*    background-color: rgba(0,0,0,0.5);*/
-    background-color: #090807
+.pull-left{
+    float:left;
 }
-.header{
-    color:#FEA401;
-    text-transform: uppercase;
-    font-size: 16px;
+.sidebar-container{
+    background: #fc3;
+    width:25%;
+    height:950px;
 }
-.ptext{
-    font-size: 14px;
-    color: #fff;
+.right-container{
+    background:#eee;
+    width:75%;
+    height:800px;
 }
-
-/*social-icons*/
-
-.social-list li{
-    list-style: none;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-/*
-    margin-right: 6px;
-    margin-top: 10px;
-*/
+.right-wala{
+    margin-left:3%;
+    margin-top:3%;
+    
 }
-a{
-    color: #fff;
+.box{
+    border: 0.5px solid white;
+    margin-top:10%;
+    margin-bottom:10%;
+    margin-left:10%;
+    background:#fda401;
+    width:300px;
+    height:15%;
+    box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.25);
+    cursor:pointer;
+    transition: transform .2s;
 }
-/*
-.social-list .facebook .browser .twitter .youtube{
-    color: #fff;
+.box:hover {
+    
+    transform: scale(1.1); 
+    cursor:pointer;
 }
-*/
-
-.facebook .browser .twitter .youtube:hover,
-.facebook .browser .twitter .youtube:focus{
-    color: #FEA401;
+.content{
+    padding: 3%;
+    color:white;
 }
-
-hr{
-    content: "";
-    width: 40px;
-    height: 5px;
-    color: #fff;
-    margin: 0;
-/*    text-align: left;*/
+/*===============================================================================================
+                                TESTIMONIAL SECTION CSS
+===============================================================================================*/
+.testimonial-cover{
+    background-image: url("img/bg-testimonials.jpg");
 }
-.heading-cover .twitter-head{
-    color:#FEA401;
-    text-transform: uppercase;
-    font-size: 16px;
+.customers-testimonials{
+    padding: 50px 0;
 }
-.link-style{
-    list-style: none;
-    text-decoration: none;
-    color: #FEA401;
-    display: block;
+.testimonial{
+    margin-bottom: 30px;
 }
-.date{
-    padding-top: 20px;
+.testimonial img{
+    max-width: 120px;
+    margin: 0 auto;
 }
-
-.days{
-    text-transform: uppercase;
-}
-.ytext{
-    color: #FEA401;
-    text-transform: uppercase;
-}
-.copyright-text{
+.testimonial blockquote{
+    border: 0;
+    color:#fff;
     text-align: center;
-    color: #fff;
-    text-transform: uppercase;
+    padding: 6px 150px;
+    font-family: Georgia,Times,serif;
+    font-style:italic;
+    font-size: 16px;
+    position: relative;
 }
-.footer-span{
-    text-align: center;
-    color: #FEA401;
-    text-transform: uppercase;
+.testimonial blockquote:before,
+.testimonial blockquote:after{
+    font-size: 80px;
+    position: absolute;
+    font-style: normal;
+    line-height: 1;
+    width:30px;
+    height:30px;
+}
+.testimonial blockquote:before{
+    content:"\201C";
+    top:0;
+    left:100;
+}
+.testimonial blockquote:after{
+    content:"\201D";
+    right:100;
+    bottom:0;
+}
+.testimonial-author{
+    text-align:center;
+}
+.testimonial-author p{
+    color:#fff;
+    font-size:16px;
+}
+.testimonial-author p strong{
+    display:block;
+}
+.text-heading{
+    color:#fda401;
+    text-align:center;
+/*    margin-top:40px;*/
+    padding:20px;
+    font-size:30px;
 }
