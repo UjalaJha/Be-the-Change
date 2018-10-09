@@ -11,19 +11,28 @@
            <div id="main"></div>
            
             <div id="login_form">
-               <h1>Login</h1>
-               <input type="email" placeholder="Email" required>
-               <input type="password" placeholder="Password" required><br>
-              
-                <button><a href="index.html" style="text-decoration: none;color:white">LOGIN</a></button>
+                <h1>Login</h1>
+                    <form action = "pages/includes/loginfunction.php" method = "POST" >
+                        <input type="email" placeholder="Email" name="email" required>
+                        <input type="password" placeholder="Password" name="password" required><br>
+                        <input type = "submit" value = " Submit "/><br />
+                    </form>
+                
+                <!-- <button><a href="index.html" style="text-decoration: none;color:white">LOGIN</a></button> -->
             </div>
             <div id="signup_form">
                 <h1>Sign Up</h1>
-               <input type="text" placeholder="Name" required=""><br>
-               <input type="email" placeholder="Email" required=""><br>
-               <input type="password" placeholder="Password" required=""><br>
+                <form action = "login.php" method = "POST" >
+                    <input type="text" placeholder="Name" name="" required=""><br>
+                    <input type="email" placeholder="Email" name="email" required=""><br>
+                    <input type="password" placeholder="Password" name="password" required=""><br>
+                    <input type = "submit" value = " Submit "/><br />
+                </form>
                <button>SIGN UP</button>
+
             </div>
+
+             
             <div id="login_msg">Have an Account?</div>
             <div id="signup_msg">Don't have an Account?</div>
         <button id="log_button">LOGIN</button>
