@@ -1,6 +1,12 @@
 <?php
 require_once("db.php");
 require_once("constants.php");
+
+$connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
+if(!$connection){
+    echo "Some issue in connecting ".mysqli_connect_error($connection);
+}
+
 function checkQueryResult($resultset){
     global $connection;
     if(!$resultset){
@@ -33,4 +39,19 @@ function getngodonations(){
     }
 }
 
+function addngoevent($nid,$desc){
+    global $connection;
+    $query = "INSERT INTO ngoevents (NID, E_DESCRIPTION) VALUES ($nid,'$desc')";
+    $resultset = mysqli_query($connection,$query);
+    checkQueryResult($resultset);
+    return $resultset;
+}
+
+function addngodonation($damt,$nid,$decs){
+    global $connection;
+    $query = "INSERT INTO donations (DAMOUNT, NID, D_DESCRIPTION) VALUES ($damt,$nid,'$decs')";
+    $resultset = mysqli_query($connection,$query);
+    checkQueryResult($resultset);
+    return $resultset;
+}
 ?>
