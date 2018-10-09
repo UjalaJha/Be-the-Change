@@ -8,9 +8,25 @@ function checkQueryResult($resultset){
     }
     
 }
-function getNGO(){
+function getngo(){
     global $connection;
     $query = "SELECT * FROM ngo";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+function getngoevents(){
+    global $connection;
+    $query = "SELECT * FROM ngoevents";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+function getngodonations(){
+    global $connection;
+    $query = "SELECT * FROM donations";
     $ngo=mysqli_query($connection,$query);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
