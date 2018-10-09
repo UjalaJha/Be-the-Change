@@ -8,6 +8,13 @@ $events=getngoevents();
 
 $donations=getngodonations();
 
+$eid=3;
+$partcptnforevent=getparticipationcount($eid);
+
+$dnid=2;
+$donationcount=getdonationscount($dnid);
+
+$donations=getngodonations();
 
 $nid=3;
 $did=9;
@@ -57,4 +64,8 @@ echo "get events participation";
 print_r($eventsexe);
 echo "get donation transaction";
 print_r($donationsexe);
+echo "get participation for event n";
+print_r($partcptnforevent);
+echo "get donationcount for donation n";
+print_r($donationcount);
 ?>
