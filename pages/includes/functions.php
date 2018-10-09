@@ -68,29 +68,53 @@ function adduserdonation($dnid,$did,$amnt){
     checkQueryResult($resultset);
     return $resultset;
 }
-function getdonationsexe($nid=null){
+
+function geteventsexe($nid=null,$vid=null){
     global $connection;
-    $query = "SELECT * FROM donationtransaction";
-    if(!empty($nid))
-    {
-        $query = " where DNID=(SELECT EID FROM donations where NID=$nid);";  
-    }
+    $query = "SELECT * FROM ngoeventspartcpn";
+    do{
+        
+        if(!empty($nid)&&isset($nid)&&!empty($vid)&&isset($vid))
+        {
+            $query = $query." where VID=$vid and EID=(SELECT EID FROM ngoevents where NID=$nid)";
+            break;  
+        }elseif(!empty($vid)&&isset($vid))
+        {
+            $query = $query." where VID=$vid";  
+            break;
+        }elseif(!empty($nid)&&isset($nid)){
+            $query = $query. " where EID=(SELECT EID FROM ngoevents where NID=$nid)";
+            break;
+        }
+    }while(0);
+    // print_r($query);
     $ngo=mysqli_query($connection,$query);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
     }
 }
-function geteventsexe($nid=null){
+function getdonationsexe($nid=null,$did=null){
     global $connection;
-    $query = "SELECT * FROM ngoeventspartcpn";
-    if(!empty($nid))
-    {
-        $query = " where EID=(SELECT EID FROM ngoevents where NID=$nid);";  
-    }
-    print_r($query);
-    echo "\n\n\n";
+    $query = "SELECT * FROM donationtransaction";
+    do{
+        if(!empty($nid)&&isset($nid)&&!empty($did)&&isset($did))
+        {
+            $query = $query." where DID=$did and DNID=(SELECT DNID FROM donations where NID=$nid)";
+            break;  
+        }
+        elseif(!empty($did)&&isset($did))
+        {
+            $query = $query." where DID=$did"; 
+            break; 
+        }elseif(!empty($nid)&&isset($nid)){
+            $query = $query. " where DNID=(SELECT DNID FROM donations where NID=$nid)";
+            break;
+        }
+        
+    }while(0);
+    // echo "<br>";
+    // print_r($query);
     $ngo=mysqli_query($connection,$query);
-    print_r($ngo);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
     }

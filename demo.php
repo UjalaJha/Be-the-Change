@@ -9,14 +9,21 @@ $events=getngoevents();
 $donations=getngodonations();
 
 
-$eventsexe=geteventsexe();
-
-$donationsexe=getdonationsexe();
-
 $nid=3;
-$eventsexe=geteventsexe($nid);
+$did=9;
+$vid=9;
 
-$donationsexe=getdonationsexe($nid);
+// $eventsexe=geteventsexe();
+// $donationsexe=getdonationsexe();
+
+$eventsexe=geteventsexe($nid,$vid);
+$donationsexe=getdonationsexe($nid,$did);
+
+// $eventsexe=geteventsexe();
+// $donationsexe=getdonationsexe();
+
+// $eventsexe=geteventsexe(null,9);
+// $donationsexe=getdonationsexe(3,null);
 
 // $nid=3;
 // $desc='Save Old Age Homes';
@@ -39,10 +46,15 @@ $donationsexe=getdonationsexe($nid);
 
 
 
-// echo "<pre>";
-// print_r($ngo);
-// print_r($events);
-// print_r($donations);
-// print_r($eventsexe);
-// print_r($donationsexe);
+echo "<pre>";
+echo "get all ngo";
+print_r($ngo);
+echo "get all events";
+print_r($events);
+echo "get all donations";
+print_r($donations);
+echo "get events participation";
+print_r($eventsexe);
+echo "get donation transaction";
+print_r($donationsexe);
 ?>
