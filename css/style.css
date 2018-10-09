@@ -424,10 +424,8 @@ all{
 .top-padding{
     padding-top: 20px;
 }
-.footer-cover{
 
-    background-color: #090807;
-}
+
 .header{
     color:#FEA401;
     text-transform: uppercase;
@@ -506,27 +504,7 @@ hr{
     color: #FEA401;
     display: block;
 }
-.date{
-    padding-top: 20px;
-}
 
-.days{
-    text-transform: uppercase;
-}
-.ytext{
-    color: #FEA401;
-    text-transform: uppercase;
-}
-.copyright-text{
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-}
-.footer-span{
-    text-align: center;
-    color: #FEA401;
-    text-transform: uppercase;
-}
 
 .service-item{
     padding:20px 0;
@@ -576,4 +554,8 @@ hr{
     font-family:nunito;
     font-size:25px;
     
+}
+.copyrights{
+    padding:40px;
+    background-color: #090807;
 }
