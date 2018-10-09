@@ -1,7 +1,7 @@
 <?php
 require_once("pages/includes/functions.php");
-session_start();
-$ngo=getNGO();
+// session_start();
+// $ngo=getNGO();
 // echo "<pre>";
 // print_r($ngo);
 //I m khushboo
