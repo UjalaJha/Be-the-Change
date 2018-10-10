@@ -1,7 +1,7 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 // $ngo=getngo();
 // $events=getngoevents();
 // $donations=getngodonations();
@@ -51,7 +51,8 @@ print_r($_SESSION);
 
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
-                    <li><a href="profile.html" style="color:white;">ABOUT US</a></li>
+                    <li><a href="profile.html" style="color:white;">PROFILE</a></li>
+                    <li><a href="about.html" style="color:white;">ABOUT US</a></li>
                 </ul>
 
 
@@ -74,7 +75,7 @@ print_r($_SESSION);
         </div>
            <p class="abouts whitewala">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus,</p>
            <p class="abouts whitewala">Maiores, suscipit dolorem saepe adipisci eos doloremque nobis asperiores animi unde est!</p>
-           <button class="orange"></button>
+           <button class="orange"><b>VISIT OUR WEBSITE</b></button>
             </div>
            </div>
     </div>
@@ -164,7 +165,7 @@ print_r($_SESSION);
                                
                                <div class="bottom-container">
                                    
-                                   <p class="bold1">Allen id chhasder</p>
+                                   <p class="bold1">Donate for their future</p>
                                    <span class="iconss">
                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
                                         <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
@@ -186,7 +187,7 @@ print_r($_SESSION);
                                
                                <div class="bottom-container">
                                    
-                                   <p class="bold1">Allen id chadderr</p>
+                                   <p class="bold1">Gift them a priviledge life</p>
                                    <span class="iconss">
                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
                                         <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
@@ -206,7 +207,7 @@ print_r($_SESSION);
                                    
                                <div class="bottom-container">
                                    
-                                   <p class="bold1">Allein ha effter</p>
+                                   <p class="bold1">Sponsor a child</p>
                                    <span class="iconss">
                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
                                         <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
@@ -234,98 +235,19 @@ print_r($_SESSION);
      </div><!--goals-->
     </section>
 <div class="clearfix"></div>
-    <div class="section2 meow">
-               
-        <!--       SERVICES SECTION-->
-           <div class="content-box meow">
-               <div class="content-title wow animated fadeInDown hi">
-                  <div class="about-heading">
-                   <div class="babare idiot">
-            <h6 style="color:black;font-family: nunito;">ABOUT US</h6>
-            <h2 style="color:black;">Join with us to<em style="font-family:libre baskerville;color:#fda401;">&nbsp discovered</em> <br><em style="font-family:libre baskerville color:#454545;font-style:italic;">the best college holiday events</em> </h2>
-            </div>
-                  </div>
-                   
-               </div>
-               <div class="container">
-                   <div class="row animated wow fadeInUp">
-                       <div class="col-md-6 mast">
-                           <div class="service-item">
-                               <div class="service-item-icon" style="background: #0086ff;">
-                                    <p class="Mar25">Apr 15</p>
-                                    <p class="two">2015</p>
-                               </div><!--service-item-icon-->
-                               <div class="service-item-title">
-                                   <h3 class="text-heading">Affiliate Marketing</h3>
-                               </div><!--service-item-title-->
-                               <div class="service-item-desc">
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                               </div>
-                           </div><!--service-item-->
-                       </div><!--col-md-4-->
-                       <div class="col-md-6">
-                           <div class="service-item">
-                               <div class="service-item-icon" style="background: #ec272e;">
-                                   <p class="Mar25">Mar 15</p>
-                                    <p class="two">2016</p>
-                               </div><!--service-item-icon-->
-                               <div class="service-item-title">
-                                   <h3 class="text-heading">Facebook Marketing</h3>
-                               </div><!--service-item-title-->
-                               <div class="service-item-desc">
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                               </div>
-                           </div><!--service-item-->
-                       </div><!--col-md-4-->
-                       <div class="col-md-6">
-                           <div class="service-item">
-                               <div class="service-item-icon" style="background: #534bf8;">
-                                <p class="Mar25">May 15</p>
-                                    <p class="two">2017</p>
-                               </div><!--service-item-icon-->
-                               <div class="service-item-title">
-                                   <h3 class="text-heading">Workshop PHP</h3>
-                               </div><!--service-item-title-->
-                               <div class="service-item-desc">
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                               </div>
-                           </div><!--service-item-->
-                       </div><!--col-md-4-->
-                       <div class="col-md-6">
-                           <div class="service-item">
-                               <div class="service-item-icon" style="background: #ffa502;">
-                                   <p class="Mar25">June 15</p>
-                                    <p class="two">2018</p>
-                               </div><!--service-item-icon-->
-                               <div class="service-item-title">
-                                   <h3 class="text-heading">Web Design</h3>
-                               </div><!--service-item-title-->
-                               <div class="service-item-desc">
-                                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                               </div>
-                           </div><!--service-item-->
-                       </div><!--col-md-4-->
-                       
-                   </div>
-               </div>
-               
-           </div>
-       
-       
-       
-       
-        <div class="clearfix"></div>
+    
+<!-- <div class="clearfix"></div> -->
                         
    
-     </div>
+
    
 
     
-        <section id="testimonials">
+        <section id="testimonials" style="margin-top:-30px">
            <div class="testimonial-cover bg-parallax">
             <div class="content-box">
                 <div class="content-title wow animated fadeInDown">
-                    <h3 class="text-heading text-heading-white">OUR HAPPY STUDENTS</h3>
+                    <h3 class="text-heading text-heading-white">What Our Stakeholders</h3>
                     <div class="content-title-underline"></div>
                     
                 </div>
@@ -388,91 +310,7 @@ print_r($_SESSION);
         
     </section>
     
-    <!--TOUR SECTION-->
-    <div class="section2">
-        <div class="babare">
-            <h6 style="color:black;font-family: nunito;">ABOUT US</h6>
-            <h2 style="color:black;">We are here to<em style="font-family:libre baskerville;color:#fda401;"> help you</em> <br><em style="font-family:libre baskerville color:#454545;font-style:italic;">bring your career</em> </h2>
-        </div>       
-    <div class="three-containers">
-                           <div class="first1">
-                              
-                                   <img src="css/img/pic1.jpg" height="239px" width="360px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chhasder</p>
-                                   <span class="iconss">
-                                       <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star"  style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#ccc;"></i>
-                                   </span>
-                                   <span class="chats" style="margin-left:10px;font-family: nunito;font-size:15px;">64<i class="fa fa-heart" style="font-size:20px;color:#fda401;"></i> 
-                            
-                                   </span>
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <div class="marginal">
-                                       <span class="marginals">
-                                           <p class="bolder">3 Year</p>
-                                           <p class="bolder1">Course</p>
-                                           <span class="vertical"></span>
-
-                                       </span>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/pic3.jpg" height="239px" width="360px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   <span class="iconss">
-                                       <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star"  style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#ccc;"></i>
-                                   </span>
-                                   <span class="chats" style="margin-left:10px;font-family: nunito;font-size:15px;">36<i class="fa fa-heart" style="font-size:20px;color:#fda401;"></i> 
-                            
-                                   </span>
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic5.jpg" height="239px" width="360px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   <span class="iconss">
-                                       <i class="fa fa-star" style="font-size:20px;color:#fda401;margin-left:12px;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star"  style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#fda401;"></i>
-                                        <i class="fa fa-star" style="font-size:20px;color:#ccc;"></i>
-                                   </span>
-                                   <span class="chats" style="margin-left:10px;font-family: nunito;font-size:15px;">98<i class="fa fa-heart" style="font-size:20px;color:#fda401;"></i> 
-                            
-                                   </span>
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                               </div>
-                           </div>
-                    
-        <div class="clearfix"></div>
-                        
-   
-     </div>
-   
-
-    </div>
+    
     
     <div class="clearfix"></div>
 

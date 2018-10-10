@@ -48,10 +48,9 @@ $donations=getngodonations();
                     <li class="big"><a href="index.php" style="color:white;">HOME</a></li>
                     
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
-                    
-                    <li><a href="profile.html" style="color:white;">ABOUT</a></li>
-                    <li><a href="#"><img src="css/img/shopping-cart-black-shape.png" height="20px" width="20px"></a></li>
-                    <li><a href="#"><img src="css/img/musica-searcher.png" height="20px" width="20px"></a></li>
+                    <li><a href="profile.html" style="color:white;">PROFILE</a></li>
+                    <li><a href="about.html" style="color:white;">ABOUT</a></li>
+                   
                     
 
 
@@ -72,7 +71,7 @@ $donations=getngodonations();
                    <span class="blog-text">DONORS</span>
                </div>
                <div class="same-section">
-                <span class="add"></span><span class="text">EDIFICATION UNIVERSITY READY FOR YOU</span>
+                <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
                 </div>
         
             </div>
