@@ -1,3 +1,11 @@
+<?php
+require_once("pages/includes/functions.php");
+
+$donations=getngodonations();
+print_r($donations);
+
+?>
+
 <html>
     <head>
         <title>blog</title>
