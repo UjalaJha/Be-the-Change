@@ -123,11 +123,10 @@ $events=getngoevents();
                        <p class="bold1"><?php print_r($value[2]) ?></p>
                        
                        <p class="bold2"><?php print_r($value[3]) ?></p>
-                       
-                       <span><a href="#"><button class="btn read-more">Read More</button></a>
-                        <form action="javascript:void(0);"  method="POST">
-                          <input type="text" name="eid" value=<?php  print_r($value[0]) ?>>
-                          <input type="text" name="vid" value="8">
+                       <form action="javascript:void(0);" >
+                          <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
+                          <input type="text" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
+                          <input type="text" name="vid" id="vid" value="8">
                           <button class="btn read-more mores" type="submit">Participate</button></span> 
                         </form>
                        
@@ -215,15 +214,40 @@ $events=getngoevents();
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
         <script type="text/javascript">
-           $("form").submit(function(){
-                var str = $(this).serialize();
-                $.ajax('getResults.php', str, function(result){
-                    alert(result); // the result variable will contain any text echoed by getResult.php
-                });
-                return(false);
-            });
-
            
+            $("form").submit(function(){
+            var form_data = $(this).closest("form");
+            $eid = form_data[0]["evid"].value;
+            $vid = form_data[0]["vid"].value;
+            
+            // var data = form_data.split("&");
+            // console.log(form_data[0]["evid"].value);
+
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "http://localhost/be-the-change/getResults.php",
+                method:"POST",
+                data:{eid:$eid,vid:$vid},
+                dataType:"json",
+                success:function(response){
+                  if(response.done==true)
+                  {
+                    alert("You Have Succesfullty registered for this event");
+                  }else if(response.done==false){
+                    alert("something went wrong");
+                  }else{
+                    alert(response.done);
+                  }
+                  
+                },
+                error: function () {
+                    alert("something went wrong");
+                }  
+                    
+                
+            });
+        });
         </script>
         
     
