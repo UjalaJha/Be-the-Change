@@ -1,3 +1,9 @@
+<?php
+require_once("pages/includes/functions.php");
+
+$events=getngoevents();
+print_r($events);
+?>
 <html>
     <head>
         <title>blog</title>
