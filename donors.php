@@ -1,3 +1,10 @@
+<?php
+require_once("pages/includes/functions.php");
+
+$donations=getngodonations();
+// print_r($donations);
+?>
+
 <html>
     <head>
         <title>blog</title>
@@ -103,88 +110,32 @@
         </div>
         <div class="right-container pull-left">
            <div class="right-wala">
+            <?php 
+            foreach($donations as $key =>$value)
+            {
+             // print_r($value[3]);
+            
+            ?>
+
             <div class="first1">
                               
-                                   <img src="css/img/pic5.jpg" height="239px" width="330px">
+                              <img src="css/img/pic5.jpg" height="239px" width="330px">
                                 
                                
-                               <div class="bottom-container">
+                            <div class="bottom-container">
                                    
-                                   <p class="bold1">Educate Poor</p>
+                                   <p class="bold1"><?php print_r($value[3]) ?></p>
                                    
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                                   <p class="bold2"><?php print_r($value[4]) ?></p>
                                    
                                    <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
                                    
                                </div>
                            </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/pic6.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Help Students</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic4.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Awareness</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                    
-                        <div class="clearfix"></div><br>
-                        <div class="first1">
-                              
-                                   <img src="css/img/pic1.jpg" height="239px" width="330px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Help Old Age Homes</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/pic2.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic3.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                    
+                           <?php
+                            }
+                         ?>
+                           
                         <div class="clearfix"></div>
         </div>
     </div>

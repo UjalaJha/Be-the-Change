@@ -1,3 +1,10 @@
+<?php
+require_once("pages/includes/functions.php");
+
+$events=getngoevents();
+// echo "<pre>";
+// print_r($events);
+?>
 <html>
     <head>
         <title>blog</title>
@@ -90,7 +97,7 @@
             <div class="box">
                <div class="content">
                 <h1 class="text-center">7264</h1>
-                <h2 class="text-center">New Donations</h2>
+                <h2 class="text-center">New Joinees</h2>
                 </div>
             </div>
             <div class="box">
@@ -102,93 +109,38 @@
             
         </div>
         <div class="right-container pull-left">
-           <div class="right-wala">
-            <div class="first1">
-                              
-                                   <img src="css/img/img3phone.jpg" height="239px" width="330px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chhasder</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/img4bkshelf.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic4.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
+             <div class="right-wala">
+              <?php 
+              foreach ($events as $key => $value) {
+                // print_r($value[2]);
+                ?>
+                <div class="first1">          
+                    <img src="css/img/img3phone.jpg" height="239px" width="330px">
                     
-                        <div class="clearfix"></div><br>
-                        <div class="first1">
-                              
-                                   <img src="css/img/pic1.jpg" height="239px" width="330px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chhasder</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/pic2.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic3.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                    
-                        <div class="clearfix"></div>
-        </div>
-    </div>
+                   
+                   <div class="bottom-container">
+                       
+                       <p class="bold1"><?php print_r($value[2]) ?></p>
+                       
+                       <p class="bold2"><?php print_r($value[3]) ?></p>
+                       
+                       <span><a href="#"><button class="btn read-more">Read More</button></a>
+                        <form action="javascript:void(0);"  method="POST">
+                          <input type="text" name="eid" value=<?php  print_r($value[0]) ?>>
+                          <input type="text" name="vid" value="8">
+                          <button class="btn read-more mores" type="submit">Participate</button></span> 
+                        </form>
+                       
+                   </div>
+               </div>
+                <?php
+              }
+              ?>
+            
+          </div>
+      </div>
 </div>
+
 <section id="testimonials" style="margin-top:-18px;">
            <div class="testimonial-cover bg-parallax">
             <div class="content-box">
@@ -262,8 +214,18 @@
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
- 
+        <script type="text/javascript">
+           $("form").submit(function(){
+                var str = $(this).serialize();
+                $.ajax('getResults.php', str, function(result){
+                    alert(result); // the result variable will contain any text echoed by getResult.php
+                });
+                return(false);
+            });
+
+           
+        </script>
         
- 
+    
     </body>
 </html>
