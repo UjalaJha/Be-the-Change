@@ -97,7 +97,7 @@ $events=getngoevents();
             <div class="box">
                <div class="content">
                 <h1 class="text-center">7264</h1>
-                <h2 class="text-center">New Donations</h2>
+                <h2 class="text-center">New Joinees</h2>
                 </div>
             </div>
             <div class="box">
@@ -122,9 +122,14 @@ $events=getngoevents();
                        
                        <p class="bold1"><?php print_r($value[2]) ?></p>
                        
-                       <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                       <p class="bold2"><?php print_r($value[3]) ?></p>
                        
-                       <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
+                       <span><a href="#"><button class="btn read-more">Read More</button></a>
+                        <form action="javascript:void(0);"  method="POST">
+                          <input type="text" name="eid" value=<?php  print_r($value[0]) ?>>
+                          <input type="text" name="vid" value="8">
+                          <button class="btn read-more mores" type="submit">Participate</button></span> 
+                        </form>
                        
                    </div>
                </div>
@@ -135,6 +140,7 @@ $events=getngoevents();
           </div>
       </div>
 </div>
+
 <section id="testimonials" style="margin-top:-18px;">
            <div class="testimonial-cover bg-parallax">
             <div class="content-box">
@@ -208,8 +214,18 @@ $events=getngoevents();
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
- 
+        <script type="text/javascript">
+           $("form").submit(function(){
+                var str = $(this).serialize();
+                $.ajax('getResults.php', str, function(result){
+                    alert(result); // the result variable will contain any text echoed by getResult.php
+                });
+                return(false);
+            });
+
+           
+        </script>
         
- 
+    
     </body>
 </html>
