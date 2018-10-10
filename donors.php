@@ -1,6 +1,11 @@
 <?php
 require_once("pages/includes/functions.php");
 
+if($_SESSION['did']!=NULL)
+{
+    header("Location: index.php");
+}
+
 $donations=getngodonations();
 // print_r($donations);
 ?>
@@ -127,11 +132,17 @@ $donations=getngodonations();
                                    <p class="bold1"><?php print_r($value[3]) ?></p>
                                    
                                    <p class="bold2"><?php print_r($value[4]) ?></p>
-                                   
-                                   <span><button class="btn read-more">Read More</button>
+                            
+                                    <form action="javascript:void(0);" >
+                                    <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
+                                    <input type="text" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
+                                    <input type="text" name="amnt" id="amnt" placeholder = "Enter amount"> 
+                                    <button class="btn read-more mores" id="Btn Donate" type="submit">Donate</button></span> 
+                                    </form>
+                                
 
                                    <!-- Trigger/Open The Modal -->
-                                   <button class="btn read-more mores" id="Btn Donate">Donate</button>
+                                   <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
                                     <!-- The Modal -->
                                     <div id="donorModal" class="modal-main">
 
@@ -141,7 +152,7 @@ $donations=getngodonations();
                                         <p class="bold1"><?php print_r($value[3]) ?></p>
                                         
                                         <form action="" method="POST">
-                                            <input type="text" name="amount"> Amount to be donated <br />
+                                            <input type="text" name="amnt"> Amount to be donated <br />
                                             <button class="btn pay" type="submit">Contribute</button>
                                         </form>
                                     </div>
@@ -230,52 +241,71 @@ $donations=getngodonations();
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
- 
+<!--         
+        <script>
+            // Get the modal
+            var modal = document.getElementById('donorModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("Btn Donate");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal 
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+         -->
+        <script>
+            $("form").submit(function(){
+                var form_data = $(this).closest("form");
+                $dnid = form_data[0]["dnid"].value;
+                $amnt = form_data[1]["amnt"].value;
+                    
+                var data = form_data.split("&");
+                console.log(form_data[0]["dnid"].value);
+
+                //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+                // console.log($eid);
+                $.ajax({
+                    url: "http://localhost/be-the-change/getDonations.php",
+                    method:"POST",
+                    data:{dnid:$dnid,amnt:$amnt},
+                    dataType:"json",
+                    success:function(response){
+                    if(response.done==true)
+                    {
+                        alert("You Have Succesfullty registered for this event");
+                    }else if(response.done==false){
+                        alert("something went wrong1");
+                    }else{
+                        alert(response.done);
+                    }
+                    
+                    },
+                    error: function () {
+                        alert("something went wrong 2");
+                    }  
+                        
+                    
+                });
+            });
+        </script>
         
  
     </body>
 </html>
-
-<!-- <script>
-var donormodal = document.getElementById("donormodal");
-var pay = document.getElementById("btn read-more mores");
-
-pay.onclick = function() {
-    donormodal.style.display = "block";
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script> -->
-
-
-<script>
-// Get the modal
-var modal = document.getElementById('donorModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("Btn Donate");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>

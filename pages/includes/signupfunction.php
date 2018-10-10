@@ -1,11 +1,10 @@
 <?php
-// echo "hello";
+//echo "hello";
 require_once("db.php");
 require_once("functions.php");
 session_start();
 
 // echo "hello";
-
 
 // {
     // if($role==1)

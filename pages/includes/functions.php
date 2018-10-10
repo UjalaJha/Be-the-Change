@@ -71,16 +71,20 @@ function addusertoevent($eid,$vid){
         $query = "INSERT INTO  ngoeventspartcpn (EID,VID) VALUES ($eid,$vid)";
         $resultset = mysqli_query($connection,$query);
         checkQueryResult($resultset);
-        return $resultset;
-        
-    
-    
+        return $resultset; 
 }
+
+
 function adduserdonation($dnid,$did,$amnt){
     global $connection;
-    $query = "INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    $resultset = mysqli_query($connection,$query);
-    checkQueryResult($resultset);
+    $query = $connection->prepare("INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES (?,?,?)");
+    $query->bind_param('iii', $dnid, $did, $amnt);
+    $query->execute();
+    $query->close();
+    // $resultset = mysqli_query($connection,$query);
+    // checkQueryResult($resultset);
+    // return $resultset;
+    $resultset="Amount Donated!";
     return $resultset;
 }
 

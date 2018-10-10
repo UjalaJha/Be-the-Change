@@ -1,6 +1,12 @@
 <?php
 require_once("pages/includes/functions.php");
 
+if($_SESSION['vid']!=NULL)
+{
+    header("Location: index.php");
+}
+
+
 $events=getngoevents();
 // echo "<pre>";
 // print_r($events);
