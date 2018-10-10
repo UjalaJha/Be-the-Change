@@ -119,7 +119,7 @@ $donations=getngodonations();
 
             <div class="first1">
                               
-                              <img src="css/img/pic5.jpg" height="239px" width="330px">
+                            <img src="css/img/pic5.jpg" height="239px" width="330px">
                                 
                                
                             <div class="bottom-container">
@@ -128,8 +128,25 @@ $donations=getngodonations();
                                    
                                    <p class="bold2"><?php print_r($value[4]) ?></p>
                                    
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
+                                   <span><button class="btn read-more">Read More</button>
+
+                                   <!-- Trigger/Open The Modal -->
+                                   <button class="btn read-more mores" id="Btn Donate">Donate</button>
+                                    <!-- The Modal -->
+                                    <div id="donorModal" class="modal-main">
+
+                                    <!-- Modal content -->
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <p class="bold1"><?php print_r($value[3]) ?></p>
+                                        
+                                        <form action="" method="POST">
+                                            <input type="text" name="amount"> Amount to be donated <br />
+                                            <button class="btn pay" type="submit">Contribute</button>
+                                        </form>
+                                    </div>
+                                    </div>
+                                   </span>
                                </div>
                            </div>
                            <?php
@@ -218,3 +235,47 @@ $donations=getngodonations();
  
     </body>
 </html>
+
+<!-- <script>
+var donormodal = document.getElementById("donormodal");
+var pay = document.getElementById("btn read-more mores");
+
+pay.onclick = function() {
+    donormodal.style.display = "block";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script> -->
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('donorModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("Btn Donate");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
