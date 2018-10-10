@@ -51,11 +51,6 @@ require_once("pages/includes/functions.php");
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
                     <li><a href="about.html" style="color:white;">ABOUT US</a></li>
-                    
-                    
-                    
-
-
                 </ul>
 
 
