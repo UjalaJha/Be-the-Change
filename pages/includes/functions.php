@@ -89,7 +89,8 @@ function geteventsexe($nid=null,$vid=null){
     }while(0);
     // print_r($query);
     $ngo=mysqli_query($connection,$query);
-    if($row=mysqli_fetch_all($ngo)){
+    if($ngo){
+        $row=mysqli_fetch_all($ngo);
         return($row);
     }
 }
@@ -133,8 +134,12 @@ function getdonationscount($dnid){
     $query2="SELECT sum(amount) as count FROM donationtransaction where DNID=$dnid";
     // print_r($query2);
     $conect = mysqli_query($connection,$query2); 
-    $cnt = mysqli_fetch_assoc($conect); 
-    $result['count'] = $cnt['count'];
+    if($conect)
+    {
+       $cnt = mysqli_fetch_assoc($conect); 
+        $result['count'] = $cnt['count']; 
+    }
+    
 
     $query = "SELECT * FROM donationtransaction where DNID=$dnid";
     $ngo=mysqli_query($connection,$query);

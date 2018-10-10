@@ -1,3 +1,10 @@
+<?php
+require_once("pages/includes/functions.php");
+
+$events=getngoevents();
+// echo "<pre>";
+// print_r($events);
+?>
 <html>
     <head>
         <title>blog</title>
@@ -102,92 +109,31 @@
             
         </div>
         <div class="right-container pull-left">
-           <div class="right-wala">
-            <div class="first1">
-                              
-                                   <img src="css/img/img3phone.jpg" height="239px" width="330px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chhasder</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/img4bkshelf.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic4.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
+             <div class="right-wala">
+              <?php 
+              foreach ($events as $key => $value) {
+                // print_r($value[2]);
+                ?>
+                <div class="first1">          
+                    <img src="css/img/img3phone.jpg" height="239px" width="330px">
                     
-                        <div class="clearfix"></div><br>
-                        <div class="first1">
-                              
-                                   <img src="css/img/pic1.jpg" height="239px" width="330px">
-                                
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chhasder</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                                   
-                               </div>
-                           </div>
-                           <div class="second">
-                              
-                                   <img src="css/img/pic2.jpg" height="239px" width="330px">
-                            
-                               
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allen id chadderr</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                           <div class="third">
-                              
-                                   <img src="css/img/pic3.jpg" height="239px" width="330px">
-                                   
-                               <div class="bottom-container">
-                                   
-                                   <p class="bold1">Allein ha effter</p>
-                                   
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
-                                   <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
-                               </div>
-                           </div>
-                    
-                        <div class="clearfix"></div>
-        </div>
-    </div>
+                   
+                   <div class="bottom-container">
+                       
+                       <p class="bold1"><?php print_r($value[2]) ?></p>
+                       
+                       <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                       
+                       <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
+                       
+                   </div>
+               </div>
+                <?php
+              }
+              ?>
+            
+          </div>
+      </div>
 </div>
 <section id="testimonials" style="margin-top:-18px;">
            <div class="testimonial-cover bg-parallax">
