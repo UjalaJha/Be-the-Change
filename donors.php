@@ -45,11 +45,11 @@ $donations=getngodonations();
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <li class="big"><a href="index.php" style="color:white;">HOME</a></li>
                     
-                    <li><a href="about.html" style="color:white;">LOGIN</a></li>
+                    <li><a href="login.html" style="color:white;">LOGIN</a></li>
                     
-                    <li><a href="story.html" style="color:white;">ABOUT</a></li>
+                    <li><a href="profile.html" style="color:white;">ABOUT</a></li>
                     <li><a href="#"><img src="css/img/shopping-cart-black-shape.png" height="20px" width="20px"></a></li>
                     <li><a href="#"><img src="css/img/musica-searcher.png" height="20px" width="20px"></a></li>
                     
