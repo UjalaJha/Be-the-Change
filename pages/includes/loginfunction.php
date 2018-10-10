@@ -5,7 +5,7 @@ require_once("functions.php");
 session_start();
 if(!empty($_POST["email"]))
 {
-    echo "hello";
+    //echo "hello";
     $email=$_POST['email'];
     $password=$_POST['password'];
     
@@ -33,13 +33,30 @@ if(!empty($_POST["email"]))
 //        i have 1 row
         $db_password = $row['PASSWORD'];
         $uid = $row['UID'];
-        $_SESSION['UID']=$uid;
-        header("Location: ../../index.php");
+        $role = $row['U_TYPE'];
+
+        //session variable according to role
+        if($role==1)
+        {
+            $_SESSION['did'] = $result['UID'];
+            header("Location: ../../donors.php");
+        }
+        elseif($role==2)
+        {
+            $_SESSION['vid'] = $result['UID'];
+            header("Location: ../../volunteers.php");
+        }
+        else{
+            $_SESSION['nid'] = $result['UID'];
+            header("Location: ../../index.php");
+        }
     }
+
+}
     else
     {
         $db_password="";
        header("Location: ../../login.html");
     }
-}
+
 ?>
