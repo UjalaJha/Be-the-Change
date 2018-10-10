@@ -1,13 +1,13 @@
 <?php
-//require_once("pages/includes/functions.php");
-//// session_start();
-//$ngo=getngo();
-//$events=getngoevents();
-//$donations=getngodonations();
-//echo "<pre>";
-//print_r($ngo);
-//print_r($events);
-//print_r($donations);
+require_once("pages/includes/functions.php");
+// session_start();
+// $ngo=getngo();
+// $events=getngoevents();
+// $donations=getngodonations();
+// echo "<pre>";
+// print_r($ngo);
+// print_r($events);
+// print_r($donations);
 //I m khushboo
 ?>
 

@@ -58,6 +58,19 @@ body{
     
     
 }
+.radio-input{
+    outline:none;
+    border:0px;
+    height:20px;
+    width:20px;
+    border-bottom:1px solid black;
+    margin:0px;
+    font-size:15px;
+    margin:5px; 
+    
+    
+    
+}
 
 #login_form button,#signup_form button{
     background:#fda401;
