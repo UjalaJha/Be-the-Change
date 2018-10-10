@@ -126,7 +126,7 @@ $donations=getngodonations();
                                    
                                    <p class="bold1"><?php print_r($value[3]) ?></p>
                                    
-                                   <p class="bold2">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                                   <p class="bold2"><?php print_r($value[4]) ?></p>
                                    
                                    <span><button class="btn read-more">Read More</button><button class="btn read-more mores">Donate</button></span>
                                    
