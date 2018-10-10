@@ -56,10 +56,25 @@ function addngodonation($damt,$nid,$decs){
 }
 function addusertoevent($eid,$vid){
     global $connection;
-    $query = "INSERT INTO  ngoeventspartcpn (EID,VID) VALUES ($eid,$vid)";
-    $resultset = mysqli_query($connection,$query);
-    checkQueryResult($resultset);
-    return $resultset;
+    $query1="Select * from ngoeventspartcpn where EID=$eid and VID=$vid";
+    $resultset1 = mysqli_query($connection,$query1);
+    // echo "hello";
+    if($resultset1){
+        $row=mysqli_fetch_all($resultset1);
+        if(!empty($row))
+        {
+            // print_r($row);
+            $resultset="Already Registered";
+            return $resultset;
+        }
+    }
+        $query = "INSERT INTO  ngoeventspartcpn (EID,VID) VALUES ($eid,$vid)";
+        $resultset = mysqli_query($connection,$query);
+        checkQueryResult($resultset);
+        return $resultset;
+        
+    
+    
 }
 function adduserdonation($dnid,$did,$amnt){
     global $connection;
