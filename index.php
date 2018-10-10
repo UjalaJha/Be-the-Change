@@ -1,13 +1,13 @@
 <?php
-require_once("pages/includes/functions.php");
-// session_start();
-$ngo=getngo();
-$events=getngoevents();
-$donations=getngodonations();
-echo "<pre>";
-print_r($ngo);
-print_r($events);
-print_r($donations);
+//require_once("pages/includes/functions.php");
+//// session_start();
+//$ngo=getngo();
+//$events=getngoevents();
+//$donations=getngodonations();
+//echo "<pre>";
+//print_r($ngo);
+//print_r($events);
+//print_r($donations);
 //I m khushboo
 ?>
 
@@ -51,11 +51,6 @@ print_r($donations);
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
                     <li><a href="about.html" style="color:white;">ABOUT US</a></li>
-                    
-                    
-                    
-
-
                 </ul>
 
 
