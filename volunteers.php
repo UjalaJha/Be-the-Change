@@ -1,7 +1,8 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-if($_SESSION['vid']!=NULL)
+// print_r($_SESSION);
+if($_SESSION['vid']==NULL)
 {
     header("Location: index.php");
 }
@@ -50,6 +51,7 @@ $events=getngoevents();
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
                     <li><a href="profile.html" style="color:white;">PROFILE</a></li>
                     <li><a href="about.html" style="color:white;">ABOUT</a></li>
+                    
                     
                     
 
