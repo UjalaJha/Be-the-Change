@@ -38,16 +38,22 @@ if(!empty($_POST["email"]))
         //session variable according to role
         if($role==1)
         {
-            $_SESSION['did'] = $result['UID'];
+            $_SESSION['did'] = $uid;
+            $_SESSION['vid'] = NULL;
+            $_SESSION['nid'] = NULL;
             header("Location: ../../donors.php");
         }
         elseif($role==2)
         {
-            $_SESSION['vid'] = $result['UID'];
+            $_SESSION['did'] = NULL;
+            $_SESSION['vid'] = $uid;
+            $_SESSION['nid'] = NULL;
             header("Location: ../../volunteers.php");
         }
         else{
-            $_SESSION['nid'] = $result['UID'];
+            $_SESSION['did'] = NULL;
+            $_SESSION['vid'] = NULL;
+            $_SESSION['nid'] = $uid;
             header("Location: ../../index.php");
         }
     }

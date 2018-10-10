@@ -1,7 +1,8 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-if($_SESSION['vid']!=NULL)
+// print_r($_SESSION);
+if($_SESSION['vid']==NULL)
 {
     header("Location: index.php");
 }
