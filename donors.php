@@ -1,6 +1,7 @@
 <?php
 require_once("pages/includes/functions.php");
-
+session_start();
+// print_r($_SESSION);
 if($_SESSION['did']!=NULL)
 {
     header("Location: index.php");
@@ -135,8 +136,8 @@ $donations=getngodonations();
                             
                                     <form action="javascript:void(0);" >
                                     <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <input type="text" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
-                                    <input type="text" name="amnt" id="amnt" placeholder = "Enter amount"> 
+                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
+                                    <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount"> 
                                     <button class="btn read-more mores" id="Btn Donate" type="submit">Donate</button></span> 
                                     </form>
                                 
@@ -241,7 +242,7 @@ $donations=getngodonations();
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
-<!--         
+        
         <script>
             // Get the modal
             var modal = document.getElementById('donorModal');
@@ -269,7 +270,7 @@ $donations=getngodonations();
                 }
             }
         </script>
-         -->
+        
         <script>
             $("form").submit(function(){
                 var form_data = $(this).closest("form");
@@ -289,7 +290,7 @@ $donations=getngodonations();
                     success:function(response){
                     if(response.done==true)
                     {
-                        alert("You Have Succesfullty registered for this event");
+                        alert("You Have Succesfullty donated for this event");
                     }else if(response.done==false){
                         alert("something went wrong1");
                     }else{

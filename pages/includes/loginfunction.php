@@ -34,7 +34,7 @@ if(!empty($_POST["email"]))
         $db_password = $row['PASSWORD'];
         $uid = $row['UID'];
         $role = $row['U_TYPE'];
-
+        print_r($role);
         //session variable according to role
         if($role==1)
         {
