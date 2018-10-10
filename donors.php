@@ -45,11 +45,19 @@ $donations=getngodonations();
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="index.php" style="color:white;">HOME</a></li>
-                    
-                    <li><a href="login.html" style="color:white;">LOGIN</a></li>
-                    <li><a href="profile.html" style="color:white;">PROFILE</a></li>
-                    <li><a href="about.html" style="color:white;">ABOUT</a></li>
+                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <?php if(!empty($_SESSION['did']))
+                    {
+                        ?>
+
+                            <li><a href="#" style="color:white;">PROFILE</a></li>
+                            <li><a href="#" style="color:white;">ABOUT</a></li>
+                            <li><a href="index.php" style="color:white;">LOGOUT</a></li>
+                        <?php
+
+                    }
+                    ?>
+                   
                    
                     
 
