@@ -168,3 +168,8 @@ all{
     font-weight: bold;
     margin-top:15px;
 }
+.left-profile{
+    float:left;
+    margin-left:12%;
+    margin-top:5%;
+}
