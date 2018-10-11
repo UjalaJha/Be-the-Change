@@ -23,7 +23,7 @@ $donations=getngodonations();
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/donors.css">
+    <link rel="stylesheet" href="css/ngo.css">
     </head>
     <body>
         <div class="header-strip">
@@ -76,7 +76,7 @@ $donations=getngodonations();
           <div class="containers">
            <div class="something">
                <div class="heading">
-                   <span class="blog-text">DONORS</span>
+                   <span class="blog-text">NGO PROFILE</span>
                </div>
                <div class="same-section">
                 <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
@@ -91,20 +91,20 @@ $donations=getngodonations();
         <div class="sidebar-container pull-left">
             <div class="box">
                <div class="content">
-                <h1 class="text-center">1235</h1>
-                <h2 class="text-center">Issues Helped</h2>
+                <h1 class="text-center">5236</h1>
+                <h2 class="text-center">Volunteer Registered</h2>
                 </div>
             </div>
             <div class="box">
                <div class="content">
-                <h1 class="text-center">45895</h1>
-                <h2 class="text-center">Donations Granted</h2>
+                <h1 class="text-center">95862</h1>
+                <h2 class="text-center">Donations Done</h2>
                 </div>
             </div>
             <div class="box">
                <div class="content">
-                <h1 class="text-center">789</h1>
-                <h2 class="text-center">Children Helped</h2>
+                <h1 class="text-center">289</h1>
+                <h2 class="text-center">Total NGO's</h2>
                 </div>
             </div>
             <div class="box">
@@ -141,12 +141,12 @@ $donations=getngodonations();
                                    
                                    <p class="bold2"><?php print_r($value[4]) ?></p>
                             
-                                    <!-- <form action="javascript:void(0);" > -->
+                                    <form action="javascript:void(0);" >
                                     <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <!-- <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> > -->
-                                    <!-- <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount">  -->
-                                    <button class="btn read-more mores" id="Btn Donate">Donate</button></span> 
-                                    <!-- </form> -->
+                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
+                                    <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount"> 
+                                    <button class="btn read-more mores" id="Btn Donate" type="submit">Existing Event</button></span> 
+                                    </form>
                                 
 
                                    <!-- Trigger/Open The Modal -->
@@ -159,8 +159,7 @@ $donations=getngodonations();
                                         <span class="close">&times;</span>
                                         <p class="bold1"><?php print_r($value[3]) ?></p>
                                         
-                                        <form action="javascript:void(0);" method="POST">
-                                            <input type="hidden" name="nid" id="nid" value=<?php  echo ($value[2]) ?>>
+                                        <form action="" method="POST">
                                             <input type="text" name="amnt"> Amount to be donated <br />
                                             <button class="btn pay" type="submit">Contribute</button>
                                         </form>
@@ -282,18 +281,18 @@ $donations=getngodonations();
         <script>
             $("form").submit(function(){
                 var form_data = $(this).closest("form");
-                $nid = form_data[1]["nid"].value;
-                $amnt = form_data[2]["amnt"].value;
-            
+                $dnid = form_data[0]["dnid"].value;
+                $amnt = form_data[1]["amnt"].value;
+                    
                 var data = form_data.split("&");
-                console.log(form_data[2]["amnt"].value);
+                console.log(form_data[0]["dnid"].value);
 
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
                     url: "http://localhost/be-the-change/getDonations.php",
                     method:"POST",
-                    data:{nid:$nid,amnt:$amnt},
+                    data:{dnid:$dnid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
                     if(response.done==true)

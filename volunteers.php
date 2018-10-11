@@ -1,7 +1,8 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-if($_SESSION['vid']!=NULL)
+// print_r($_SESSION);
+if($_SESSION['vid']==NULL)
 {
     header("Location: index.php");
 }
@@ -45,11 +46,18 @@ $events=getngoevents();
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="index.php" style="color:white;">HOME</a></li>
-                    
-                    <li><a href="login.html" style="color:white;">LOGIN</a></li>
-                    
-                    <li><a href="profile.html" style="color:white;">ABOUT</a></li>
+                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <?php if(!empty($_SESSION['vid']))
+                    {
+                        ?>
+
+                            <li><a href="profile.html" style="color:white;">PROFILE</a></li>
+                            <li><a href="#" style="color:white;">ABOUT</a></li>
+                            <li><a href="index.php" style="color:white;">LOGOUT</a></li>
+                        <?php
+
+                    }
+                    ?>
                     
                     
 
@@ -120,8 +128,8 @@ $events=getngoevents();
                 // print_r($value[2]);
                 ?>
                 <div class="first1">          
-                    <img src="css/img/img3phone.jpg" height="239px" width="330px">
-                    
+                    <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                   <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=kurla%20station&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div> 
                    
                    <div class="bottom-container">
                        
