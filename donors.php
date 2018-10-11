@@ -72,7 +72,7 @@ $donations=getngodonations();
                    <span class="blog-text">DONORS</span>
                </div>
                <div class="same-section">
-                <span class="add"></span><span class="text">EDIFICATION UNIVERSITY READY FOR YOU</span>
+                <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
                 </div>
         
             </div>
