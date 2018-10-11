@@ -1,6 +1,6 @@
 <?php
 require_once("pages/includes/functions.php");
-
+session_start();
 if($_SESSION['vid']!=NULL)
 {
     header("Location: index.php");
@@ -50,8 +50,7 @@ $events=getngoevents();
                     <li><a href="login.html" style="color:white;">LOGIN</a></li>
                     
                     <li><a href="profile.html" style="color:white;">ABOUT</a></li>
-                    <li><a href="#"><img src="css/img/shopping-cart-black-shape.png" height="20px" width="20px"></a></li>
-                    <li><a href="#"><img src="css/img/musica-searcher.png" height="20px" width="20px"></a></li>
+                    
                     
 
 

@@ -73,7 +73,7 @@ require_once("pages/includes/functions.php");
         </div>
            <p class="abouts whitewala">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus,</p>
            <p class="abouts whitewala">Maiores, suscipit dolorem saepe adipisci eos doloremque nobis asperiores animi unde est!</p>
-           <button class="orange"></button>
+               <button class="orange"><B>VISIT OUR WEBSITE</B></button>
             </div>
            </div>
     </div>
