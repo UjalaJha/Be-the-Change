@@ -130,8 +130,8 @@ $events=getngoevents();
                        <p class="bold2"><?php print_r($value[3]) ?></p>
                        <form action="javascript:void(0);" >
                           <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                          <input type="text" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
-                          <input type="text" name="vid" id="vid" value="8">
+                          <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
+                          <input type="hidden" name="vid" id="vid" value="8">
                           <button class="btn read-more mores" type="submit">Participate</button></span> 
                         </form>
                        
@@ -231,7 +231,7 @@ $events=getngoevents();
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost/be-the-change/getResults.php",
+                url: "http://localhost:88/be-the-change/getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",
