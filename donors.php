@@ -134,12 +134,12 @@ $donations=getngodonations();
                                    
                                    <p class="bold2"><?php print_r($value[4]) ?></p>
                             
-                                    <form action="javascript:void(0);" >
+                                    <!-- <form action="javascript:void(0);" > -->
                                     <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
-                                    <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount"> 
-                                    <button class="btn read-more mores" id="Btn Donate" type="submit">Donate</button></span> 
-                                    </form>
+                                    <!-- <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> > -->
+                                    <!-- <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount">  -->
+                                    <button class="btn read-more mores" id="Btn Donate">Donate</button></span> 
+                                    <!-- </form> -->
                                 
 
                                    <!-- Trigger/Open The Modal -->
@@ -152,7 +152,8 @@ $donations=getngodonations();
                                         <span class="close">&times;</span>
                                         <p class="bold1"><?php print_r($value[3]) ?></p>
                                         
-                                        <form action="" method="POST">
+                                        <form action="javascript:void(0);" method="POST">
+                                            <input type="hidden" name="nid" id="nid" value=<?php  echo ($value[2]) ?>>
                                             <input type="text" name="amnt"> Amount to be donated <br />
                                             <button class="btn pay" type="submit">Contribute</button>
                                         </form>
@@ -274,18 +275,18 @@ $donations=getngodonations();
         <script>
             $("form").submit(function(){
                 var form_data = $(this).closest("form");
-                $dnid = form_data[0]["dnid"].value;
-                $amnt = form_data[1]["amnt"].value;
-                    
+                $nid = form_data[1]["nid"].value;
+                $amnt = form_data[2]["amnt"].value;
+            
                 var data = form_data.split("&");
-                console.log(form_data[0]["dnid"].value);
+                console.log(form_data[2]["amnt"].value);
 
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
                     url: "http://localhost/be-the-change/getDonations.php",
                     method:"POST",
-                    data:{dnid:$dnid,amnt:$amnt},
+                    data:{nid:$nid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
                     if(response.done==true)
