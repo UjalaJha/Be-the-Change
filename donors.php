@@ -145,7 +145,7 @@ $donations=getngodonations();
                                     <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
                                     <!-- <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> > -->
                                     <!-- <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount">  -->
-                                    <button class="btn read-more mores" id="Btn Donate">Donate</button></span> 
+                                    <button class="btn read-more mores" id="Btn Donate">Donate</button>
                                     <!-- </form> -->
                                 
 
