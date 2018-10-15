@@ -24,6 +24,7 @@ $events=getngoevents();
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
+    <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
     <link rel="stylesheet" href="css/volunteers.css">
     </head>
     <body>
@@ -225,7 +226,28 @@ $events=getngoevents();
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
+        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
         <script src="js/script.js"></script>
+        <script>
+                toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "newestOnTop": true,
+                  "progressBar": true,
+                  "positionClass": "toast-top-right",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": "5000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+                }
+            
+        </script>
         <script type="text/javascript">
            
             $("form").submit(function(){
@@ -239,18 +261,19 @@ $events=getngoevents();
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost:88/be-the-change/getResults.php",
+                url: "http://localhost/be-the-change/getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",
                 success:function(response){
                   if(response.done==true)
                   {
-                    alert("You Have Succesfullty registered for this event");
+                    //alert("You Have Succesfullty registered for this event");
+                      toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "PARTICIPANTS");
                   }else if(response.done==false){
-                    alert("something went wrong");
+                        toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                   }else{
-                    alert(response.done);
+                        toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                   }
                   
                 },
@@ -261,8 +284,6 @@ $events=getngoevents();
                 
             });
         });
-        </script>
-        
-    
+        </script>        
     </body>
 </html>

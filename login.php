@@ -25,6 +25,7 @@
                     <input type="text" placeholder="Name" name="username" required=""><br>
                     <input type="email" placeholder="Email" name="email" required=""><br>
                     <input type="password" placeholder="Password" name="password" required=""><br>
+                    <input type="phone" placeholder="PhoneNumber" name="phone" required=""><br>
 <!-- 
                     <span><input type="radio" value="1" name="role">Be A Donor<br>
                     <input type="radio" value="2" name="role">Be A Volunteer<br>
