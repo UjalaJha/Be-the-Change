@@ -31,6 +31,7 @@ if(!empty($_POST["email"]))
 
     if($row=mysqli_fetch_assoc($select_user_details)){
 //        i have 1 row
+        $uname=$row['UNAME'];
         $db_password = $row['PASSWORD'];
         $uid = $row['UID'];
         $role = $row['U_TYPE'];
@@ -41,6 +42,7 @@ if(!empty($_POST["email"]))
             $_SESSION['did'] = $uid;
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = NULL;
+            $_SESSION['uname'] = $uname;
             header("Location: ../../donors.php");
         }
         elseif($role==2)
@@ -48,12 +50,14 @@ if(!empty($_POST["email"]))
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = $uid;
             $_SESSION['nid'] = NULL;
+            $_SESSION['uname'] = $uname;
             header("Location: ../../volunteers.php");
         }
         else{
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
+            $_SESSION['uname'] = $uname;
             header("Location: ../../index.php");
         }
     }

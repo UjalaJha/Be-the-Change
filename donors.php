@@ -1,14 +1,14 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-// print_r($_SESSION);
+//print_r($_SESSION);
 if($_SESSION['did']==NULL)
 {
     header("Location: index.php");
 }
 
 $donations=getngodonations();
-// print_r($donations);
+print_r($donations);
 ?>
 
 <html>
@@ -57,14 +57,7 @@ $donations=getngodonations();
 
                     }
                     ?>
-                   
-                   
-                    
-
-
                 </ul>
-
-
             </div>
             <!-- /.navbar-collapse -->
         </div>
@@ -160,8 +153,8 @@ $donations=getngodonations();
                                         <p class="bold1"><?php print_r($value[3]) ?></p>
                                         
                                         <form action="javascript:void(0);" method="POST">
-                                            <input type="hidden" name="nid" id="nid" value=<?php  echo ($value[2]) ?>>
-                                            <input type="text" name="amnt"> Amount to be donated <br />
+                                            <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[2]) ?>>
+                                            <input type="text" name="amnt" id="amnt"> Amount to be donated <br />
                                             <button class="btn pay" type="submit">Contribute</button>
                                         </form>
                                     </div>
@@ -282,18 +275,22 @@ $donations=getngodonations();
         <script>
             $("form").submit(function(){
                 var form_data = $(this).closest("form");
-                $nid = form_data[1]["nid"].value;
-                $amnt = form_data[2]["amnt"].value;
+                // $did = form_data[1]["did"].value;
+                $did = <?php $_SESSION['did']; ?>
+                // $amnt = form_data[2]["amnt"].value;
+                $dnid = document.getElementById('dnid').value;
+                $amnt = document.getElementById('amnt').value;
             
-                var data = form_data.split("&");
-                console.log(form_data[2]["amnt"].value);
-
+                //var data = form_data.split("&");
+                // console.log(form_data[2]["amnt"].value);
+                console.log($amnt);
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
-                    url: "http://localhost/be-the-change/getDonations.php",
+                    // url: "http://localhost/be-the-change/getDonations.php",
+                    url : "getDonations.php",
                     method:"POST",
-                    data:{nid:$nid,amnt:$amnt},
+                    data:{dnid:$dnid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
                     if(response.done==true)
@@ -306,9 +303,12 @@ $donations=getngodonations();
                     }
                     
                     },
-                    error: function () {
-                        alert("something went wrong 2");
-                    }  
+                    error: function( jqXhr, textStatus, errorThrown ){
+                        console.log( JSON.stringify(errorThrown) );
+                    }
+                    // error: function () {
+                    //     alert("something went wrong 2");
+                    // }  
                         
                     
                 });

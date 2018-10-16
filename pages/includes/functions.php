@@ -81,11 +81,11 @@ function adduserdonation($dnid,$did,$amnt){
     $query->bind_param('iii', $dnid, $did, $amnt);
     $query->execute();
     $query->close();
-    // $resultset = mysqli_query($connection,$query);
-    // checkQueryResult($resultset);
-    // return $resultset;
-    $resultset="Amount Donated!";
+    $resultset = mysqli_query($connection,$query);
+    checkQueryResult($resultset);
     return $resultset;
+    // $resultset="Amount Donated!";
+    // return $resultset;
 }
 
 function geteventsexe($nid=null,$vid=null){
