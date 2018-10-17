@@ -1,13 +1,14 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 if($_SESSION['did']==NULL)
 {
     header("Location: index.php");
 }
 
 $donations=getngodonations();
+// echo "<pre>";
 // print_r($donations);
 ?>
 
@@ -123,119 +124,53 @@ $donations=getngodonations();
             
             ?>
 
-            <div class="first1">
-                              
-                            <img src="css/img/pic5.jpg" height="239px" width="330px">
+            <div class="first1"> 
+                <img src="css/img/pic5.jpg" height="239px" width="330px">
                                 
-                               
-                            <div class="bottom-container">
+                    <div class="bottom-container">
                                    
-                                   <p class="bold1"><?php print_r($value[3]) ?></p>
-                                   
-                                   <p class="bold2"><?php print_r($value[4]) ?></p>
-                            
-                                    <!-- <form action="javascript:void(0);" > -->
-                                    <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <!-- <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> > -->
-                                    <!-- <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount">  -->
-                                    <button class="btn read-more mores" id="Btn Donate">Donate</button>
-                                    <!-- </form> -->
-                                
+                        <p class="bold1"><?php print_r($value[4]) ?></p>
+                        <p class="bold2"><?php print_r($value[5]) ?></p>
+                        <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
+                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Open Modal</button>
 
-                                   <!-- Trigger/Open The Modal -->
-                                   <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
-                                    <!-- The Modal -->
-                                    <div id="donorModal" class="modal-main">
+                        <div class="modal fade" id="myModal<?php  echo ($value[0]) ?>" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
+                            </div>
+                            <div class="modal-body">  
 
-                                    <!-- Modal content -->
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p class="bold1"><?php print_r($value[3]) ?></p>
-                                        
-                                        <form action="javascript:void(0);" method="POST">
-                                            <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[2]) ?>>
-                                            <input type="text" name="amnt" id="amnt"> Amount to be donated <br />
-                                            <button class="btn pay" type="submit" id="contribute">Contribute</button>
-                                        </form>
-                                    </div>
-                                    </div>
-                                   </span>
-                               </div>
-                           </div>
-                           <?php
-                            }
-                         ?>
+                            <form action="javascript:void(0);">
+                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
+                                    <input type="text" name="amnt" id="amnt" value=""> Amount to be donated                                         
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn pay" type="submit" id="contribute">Contribute</button>
+                            </form>
+                            </div>
+
+                            </div>
+
+                        </div>
+                        </div>                                   
+                   </div>
+               </div>
+               <?php
+                }
+             ?>
                            
-                        <div class="clearfix"></div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
-<!-- <section id="testimonials" style="margin-top:-18px;">
-           <div class="testimonial-cover bg-parallax">
-            <div class="content-box">
-                <div class="content-title wow animated fadeInDown">
-                    <h3 class="text-heading text-heading-white">What Our Customer Say</h3>
-                    <div class="content-title-underline"></div>
-                    
-                </div>
-                <div class="container">
-                    <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                        
-                    <div class="col-md-12">
-                            
-                            
-                     <div class="customer-testimonials owl-carousel owl-theme">
-                               <div class="testimonial">
-                                <img src="css/img/client/client-3.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-2.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-1.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        
-       <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
-        <!--Bootstrap Script-->
+        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+<!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <!--END OF CORE JS-->
-        <!--Custom Js-->
+<!--END OF CORE JS-->
+<!--Custom Js-->
         <script src="vendors/WOW-master/dist/wow.min.js"></script>
         <script src="vendors/jquery.magnific-popup.min.js"></script>
         <script src="vendors/owl.carousel.min.js"></script>
@@ -243,47 +178,31 @@ $donations=getngodonations();
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
-        
+
+                
         <script>
-            // Get the modal
-            var modal = document.getElementById('donorModal');
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("Btn Donate");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-        
-        <script>
+            // $(function () {
+            //     $(".custom-close").on('click', function() {
+            //         $('#myModal').modal('hide');
+            //     });
+            // });
             $("form").submit(function(){
+                
                 var form_data = $(this).closest("form");
-                // $did = form_data[1]["did"].value;
-                $did = <?php $_SESSION['did']; ?>
-                // $amnt = form_data[2]["amnt"].value;
-                $dnid = document.getElementById('dnid').value;
-                $amnt = document.getElementById('amnt').value;
+                console.log(form_data);
+                $dnid = form_data[0]["dnid"].value;
+                var dnid= form_data[0]["dnid"].value;
+                $amnt = form_data[0]["amnt"].value;
+                console.log(form_data[0]["dnid"].value);
+                // document.write(dnid);
+                $('#myModal'+dnid).modal('hide');
+                // $dnid = document.getElementById('dnid').value;
+
+                // $amnt = document.getElementById('amnt').value;
             
                 //var data = form_data.split("&");
                 // console.log(form_data[2]["amnt"].value);
-                console.log($amnt);
+                // console.log($amnt);
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
@@ -293,10 +212,12 @@ $donations=getngodonations();
                     data:{dnid:$dnid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
-                        print_r(response);
+                        // print_r(response);
+
                     if(response.done==true)
                     {
                         alert("You Have Succesfullty donated for this event");
+                        
                     }else if(response.done==false){
                         alert("something went wrong1");
                     }else{
@@ -310,12 +231,12 @@ $donations=getngodonations();
                     error: function () {
                         alert("something went wrong 2");
                     }  
-                        a
+                        
                     
                 });
             });
         </script>
-        
+
  
     </body>
 </html>
