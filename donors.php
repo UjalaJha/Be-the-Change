@@ -8,6 +8,7 @@ if($_SESSION['did']==NULL)
 }
 
 $donations=getngodonations();
+// echo "<pre>";
 // print_r($donations);
 ?>
 
@@ -130,9 +131,9 @@ $donations=getngodonations();
                                
                             <div class="bottom-container">
                                    
-                                   <p class="bold1"><?php print_r($value[3]) ?></p>
+                                   <p class="bold1"><?php print_r($value[4]) ?></p>
                                    
-                                   <p class="bold2"><?php print_r($value[4]) ?></p>
+                                   <p class="bold2"><?php print_r($value[5]) ?></p>
                             
                                     <!-- <form action="javascript:void(0);" > -->
                                     <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
@@ -150,10 +151,10 @@ $donations=getngodonations();
                                     <!-- Modal content -->
                                     <div class="modal-content">
                                         <span class="close">&times;</span>
-                                        <p class="bold1"><?php print_r($value[3]) ?></p>
+                                        <p class="bold1"><?php print_r($value[4]) ?></p>
                                         
                                         <form action="javascript:void(0);" method="POST">
-                                            <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[2]) ?>>
+                                            <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
                                             <input type="text" name="amnt" id="amnt"> Amount to be donated <br />
                                             <button class="btn pay" type="submit" id="contribute">Contribute</button>
                                         </form>
@@ -293,7 +294,7 @@ $donations=getngodonations();
                     data:{dnid:$dnid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
-                        print_r(response);
+                        // print_r(response);
                     if(response.done==true)
                     {
                         alert("You Have Succesfullty donated for this event");
