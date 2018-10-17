@@ -7,7 +7,7 @@ require_once("pages/includes/functions.php");
 //    header("Location: index.php");
 //}
 
-$donations=getngodonations();
+//$donations=getngodonations();
 // print_r($donations);
 ?>
 
@@ -18,61 +18,12 @@ $donations=getngodonations();
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
-        <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
-        
-    
+    <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/ngo.css">
+    <link rel="stylesheet" href="css/ngo1.css">
     <style>
-    .pricing-box{
-    text-align: center;
-    border:solid 3px #fda401;
-    
-    margin:40px 0;
-}
-h4.pricing-title{
-    background-color: #fda401;
-    color:#fff;
-    display: inline-block;
-    padding: 7px 15px;
-    font-size: 14px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin: 0 0 30px;
-}
-h3.pricing-value{
-    font-size:60px;
-    font-weight: 700;
-}
-h3.pricing-value sup{
-    font-size: 28px;
-    font-weight: 400;
-    vertical-align: super;
-}
-ul.pricing-spec{
-    list-style: none;
-    padding-left: 0;
-    margin: 20px 0 60px;
-}
-ul.pricing-spec li p{
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size:16px;
-}
-.pricing-box-lg{
-    padding: 90px 0;
-    margin: 0;
-    background-color: #fda401;
-    
-}
-.pricing-box-lg h4.pricing-title{
-    color:#fda401;
-    background-color: #fff;
-}
-.pricing-box-lg ul.pricing-spec li p{
-    color:#fff;
-}
+   
 </style>
     </head>
     <body>
@@ -179,62 +130,36 @@ ul.pricing-spec li p{
               
                <h1 style="font-family:roboto;text-align:center;">NGO PROFILE</h1>
                <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
-               <div class="description-section" style="border:2px solid #fda401;padding:10px;">
+               <img src="css/img/ngo3.gif" class="img-responsive" style="width:1000px;height:400px;margin-left:30px;background-size:cover;background-position:center;">
+               <div class="description-section" style="border:2px solid #fda401;padding:10px;width:1000px;margin-left:30px;">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet dicta eos id odit? Ipsam culpa ex, quo iusto vero repudiandae labore veritatis, adipisci, natus, fugit officiis aperiam. Totam, blanditiis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam, maxime beatae nulla totam 
-                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consectetur eaque at praesentium vitae veniam, est voluptates, corporis porro fugiat sunt tenetur, ad eius. Ratione ipsam, ex doloribus deleniti enim!</p>
+                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet,</p>
                </div>
-               <section id="pricing">
-            <div class="content-box">
-                <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
-                    
-                    <div class="content-title-underline"></div>
-                </div>
-                <div class="container">
-                    <div class="row" style="margin-left:10%;">
-                        <div class="col-md-5 animated wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div class="pricing-box">
-                                
-                                <h3 class="pricings" style="background:#fda401;width:100%;height:50px;color:white;margin-top:0%;padding:10px;">NGO EVENT</h3>
-                                <ul class="pricing-spec">
-                                    <li>
-                                        <p>200 Events Achiveved</p>
-                                    </li>
-                                    <li>
-                                        <p>750 Events Ongoing</p>
-                                    </li>
-                                    
-                                </ul> 
-                                <div class="pricing-btn">
-                                    <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-5 animated wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
-                            <div class="pricing-box">
-                                
-                                <h3 class="pricings" style="background:#fda401;width:100%;height:50px;color:white;margin-top:0%;padding:10px;">NGO DONATION</h3>
-                                <ul class="pricing-spec">
-                                    <li>
-                                        <p>200 Donations Achiveved</p>
-                                    </li>
-                                    <li>
-                                        <p>750 Donations Ongoing</p>
-                                    </li>
-                                    
-                                </ul> 
-                                <div class="pricing-btn">
-                                    <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                
+<section class="two-containers" style="margin-top:1%;">
+    <div class="col-md-5" style="margin-left:5%;">
+        <div class="card" style="height:250px;">
+            <h1 class="label1 text-center animated zoomIn wow">NGO EVENT</h1>
+            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
+                <p style="font-family:roboto;font-size:25px;text-align:center;">300 Events Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;">600 Events Ongoing</p>
+                <a href="add-event.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD EVENTS</button></a>
             </div>
-        </section>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="card" style="height:250px;">
+            <h1 class="label1 text-center animated zoomIn wow">NGO DONATION</h1>
+            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
+                <p style="font-family:roboto;font-size:25px;text-align:center;">200 Donations Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;">500 Donations Ongoing</p>
+                <a href="add-donation.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD DONATIONS</button></a>
             </div>
+            
+        </div>
+        
+    </div>
+</section>
+</div>
     </div>  
      </div>
         </div>   
