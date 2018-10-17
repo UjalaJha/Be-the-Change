@@ -92,13 +92,18 @@ function adduserdonation($dnid,$did,$amnt){
     // return $resultset;
     global $connection;
     $did=$_SESSION['did'];
-    $query = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    // echo $query;
-    $resultset = mysqli_query($connection,$query);
-    // checkQueryResult($resultset);
-    // return $resultset;
-    $resultset="Amount Donated!";
-    return $resultset;
+    $queryd ="INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
+    // $queryd = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
+    echo $queryd;
+    $resultset = mysqli_query($connection,$queryd);
+    checkQueryResult($resultset);
+    echo checkQueryResult($resultset);
+    if($resultset==true)
+    {
+        $resultset="Amount Donated!";
+        return $resultset;
+    }
+    
 }
 
 function geteventsexe($nid=null,$vid=null){
