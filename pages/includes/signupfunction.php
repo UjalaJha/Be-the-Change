@@ -35,38 +35,29 @@ session_start();
     $stmt->bind_param('sssi', $uname, $u_email, $password,$u_phone);
     $stmt->execute();
     $stmt->close();
-
-    $sql = "SELECT UID FROM users where U_EMAIL = '$u_email' and PASSWORD = '$password'";
-    $result = $connection->query($sql);
-
-    if ($result->num_rows == 1) 
-    {
-        // output data of each row
-        if($role==1)
-        {
-            $_SESSION['did'] = $uid;
-            $_SESSION['vid'] = NULL;
-            $_SESSION['nid'] = NULL;
-            $_SESSION['uname'] = $uname;
-            header("Location: ../../donors.php");
-        }
-        elseif($role==2)
-        {
-            $_SESSION['did'] = NULL;
-            $_SESSION['vid'] = $uid;
-            $_SESSION['nid'] = NULL;
-            $_SESSION['uname'] = $uname;
-            header("Location: ../../volunteers.php");
-        }
-        else{
-            $_SESSION['did'] = NULL;
-            $_SESSION['vid'] = NULL;
-            $_SESSION['nid'] = $uid;
-            $_SESSION['uname'] = $uname;
-            header("Location: ../../index.php");
-        }
-    }
-
-    header("Location: ../../index.php");
-    
+    $_SESSION["phone_number"] = $u_phone;
+    header("Location: ../../otp.php");
+    exit();
+        
+//    $sql = "SELECT UID FROM users where U_EMAIL = '$u_email' and PASSWORD = '$password'";
+//    $result = $connection->query($sql);
+//
+//    if ($result->num_rows == 1) 
+//    {
+//        // output data of each row
+//        if($role==1)
+//        {
+//            $_SESSION['did'] = $result['UID'];
+//        }
+//        elseif($role==2)
+//        {
+//            $_SESSION['vid'] = $result['UID'];
+//        }
+//        else{
+//            $_SESSION['nid'] = $result['UID'];
+//        }
+//    }
+//
+//    header("Location: ../../index.php");
+//    
 ?>
