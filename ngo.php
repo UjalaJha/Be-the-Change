@@ -24,6 +24,56 @@ $donations=getngodonations();
     
     <link href="vendors/WOW-master/dist/wow.min.js">
     <link rel="stylesheet" href="css/ngo.css">
+    <style>
+    .pricing-box{
+    text-align: center;
+    border:solid 3px #fda401;
+    
+    margin:40px 0;
+}
+h4.pricing-title{
+    background-color: #fda401;
+    color:#fff;
+    display: inline-block;
+    padding: 7px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+}
+h3.pricing-value{
+    font-size:60px;
+    font-weight: 700;
+}
+h3.pricing-value sup{
+    font-size: 28px;
+    font-weight: 400;
+    vertical-align: super;
+}
+ul.pricing-spec{
+    list-style: none;
+    padding-left: 0;
+    margin: 20px 0 60px;
+}
+ul.pricing-spec li p{
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size:16px;
+}
+.pricing-box-lg{
+    padding: 90px 0;
+    margin: 0;
+    background-color: #fda401;
+    
+}
+.pricing-box-lg h4.pricing-title{
+    color:#fda401;
+    background-color: #fff;
+}
+.pricing-box-lg ul.pricing-spec li p{
+    color:#fff;
+}
+</style>
     </head>
     <body>
         <div class="header-strip">
@@ -81,10 +131,7 @@ $donations=getngodonations();
                <div class="same-section">
                 <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
                </div>
-                <div class="add-btn" style="margin-top:4%;">
-                    <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
-                    <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;margin-left:2%;">ADD DONATION</button>
-                </div>
+                
             
             
             
@@ -129,121 +176,68 @@ $donations=getngodonations();
         </div>
         <div class="right-container pull-left">
            <div class="right-wala">
-            <?php 
-            foreach($donations as $key =>$value)
-            {
-             // print_r($value[3]);
-            
-            ?>
-
-            <div class="first1">
-                              
-                            <img src="css/img/pic5.jpg" height="239px" width="330px">
-                                
-                               
-                            <div class="bottom-container">
-                                   
-                                   <p class="bold1"><?php print_r($value[3]) ?></p>
-                                   
-                                   <p class="bold2"><?php print_r($value[4]) ?></p>
-                            
-                                    <form action="javascript:void(0);" >
-                                    <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
-                                    <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount"> 
-                                    <button class="btn read-more mores" id="Btn Donate" type="submit">Existing Event</button></span> 
-                                    </form>
-                                
-
-                                   <!-- Trigger/Open The Modal -->
-                                   <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
-                                    <!-- The Modal -->
-                                    <div id="donorModal" class="modal-main">
-
-                                    <!-- Modal content -->
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p class="bold1"><?php print_r($value[3]) ?></p>
-                                        
-                                        <form action="" method="POST">
-                                            <input type="text" name="amnt"> Amount to be donated <br />
-                                            <button class="btn pay" type="submit">Contribute</button>
-                                        </form>
-                                    </div>
-                                    </div>
-                                   </span>
-                               </div>
-                           </div>
-                           <?php
-                            }
-                         ?>
-                           
-                        <div class="clearfix"></div>
-        </div>
-    </div>
-</div>
-<section id="testimonials" style="margin-top:-18px;">
-           <div class="testimonial-cover bg-parallax">
+              
+               <h1 style="font-family:roboto;text-align:center;">NGO PROFILE</h1>
+               <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
+               <div class="description-section" style="border:2px solid #fda401;padding:10px;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet dicta eos id odit? Ipsam culpa ex, quo iusto vero repudiandae labore veritatis, adipisci, natus, fugit officiis aperiam. Totam, blanditiis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam, maxime beatae nulla totam 
+                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam consectetur eaque at praesentium vitae veniam, est voluptates, corporis porro fugiat sunt tenetur, ad eius. Ratione ipsam, ex doloribus deleniti enim!</p>
+               </div>
+               <section id="pricing">
             <div class="content-box">
-                <div class="content-title wow animated fadeInDown">
-                    <h3 class="text-heading text-heading-white">What Our Customer Say</h3>
-                    <div class="content-title-underline"></div>
+                <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
                     
+                    <div class="content-title-underline"></div>
                 </div>
                 <div class="container">
-                    <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                    <div class="row" style="margin-left:10%;">
+                        <div class="col-md-5 animated wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="pricing-box">
+                                
+                                <h3 class="pricings" style="background:#fda401;width:100%;height:50px;color:white;margin-top:0%;padding:10px;">NGO EVENT</h3>
+                                <ul class="pricing-spec">
+                                    <li>
+                                        <p>200 Events Achiveved</p>
+                                    </li>
+                                    <li>
+                                        <p>750 Events Ongoing</p>
+                                    </li>
+                                    
+                                </ul> 
+                                <div class="pricing-btn">
+                                    <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
+                                </div>
+                            </div>
+                        </div>
                         
-                    <div class="col-md-12">
-                            
-                            
-                     <div class="customer-testimonials owl-carousel owl-theme">
-                               <div class="testimonial">
-                                <img src="css/img/client/client-3.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
+                        <div class="col-md-5 animated wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
+                            <div class="pricing-box">
+                                
+                                <h3 class="pricings" style="background:#fda401;width:100%;height:50px;color:white;margin-top:0%;padding:10px;">NGO DONATION</h3>
+                                <ul class="pricing-spec">
+                                    <li>
+                                        <p>200 Donations Achiveved</p>
+                                    </li>
+                                    <li>
+                                        <p>750 Donations Ongoing</p>
+                                    </li>
+                                    
+                                </ul> 
+                                <div class="pricing-btn">
+                                    <a href="#" role="button" class="btn btn-lg btn-general btn-blue">Purchase</a>
                                 </div>
                             </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-2.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-1.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            
-                            
                         </div>
                     </div>
                 </div>
+                
+                
             </div>
-            
         </section>
-        
+            </div>
+    </div>  
+     </div>
+        </div>   
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
@@ -257,69 +251,8 @@ $donations=getngodonations();
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
         
-        <script>
-            // Get the modal
-            var modal = document.getElementById('donorModal');
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("Btn Donate");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-
-        <script>
-            $("form").submit(function(){
-                var form_data = $(this).closest("form");
-                $dnid = form_data[0]["dnid"].value;
-                $amnt = form_data[1]["amnt"].value;
-                    
-                var data = form_data.split("&");
-                console.log(form_data[0]["dnid"].value);
-
-                //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
-                // console.log($eid);
-                $.ajax({
-                    url: "http://localhost/be-the-change/getDonations.php",
-                    method:"POST",
-                    data:{dnid:$dnid,amnt:$amnt},
-                    dataType:"json",
-                    success:function(response){
-                    if(response.done==true)
-                    {
-                        alert("You Have Succesfullty donated for this event");
-                    }else if(response.done==false){
-                        alert("something went wrong1");
-                    }else{
-                        alert(response.done);
-                    }
-                    
-                    },
-                    error: function () {
-                        alert("something went wrong 2");
-                    }  
-                        
-                    
-                });
-            });
-        </script>
+    </body>    
+        
 </html>
 
  

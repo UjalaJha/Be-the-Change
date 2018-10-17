@@ -246,19 +246,7 @@ all{
 .uff{
     margin-top:5%;
 }
-/*style.css*/
-/*footer*/
-/*
 
-PROJECT-NAME           : EDUCATION
-
-
-FOOTER HEADINGS COLOR  : #FEA401  
-TEXT(PARAGRAPHS)       : #fff
-
-headings fontsize 20
-text font size : 16
-*/
 .new-section{
     background:#eee;
     width:100%;
@@ -282,6 +270,11 @@ text font size : 16
     margin-left:3%;
     margin-top:3%;
     
+}
+.description-section{
+    height:300px;
+    width:100px;
+    border:2px solid #fda401;
 }
 .box{
     border: 0.5px solid white;
@@ -316,65 +309,5 @@ text font size : 16
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-/*===============================================================================================
-                                TESTIMONIAL SECTION CSS
-===============================================================================================*/
-.testimonial-cover{
-    background-image: url("img/bg-testimonials.jpg");
-}
-.customers-testimonials{
-    padding: 50px 0;
-}
-.testimonial{
-    margin-bottom: 30px;
-}
-.testimonial img{
-    max-width: 120px;
-    margin: 0 auto;
-}
-.testimonial blockquote{
-    border: 0;
-    color:#fff;
-    text-align: center;
-    padding: 6px 150px;
-    font-family: Georgia,Times,serif;
-    font-style:italic;
-    font-size: 16px;
-    position: relative;
-}
-.testimonial blockquote:before,
-.testimonial blockquote:after{
-    font-size: 80px;
-    position: absolute;
-    font-style: normal;
-    line-height: 1;
-    width:30px;
-    height:30px;
-}
-.testimonial blockquote:before{
-    content:"\201C";
-    top:0;
-    left:100;
-}
-.testimonial blockquote:after{
-    content:"\201D";
-    right:100;
-    bottom:0;
-}
-.testimonial-author{
-    text-align:center;
-}
-.testimonial-author p{
-    color:#fff;
-    font-size:16px;
-}
-.testimonial-author p strong{
-    display:block;
-}
-.text-heading{
-    color:#fda401;
-    text-align:center;
-/*    margin-top:40px;*/
-    padding:20px;
-    font-size:30px;
-}
+
+
