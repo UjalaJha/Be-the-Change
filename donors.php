@@ -142,25 +142,36 @@ $donations=getngodonations();
                                     <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
                                     <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal" >Open Modal</button>
                                     <!-- </form> -->
-                                
-
-                                   <!-- Trigger/Open The Modal -->
-                                   <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
-                                    <!-- The Modal -->
-                                    <!-- <div id="donorModal" class="modal-main">
-
+                                     <!-- Modal -->
+                                  <div class="modal fade" id="myModal" role="dialog">
+                                    <div class="modal-dialog">
                                     
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p class="bold1"><?php print_r($value[4]) ?></p>
-                                        
+                                      <!-- Modal content-->
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                          <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
+                                        </div>
                                         <form action="javascript:void(0);" method="POST">
-                                            <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
-                                            <input type="text" name="amnt" id="amnt"> Amount to be donated <br />
-                                            <button class="btn pay" type="submit" id="contribute">Contribute</button>
+                                            <div class="modal-body">
+                                             <!-- <span class="close">&times;</span> -->
+                                                     <!-- <a class="custom-close"> My Custom Close Link </a> -->
+                                               
+                                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
+                                                    <input type="text" name="amnt" id="amnt"> Amount to be donated 
+                                                    <!-- <button class="btn pay" type="submit" id="contribute">Contribute</button> -->
+                                                
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button class="btn pay" type="submit" id="contribute">Contribute</button>
+                                             </div>
                                         </form>
+                                      </div>
+                                      
                                     </div>
-                                    </div> -->
+                                  </div>
+
+                                   
                                    </span>
                                </div>
                            </div>
@@ -177,34 +188,7 @@ $donations=getngodonations();
   <!-- Trigger the modal with a button -->
   <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
 
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
-        </div>
-        <form action="javascript:void(0);" method="POST">
-            <div class="modal-body">
-             <!-- <span class="close">&times;</span> -->
-                
-               
-                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
-                    <input type="text" name="amnt" id="amnt"> Amount to be donated 
-                    <!-- <button class="btn pay" type="submit" id="contribute">Contribute</button> -->
-                
-            </div>
-            <div class="modal-footer">
-                <button class="btn pay" type="submit" id="contribute">Contribute</button>
-             </div>
-        </form>
-      </div>
-      
-    </div>
-  </div>
+ 
   
 </div>
 
@@ -284,17 +268,25 @@ $donations=getngodonations();
         
         
         <script>
+            // $(function () {
+            //     $(".custom-close").on('click', function() {
+            //         $('#myModal').modal('hide');
+            //     });
+            // });
             $("form").submit(function(){
+                
                 var form_data = $(this).closest("form");
-                // $did = form_data[1]["did"].value;
-                $did = <?php $_SESSION['did']; ?>
-                // $amnt = form_data[2]["amnt"].value;
-                $dnid = document.getElementById('dnid').value;
-                $amnt = document.getElementById('amnt').value;
+                $dnid = form_data[0]["dnid"].value;
+                $amnt = form_data[0]["amnt"].value;
+                console.log(form_data[0]["dnid"].value);
+                $('#myModal').modal('hide');
+                // $dnid = document.getElementById('dnid').value;
+
+                // $amnt = document.getElementById('amnt').value;
             
                 //var data = form_data.split("&");
                 // console.log(form_data[2]["amnt"].value);
-                console.log($amnt);
+                // console.log($amnt);
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
@@ -305,9 +297,9 @@ $donations=getngodonations();
                     dataType:"json",
                     success:function(response){
                         // print_r(response);
+
                     if(response.done==true)
                     {
-                        $('#myModal').modal('hide');
                         alert("You Have Succesfullty donated for this event");
                         
                     }else if(response.done==false){

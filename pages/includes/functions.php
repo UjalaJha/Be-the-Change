@@ -94,10 +94,10 @@ function adduserdonation($dnid,$did,$amnt){
     $did=$_SESSION['did'];
     $queryd ="INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
     // $queryd = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    echo $queryd;
+    // echo $queryd;
     $resultset = mysqli_query($connection,$queryd);
     checkQueryResult($resultset);
-    echo checkQueryResult($resultset);
+    // echo checkQueryResult($resultset);
     if($resultset==true)
     {
         $resultset="Amount Donated!";
