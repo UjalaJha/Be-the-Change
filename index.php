@@ -50,7 +50,7 @@ session_start();
                 <ul class="nav navbar-nav navbar-right change">
 
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
-                    <li><a href="login.html" style="color:white;">LOGIN</a></li>
+                    <li><a href="login.php" style="color:white;">LOGIN</a></li>
                     <!-- <li><a href="profile.html" style="color:white;">PROFILE</a></li> -->
                     <li><a href="about.html" style="color:white;">ABOUT US</a></li>
                 </ul>

@@ -1,5 +1,6 @@
 <?php
 require_once("db.php");
+session_start();
 require_once("constants.php");
 
 $connection = mysqli_connect(SERVER,USER,PASSWORD,DB);
@@ -76,16 +77,28 @@ function addusertoevent($eid,$vid){
 
 
 function adduserdonation($dnid,$did,$amnt){
-    global $connection;
-    $query = $connection->prepare("INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES (?,?,?)");
-    $query->bind_param('iii', $dnid, $did, $amnt);
-    $query->execute();
-    $query->close();
-    $resultset = mysqli_query($connection,$query);
-    checkQueryResult($resultset);
-    return $resultset;
+
+    echo "In function";
+    // global $connection;
+    // $query = $connection->prepare("INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES (?,?,?)");
+    // $query->bind_param('iii', $dnid, $did, $amnt);
+    // echo $query;
+    // $query->execute();
+    // $query->close();
+    // $resultset = mysqli_query($connection,$query);
+    // checkQueryResult($resultset);
+    // return $resultset;
     // $resultset="Amount Donated!";
     // return $resultset;
+    global $connection;
+    $did=$_SESSION['did'];
+    $query = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
+    echo $query;
+    $resultset = mysqli_query($connection,$query);
+    // checkQueryResult($resultset);
+    // return $resultset;
+    $resultset="Amount Donated!";
+    return $resultset;
 }
 
 function geteventsexe($nid=null,$vid=null){

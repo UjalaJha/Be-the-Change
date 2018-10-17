@@ -60,7 +60,7 @@ if(!empty($_POST["email"]))
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
             $_SESSION['uname'] = $uname;
-            header("Location: ../../index.php");
+            header("Location: ../../ngo.php");
         }
     }
 

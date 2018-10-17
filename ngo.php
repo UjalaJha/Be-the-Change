@@ -1,8 +1,8 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-// print_r($_SESSION);
-if($_SESSION['did']==NULL)
+print_r($_SESSION);
+if($_SESSION['nid']==NULL)
 {
     header("Location: index.php");
 }
@@ -46,13 +46,13 @@ $donations=getngodonations();
                 <ul class="nav navbar-nav navbar-right change">
 
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
-                    <?php if(!empty($_SESSION['did']))
+                    <?php if(!empty($_SESSION['nid']))
                     {
                         ?>
 
                             <li><a href="#" style="color:white;">PROFILE</a></li>
                             <li><a href="#" style="color:white;">ABOUT</a></li>
-                            <li><a href="index.php" style="color:white;">LOGOUT</a></li>
+                            <li><a href="pages/includes/logout.php" style="color:white;" id="logout">LOGOUT</a></li>
                         <?php
 
                     }
@@ -277,7 +277,7 @@ $donations=getngodonations();
                 }
             }
         </script>
-        
+
         <script>
             $("form").submit(function(){
                 var form_data = $(this).closest("form");

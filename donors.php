@@ -1,14 +1,14 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-//print_r($_SESSION);
+print_r($_SESSION);
 if($_SESSION['did']==NULL)
 {
     header("Location: index.php");
 }
 
 $donations=getngodonations();
-print_r($donations);
+// print_r($donations);
 ?>
 
 <html>
@@ -52,7 +52,7 @@ print_r($donations);
 
                             <li><a href="#" style="color:white;">PROFILE</a></li>
                             <li><a href="#" style="color:white;">ABOUT</a></li>
-                            <li><a href="index.php" style="color:white;">LOGOUT</a></li>
+                            <li><a href="pages/includes/logout.php" style="color:white;">LOGOUT</a></li>
                         <?php
 
                     }
@@ -155,7 +155,7 @@ print_r($donations);
                                         <form action="javascript:void(0);" method="POST">
                                             <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[2]) ?>>
                                             <input type="text" name="amnt" id="amnt"> Amount to be donated <br />
-                                            <button class="btn pay" type="submit">Contribute</button>
+                                            <button class="btn pay" type="submit" id="contribute">Contribute</button>
                                         </form>
                                     </div>
                                     </div>
@@ -170,7 +170,7 @@ print_r($donations);
         </div>
     </div>
 </div>
-<section id="testimonials" style="margin-top:-18px;">
+<!-- <section id="testimonials" style="margin-top:-18px;">
            <div class="testimonial-cover bg-parallax">
             <div class="content-box">
                 <div class="content-title wow animated fadeInDown">
@@ -229,7 +229,7 @@ print_r($donations);
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
@@ -293,6 +293,7 @@ print_r($donations);
                     data:{dnid:$dnid,amnt:$amnt},
                     dataType:"json",
                     success:function(response){
+                        print_r(response);
                     if(response.done==true)
                     {
                         alert("You Have Succesfullty donated for this event");
@@ -303,13 +304,13 @@ print_r($donations);
                     }
                     
                     },
-                    error: function( jqXhr, textStatus, errorThrown ){
-                        console.log( JSON.stringify(errorThrown) );
-                    }
-                    // error: function () {
-                    //     alert("something went wrong 2");
-                    // }  
-                        
+                    // error: function( jqXhr, textStatus, errorThrown ){
+                    //     console.log( JSON.stringify(errorThrown) );
+                    // }
+                    error: function () {
+                        alert("something went wrong 2");
+                    }  
+                        a
                     
                 });
             });

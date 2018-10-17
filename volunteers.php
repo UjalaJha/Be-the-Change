@@ -54,7 +54,7 @@ $events=getngoevents();
 
                             <li><a href="profile.html" style="color:white;">PROFILE</a></li>
                             <li><a href="#" style="color:white;">ABOUT</a></li>
-                            <li><a href="index.php" style="color:white;">LOGOUT</a></li>
+                            <li><a href="pages/includes/logout.php" style="color:white;">LOGOUT</a></li>s
                         <?php
 
                     }
