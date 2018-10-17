@@ -23,7 +23,7 @@ $donations=getngodonations();
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/ngo.css">
+    <link rel="stylesheet" href="css/add-event.css">
     </head>
     <body>
         <div class="header-strip">
@@ -81,10 +81,7 @@ $donations=getngodonations();
                <div class="same-section">
                 <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
                </div>
-                <div class="add-btn" style="margin-top:4%;">
-                    <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
-                    <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;margin-left:2%;">ADD DONATION</button>
-                </div>
+                
             
             
             
@@ -129,120 +126,28 @@ $donations=getngodonations();
         </div>
         <div class="right-container pull-left">
            <div class="right-wala">
-            <?php 
-            foreach($donations as $key =>$value)
-            {
-             // print_r($value[3]);
-            
-            ?>
-
-            <div class="first1">
-                              
-                            <img src="css/img/pic5.jpg" height="239px" width="330px">
-                                
-                               
-                            <div class="bottom-container">
-                                   
-                                   <p class="bold1"><?php print_r($value[3]) ?></p>
-                                   
-                                   <p class="bold2"><?php print_r($value[4]) ?></p>
-                            
-                                    <form action="javascript:void(0);" >
-                                    <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> >
-                                    <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount"> 
-                                    <button class="btn read-more mores" id="Btn Donate" type="submit">Existing Event</button></span> 
-                                    </form>
-                                
-
-                                   <!-- Trigger/Open The Modal -->
-                                   <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
-                                    <!-- The Modal -->
-                                    <div id="donorModal" class="modal-main">
-
-                                    <!-- Modal content -->
-                                    <div class="modal-content">
-                                        <span class="close">&times;</span>
-                                        <p class="bold1"><?php print_r($value[3]) ?></p>
-                                        
-                                        <form action="" method="POST">
-                                            <input type="text" name="amnt"> Amount to be donated <br />
-                                            <button class="btn pay" type="submit">Contribute</button>
-                                        </form>
-                                    </div>
-                                    </div>
-                                   </span>
-                               </div>
-                           </div>
-                           <?php
-                            }
-                         ?>
-                           
-                        <div class="clearfix"></div>
-        </div>
+                <div class="add-event-form">
+            <div class="card-container">
+           <h1>ADD EVENT</h1>
+           <hr class="rule">
+            <form>
+                
+                Name of Event : <input type="text" class="form-control" id="name"><br>
+                Date of Event : <input type="date" class="form-control" id="name"><br>
+                Time of Event : <input type="text" class="form-control" id="name"><br>
+                Location of Event : <input type="text" class="form-control" id="name"><br>
+                Description of Event : <textarea type="text" class="form-control" cols=10 rows=10></textarea><br>
+                Limit of People : <input type="text" class="form-control" id="name"><br>
+                <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
+                
+                
+                
+            </form>
+            </div>
+                </div>
     </div>
 </div>
-<section id="testimonials" style="margin-top:-18px;">
-           <div class="testimonial-cover bg-parallax">
-            <div class="content-box">
-                <div class="content-title wow animated fadeInDown">
-                    <h3 class="text-heading text-heading-white">What Our Customer Say</h3>
-                    <div class="content-title-underline"></div>
-                    
-                </div>
-                <div class="container">
-                    <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                        
-                    <div class="col-md-12">
-                            
-                            
-                     <div class="customer-testimonials owl-carousel owl-theme">
-                               <div class="testimonial">
-                                <img src="css/img/client/client-3.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-2.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-1.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </section>
+
         
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
