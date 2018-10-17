@@ -1,7 +1,7 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 if($_SESSION['did']==NULL)
 {
     header("Location: index.php");
@@ -310,7 +310,7 @@ $donations=getngodonations();
                     error: function () {
                         alert("something went wrong 2");
                     }  
-                        a
+                        
                     
                 });
             });
