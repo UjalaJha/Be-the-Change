@@ -92,7 +92,7 @@ $donations=getngodonations();
             <div class="box">
                <div class="content">
                 <h1 class="text-center">5236</h1>
-                <h2 class="text-center">Volunteer Registered</h2>
+                <h2 class="text-center">Total Volunteers</h2>
                 </div>
             </div>
             <div class="box">
