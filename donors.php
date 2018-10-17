@@ -124,140 +124,53 @@ $donations=getngodonations();
             
             ?>
 
-            <div class="first1">
-                              
-                            <img src="css/img/pic5.jpg" height="239px" width="330px">
+            <div class="first1"> 
+                <img src="css/img/pic5.jpg" height="239px" width="330px">
                                 
-                               
-                            <div class="bottom-container">
+                    <div class="bottom-container">
                                    
-                                   <p class="bold1"><?php print_r($value[4]) ?></p>
-                                   
-                                   <p class="bold2"><?php print_r($value[5]) ?></p>
-                            
-                                    <!-- <form action="javascript:void(0);" > -->
-                                    <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                                    <!-- <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?> > -->
-                                    <!-- <input type="hidden" name="amnt" id="amnt" placeholder = "Enter amount">  -->
-                                    <!-- <button class="btn read-more mores" id="Btn Donate">Donate</button> -->
-                                    <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal" >Open Modal</button>
-                                    <!-- </form> -->
-                                     <!-- Modal -->
-                                  <div class="modal fade" id="myModal" role="dialog">
-                                    <div class="modal-dialog">
-                                    
-                                      <!-- Modal content-->
-                                      <div class="modal-content">
-                                        <div class="modal-header">
-                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                          <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
-                                        </div>
-                                        <form action="javascript:void(0);" method="POST">
-                                            <div class="modal-body">
-                                             <!-- <span class="close">&times;</span> -->
-                                                     <!-- <a class="custom-close"> My Custom Close Link </a> -->
-                                               
-                                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
-                                                    <input type="text" name="amnt" id="amnt"> Amount to be donated 
-                                                    <!-- <button class="btn pay" type="submit" id="contribute">Contribute</button> -->
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button class="btn pay" type="submit" id="contribute">Contribute</button>
-                                             </div>
-                                        </form>
-                                      </div>
-                                      
-                                    </div>
-                                  </div>
+                        <p class="bold1"><?php print_r($value[4]) ?></p>
+                        <p class="bold2"><?php print_r($value[5]) ?></p>
+                        <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
+                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Open Modal</button>
 
-                                   
-                                   </span>
-                               </div>
-                           </div>
-                           <?php
-                            }
-                         ?>
+                        <div class="modal fade" id="myModal<?php  echo ($value[0]) ?>" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
+                            </div>
+                            <div class="modal-body">  
+
+                            <form action="javascript:void(0);">
+                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
+                                    <input type="text" name="amnt" id="amnt" value=""> Amount to be donated                                         
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn pay" type="submit" id="contribute">Contribute</button>
+                            </form>
+                            </div>
+
+                            </div>
+
+                        </div>
+                        </div>                                   
+                   </div>
+               </div>
+               <?php
+                }
+             ?>
                            
-                        <div class="clearfix"></div>
+            <div class="clearfix"></div>
         </div>
     </div>
 </div>
-<div class="container">
-  <!-- <h2>Modal Example</h2> -->
-  <!-- Trigger the modal with a button -->
-  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> -->
-
- 
-  
-</div>
-
-<!-- <section id="testimonials" style="margin-top:-18px;">
-           <div class="testimonial-cover bg-parallax">
-            <div class="content-box">
-                <div class="content-title wow animated fadeInDown">
-                    <h3 class="text-heading text-heading-white">What Our Customer Say</h3>
-                    <div class="content-title-underline"></div>
-                    
-                </div>
-                <div class="container">
-                    <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
-                        
-                    <div class="col-md-12">
-                            
-                            
-                     <div class="customer-testimonials owl-carousel owl-theme">
-                               <div class="testimonial">
-                                <img src="css/img/client/client-3.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-2.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            <div class="testimonial">
-                                <img src="css/img/client/client-1.jpg" class="img-responsive img-circle">
-                                <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
-                                </blockquote>
-                                <div class="testimonial-author">
-                                   <p>
-                                       <strong>Sara Smith</strong>
-                                       <span>CEO &amp; Founder-Microsoft</span>
-                                   </p> 
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        
-       <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
-        <!--Bootstrap Script-->
+        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+<!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
-        <!--END OF CORE JS-->
-        <!--Custom Js-->
+<!--END OF CORE JS-->
+<!--Custom Js-->
         <script src="vendors/WOW-master/dist/wow.min.js"></script>
         <script src="vendors/jquery.magnific-popup.min.js"></script>
         <script src="vendors/owl.carousel.min.js"></script>
@@ -265,8 +178,8 @@ $donations=getngodonations();
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
-        
-        
+
+                
         <script>
             // $(function () {
             //     $(".custom-close").on('click', function() {
@@ -276,10 +189,13 @@ $donations=getngodonations();
             $("form").submit(function(){
                 
                 var form_data = $(this).closest("form");
+                console.log(form_data);
                 $dnid = form_data[0]["dnid"].value;
+                var dnid= form_data[0]["dnid"].value;
                 $amnt = form_data[0]["amnt"].value;
                 console.log(form_data[0]["dnid"].value);
-                $('#myModal').modal('hide');
+                // document.write(dnid);
+                $('#myModal'+dnid).modal('hide');
                 // $dnid = document.getElementById('dnid').value;
 
                 // $amnt = document.getElementById('amnt').value;
@@ -320,7 +236,7 @@ $donations=getngodonations();
                 });
             });
         </script>
-        
+
  
     </body>
 </html>

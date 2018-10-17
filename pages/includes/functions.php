@@ -97,7 +97,7 @@ function adduserdonation($dnid,$did,$amnt){
     // echo $queryd;
     $resultset = mysqli_query($connection,$queryd);
     checkQueryResult($resultset);
-    // echo checkQueryResult($resultset);
+    echo checkQueryResult($resultset);
     if($resultset==true)
     {
         $resultset="Amount Donated!";
