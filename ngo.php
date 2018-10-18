@@ -8,7 +8,11 @@ if($_SESSION['nid']==NULL)
 }
 // echo "string";
 $ngo=getngo();
-print_r($ngo);
+$event=getngoevent();
+$donations=getngodonations();
+
+// print_r();
+// print_r($ngo['ORGNAME']);
 // print_r($_SESSION);
 //if($_SESSION['nid']==NULL)
 //{
@@ -83,7 +87,7 @@ print_r($ngo);
           <div class="containers">
            <div class="something">
                <div class="heading">
-                   <span class="blog-text">$ngo['ORGNAME']</span>
+                   <span class="blog-text">NGO PROFILE</span>
                </div>
                <div class="same-section">
                 <span class="add"></span><span class="text">CHANGE IS READY FOR YOU</span>
@@ -134,7 +138,7 @@ print_r($ngo);
         <div class="right-container pull-left">
            <div class="right-wala">
               
-               <h1 style="font-family:roboto;text-align:center;">NGO PROFILE</h1>
+               <h1 style="font-family:roboto;text-align:center;"><?php print_r($ngo['ORGNAME']) ;?></h1>
                <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
                <img src="css/img/ngo3.gif" class="img-responsive" style="width:1000px;height:400px;margin-left:30px;background-size:cover;background-position:center;">
                <div class="description-section" style="border:2px solid #fda401;padding:10px;width:1000px;margin-left:30px;">
@@ -146,8 +150,8 @@ print_r($ngo);
         <div class="card" style="height:250px;">
             <h1 class="label1 text-center animated zoomIn wow">NGO EVENT</h1>
             <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
-                <p style="font-family:roboto;font-size:25px;text-align:center;">300 Events Accomplished</p>
-                <p style="font-family:roboto;font-size:25px;text-align:center;">600 Events Ongoing</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
                 <a href="add-event.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD EVENTS</button></a>
             </div>
         </div>
@@ -156,8 +160,8 @@ print_r($ngo);
         <div class="card" style="height:250px;">
             <h1 class="label1 text-center animated zoomIn wow">NGO DONATION</h1>
             <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
-                <p style="font-family:roboto;font-size:25px;text-align:center;">200 Donations Accomplished</p>
-                <p style="font-family:roboto;font-size:25px;text-align:center;">500 Donations Ongoing</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
                 <a href="add-donation.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD DONATIONS</button></a>
             </div>
             
