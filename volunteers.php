@@ -261,7 +261,7 @@ $events=getngoevents();
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost/be-the-change/getResults.php",
+                url: "/getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",

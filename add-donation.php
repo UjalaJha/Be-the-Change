@@ -19,6 +19,7 @@ require_once("pages/includes/functions.php");
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
+         <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
         <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
         <link rel="stylesheet" href="vendors/bootstrap-fileinput/bootstrap-fileinput.css">
         
@@ -46,7 +47,7 @@ require_once("pages/includes/functions.php");
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <li class="big"><a href="ngo.php" style="color:white;">HOME</a></li>
                     <?php if(empty($_SESSION['nid']))
                     {
                         ?>
@@ -131,10 +132,10 @@ require_once("pages/includes/functions.php");
             <div class="card-container">
            <h1>ADD DONATION</h1>
            <hr class="rule">
-            <form method="POST" enctype="multipart/form-data" action="pages/includes/savefunction.php">
+            <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
                 
                 Title : <input type="text" class="form-control" id="name" name="name"><br>
-                Target Amount of Donation : <input type="text" class="form-control" id="name" name="amount"><br>
+                Target Amount of Donation : <input type="text" class="form-control" id="amount" name="amount"><br>
                
                 Image:<br>
                     
@@ -153,7 +154,7 @@ require_once("pages/includes/functions.php");
                         
                     
             
-                Description of Donation : <textarea type="text" class="form-control"  name="desc" cols=15 rows=5></textarea><br>
+                Description of Donation : <textarea type="text" class="form-control"  id="desc" name="desc" cols=15 rows=5></textarea><br>
                 <button class="btn" type="submit" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD DONATION</button>
                 
                 
@@ -176,9 +177,45 @@ require_once("pages/includes/functions.php");
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
+        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
         <script src="vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
         <script src="js/script.js"></script>
-        
+        <script type="text/javascript">
+           
+            $("form").submit(function(){
+            var form_data = $(this).closest("form");
+            $damt = form_data[0]["amount"].value;
+            $dtitle = form_data[0]["name"].value;
+            $desc=form_data[0]["desc"].value;
+            console.log("aj")
+            console.log(form_data);
+            // var data = form_data.split("&");
+            // console.log(form_data[0]["evid"].value);
+
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "http://localhost:81/be-the-change/pages/includes/savefunction.php",
+                method:"POST",
+                data:{amount:$damt,name:$dtitle,desc:$desc},
+                dataType:"json",
+                success:function(response){
+                  if(response.done=="Donation Added")
+                  {
+                    //alert("You Have Succesfullty registered for this event");
+                      toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Donations");
+                      
+                  }
+                  
+                },
+                error: function () {
+                    toastr["error"]("There was some error, try again later", "Donations");
+                }  
+                    
+                
+            });
+        });
+        </script>   
         </div>
         </div>
     </body>
