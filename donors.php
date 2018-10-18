@@ -21,6 +21,7 @@ $donations=getngodonations();
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
         <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
+        <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
@@ -176,9 +177,29 @@ $donations=getngodonations();
         <script src="vendors/owl.carousel.min.js"></script>
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
+        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
         <script src="js/script.js"></script>
-
+        <script>
+                toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "newestOnTop": true,
+                  "progressBar": true,
+                  "positionClass": "toast-top-right",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": "5000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+                }
+            
+        </script>
                 
         <script>
             // $(function () {
@@ -214,22 +235,21 @@ $donations=getngodonations();
                     success:function(response){
                         // print_r(response);
 
-                    if(response.done==true)
-                    {
-                        alert("You Have Succesfullty donated for this event");
-                        
-                    }else if(response.done==false){
-                        alert("something went wrong1");
-                    }else{
-                        alert(response.done);
-                    }
+                        if(response.done==true)
+                        {
+                            toastr["success"]("YOU HAVE A SUCCCESFULLY DONATED");
+                        }else if(response.done==false){
+                            toastr["error"]("SOMETHING WENT WRONG1");
+                        }else{
+                            alert(response.done);
+                        }
                     
                     },
                     // error: function( jqXhr, textStatus, errorThrown ){
                     //     console.log( JSON.stringify(errorThrown) );
                     // }
                     error: function () {
-                        alert("something went wrong 2");
+                        toastr["error"]("SOMETHING WENT WRONG1");
                     }  
                         
                     
