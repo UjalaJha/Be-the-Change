@@ -278,7 +278,7 @@ $events=getngoevents();
                   
                 },
                 error: function () {
-                    alert("something went wrong");
+                    toastr["error"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                 }  
                     
                 
