@@ -20,6 +20,7 @@ require_once("pages/includes/functions.php");
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
         <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
+        <link rel="stylesheet" href="vendors/bootstrap-fileinput/bootstrap-fileinput.css">
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
@@ -130,12 +131,29 @@ require_once("pages/includes/functions.php");
             <div class="card-container">
            <h1>ADD DONATION</h1>
            <hr class="rule">
-            <form>
+            <form method="post" enctype="multipart/form-data">
                 
                 Title : <input type="text" class="form-control" id="name"><br>
                 Target Amount of Donation : <input type="text" class="form-control" id="name"><br>
-                Image : 
-                Description of Donation : <textarea type="text" class="form-control" cols=30 rows=15></textarea><br>
+               
+                Image:<br>
+                    
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                            <div>
+                                <span class="btn default btn-file">
+                                    <span class="fileinput-new btn" style="color:black;border-radius:0px;border:1px solid black;" > Select image </span>
+                                    <span class="fileinput-exists"> Change </span>
+                                    <input type="file" name="product_image" accept="image/*"> </span>
+                                <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                            </div>
+                        </div><br><br>
+                        
+                    
+            
+                Description of Donation : <textarea type="text" class="form-control" cols=15 rows=5></textarea><br>
                 <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD DONATION</button>
                 
                 
@@ -158,6 +176,7 @@ require_once("pages/includes/functions.php");
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
+        <script src="vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
         <script src="js/script.js"></script>
         
         </div>
