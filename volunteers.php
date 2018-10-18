@@ -27,7 +27,7 @@ $events=getngoevents();
     <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
     <link rel="stylesheet" href="css/volunteers.css">
     </head>
-    <body>
+    <body style="background-color: #eee">
         <div class="header-strip">
         <div class="dot">
         <span class="icon"><img src="img/call-answer%20(1).png" height="20px" width="20px"></span><span class="number">+88 0987654334567</span>

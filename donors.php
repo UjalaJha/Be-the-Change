@@ -27,7 +27,7 @@ $donations=getngodonations();
     <link href="vendors/WOW-master/dist/wow.min.js">
     <link rel="stylesheet" href="css/donors.css">
     </head>
-    <body>
+    <body style="background-color: #eee">
         <div class="header-strip">
         <div class="dot">
         <span class="icon"><img src="img/call-answer%20(1).png" height="20px" width="20px"></span><span class="number">+88 0987654334567</span>
@@ -133,7 +133,7 @@ $donations=getngodonations();
                         <p class="bold1"><?php print_r($value[4]) ?></p>
                         <p class="bold2"><?php print_r($value[5]) ?></p>
                         <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Open Modal</button>
+                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Donate</button>
 
                         <div class="modal fade" id="myModal<?php  echo ($value[0]) ?>" role="dialog">
                         <div class="modal-dialog">
@@ -145,8 +145,9 @@ $donations=getngodonations();
                             <div class="modal-body">  
 
                             <form action="javascript:void(0);">
-                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
-                                    <input type="text" name="amnt" id="amnt" value=""> Amount to be donated                                         
+                                    
+                                     Amount to be donated <input type="text" name="amnt" id="amnt" value="">
+                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>                                      
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn pay" type="submit" id="contribute">Contribute</button>
