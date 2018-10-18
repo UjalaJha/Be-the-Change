@@ -59,12 +59,8 @@ $events=getngoevents();
 
                     }
                     ?>
-                    
-                    
-
-
+        
                 </ul>
-
 
             </div>
             <!-- /.navbar-collapse -->
@@ -261,7 +257,7 @@ $events=getngoevents();
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost/be-the-change/getResults.php",
+                url: "getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",
@@ -269,7 +265,7 @@ $events=getngoevents();
                   if(response.done==true)
                   {
                     //alert("You Have Succesfullty registered for this event");
-                      toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "PARTICIPANTS");
+                      toastr["success"]("YOU HAVE SUCCCESFULLY REGISTERED FOR THE EVENT", "PARTICIPANTS");
                   }else if(response.done==false){
                         toastr["success"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                   }else{

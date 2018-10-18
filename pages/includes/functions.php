@@ -110,7 +110,6 @@ function geteventsexe($nid=null,$vid=null){
     global $connection;
     $query = "SELECT * FROM ngoeventspartcpn";
     do{
-        
         if(!empty($nid)&&isset($nid)&&!empty($vid)&&isset($vid))
         {
             $query = $query." where VID=$vid and EID=(SELECT EID FROM ngoevents where NID=$nid)";
