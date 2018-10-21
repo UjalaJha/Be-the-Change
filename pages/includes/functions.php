@@ -23,22 +23,42 @@ function getngo(){
         return($row);
     }
 }
+// function getngoevents(){
+//     global $connection;
+//     $query = "SELECT * FROM ngoevents";
+//     $ngo=mysqli_query($connection,$query);
+//     if($row=mysqli_fetch_all($ngo)){
+//         return($row);
+//     }
+// }
+
 function getngoevents(){
     global $connection;
-    $query = "SELECT * FROM ngoevents";
+    $query = "SELECT * FROM activengoevents";
     $ngo=mysqli_query($connection,$query);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
     }
 }
+
+// function getngodonations(){
+//     global $connection;
+//     $query = "SELECT * FROM donations";
+//     $ngo=mysqli_query($connection,$query);
+//     if($row=mysqli_fetch_all($ngo)){
+//         return($row);
+//     }
+// }
+
 function getngodonations(){
     global $connection;
-    $query = "SELECT * FROM donations";
+    $query = "SELECT * FROM REQ_DONATIONS";
     $ngo=mysqli_query($connection,$query);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
     }
 }
+
 
 function addngoevent($nid,$desc){
     global $connection;

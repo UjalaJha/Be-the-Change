@@ -130,8 +130,8 @@ $donations=getngodonations();
                                 
                     <div class="bottom-container">
                                    
-                        <p class="bold1"><?php print_r($value[4]) ?></p>
-                        <p class="bold2"><?php print_r($value[5]) ?></p>
+                        <p class="bold1"><?php print_r($value[1]) ?></p>
+                        <p class="bold2"><?php print_r($value[2]) ?></p>
                         <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
                         <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Open Modal</button>
 
@@ -140,7 +140,7 @@ $donations=getngodonations();
                             <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
-                              <h4 class="modal-title"><?php print_r($value[4]) ?></h4>
+                              <h4 class="modal-title"><?php print_r($value[1]) ?></h4>
                             </div>
                             <div class="modal-body">  
 

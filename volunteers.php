@@ -130,9 +130,9 @@ $events=getngoevents();
                    
                    <div class="bottom-container">
                        
-                       <p class="bold1"><?php print_r($value[2]) ?></p>
+                       <p class="bold1"><?php print_r($value[1]) ?></p>
                        
-                       <p class="bold2"><?php print_r($value[3]) ?></p>
+                       <p class="bold2"><?php print_r($value[2]) ?></p>
                        <form action="javascript:void(0);" >
                           <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
                           <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
