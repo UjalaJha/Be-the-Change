@@ -1,31 +1,40 @@
 <?php
-require_once("pages/includes/functions.php");
-//session_start();
+require_once("pages/includes/ngofunction.php");
+session_start();
 //print_r($_SESSION);
+if($_SESSION['nid']==NULL)
+{
+    header("Location: index.php");
+}
+// echo "string";
+$ngo=getngo();
+$event=getngoevent();
+$donations=getngodonations();
+
+// print_r();
+// print_r($ngo['ORGNAME']);
+// print_r($_SESSION);
 //if($_SESSION['nid']==NULL)
 //{
 //    header("Location: index.php");
 //}
-
 //$donations=getngodonations();
 // print_r($donations);
 ?>
-
 <html>
     <head>
-        <title>add donation</title>
+        <title>blog</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
-        <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
-         <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
-        <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
-        <link rel="stylesheet" href="vendors/bootstrap-fileinput/bootstrap-fileinput.css">
-        
-    
+    <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
+    <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/add-donation.css">
+    <link rel="stylesheet" href="css/ngo1.css">
+    <style>
+   
+</style>
     </head>
     <body>
         <div class="header-strip">
@@ -47,8 +56,8 @@ require_once("pages/includes/functions.php");
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="ngo.php" style="color:white;">HOME</a></li>
-                    <?php if(empty($_SESSION['nid']))
+                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <?php if(!empty($_SESSION['nid']))
                     {
                         ?>
 
@@ -128,44 +137,42 @@ require_once("pages/includes/functions.php");
         </div>
         <div class="right-container pull-left">
            <div class="right-wala">
-        <div class="add-event-form">
-            <div class="card-container">
-           <h1>ADD DONATION</h1>
-           <hr class="rule">
-            <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
-                
-                Title : <input type="text" class="form-control" id="name" name="name"><br>
-                Target Amount of Donation : <input type="text" class="form-control" id="amount" name="amount"><br>
-               
-                Image:<br>
-                    
-                <div class="fileinput fileinput-new" data-provides="fileinput" >
-                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
-                        <img src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image" alt="" /> </div>
-                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
-                    <div>
-                        <span class="btn default btn-file">
-                            <span class="fileinput-new btn" style="color:black;border-radius:0px;border:1px solid black;" > Select image </span>
-                            <span class="fileinput-exists"> Change </span>
-                            <input type="file" name="product_image" accept="image/*"> </span>
-                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
-                    </div>
-                </div><br><br>
-                        
-                    
-            
-                Description of Donation : <textarea type="text" class="form-control"  id="desc" name="desc" cols=15 rows=5></textarea><br>
-                <button class="btn" type="submit" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD DONATION</button>
-                
-                
-                
-            </form>
+              
+               <h1 style="font-family:roboto;text-align:center;"><?php print_r($ngo['ORGNAME']) ;?></h1>
+               <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
+               <img src="css/img/ngo3.gif" class="img-responsive" style="width:1000px;height:400px;margin-left:30px;background-size:cover;background-position:center;">
+               <div class="description-section" style="border:2px solid #fda401;padding:10px;width:1000px;margin-left:30px;">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet dicta eos id odit? Ipsam culpa ex, quo iusto vero repudiandae labore veritatis, adipisci, natus, fugit officiis aperiam. Totam, blanditiis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam, maxime beatae nulla totam 
+                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet,</p>
+               </div>
+<section class="two-containers" style="margin-top:1%;">
+    <div class="col-md-5" style="margin-left:5%;">
+        <div class="card" style="height:250px;">
+            <h1 class="label1 text-center animated zoomIn wow">NGO EVENT</h1>
+            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
+                <a href="add-event.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD EVENTS</button></a>
             </div>
         </div>
     </div>
-</div>
-
+    <div class="col-md-5">
+        <div class="card" style="height:250px;">
+            <h1 class="label1 text-center animated zoomIn wow">NGO DONATION</h1>
+            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
+                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
+                <a href="add-donation.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD DONATIONS</button></a>
+            </div>
+            
+        </div>
         
+    </div>
+</section>
+</div>
+    </div>  
+     </div>
+        </div>   
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
@@ -177,48 +184,10 @@ require_once("pages/includes/functions.php");
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
-        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
-        <script src="vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
         <script src="js/script.js"></script>
-        <script type="text/javascript">
-           
-            $("form").submit(function(){
-            var form_data = $(this).closest("form");
-            $damt = form_data[0]["amount"].value;
-            $dtitle = form_data[0]["name"].value;
-            $desc=form_data[0]["desc"].value;
-            console.log("aj")
-            console.log(form_data);
-            // var data = form_data.split("&");
-            // console.log(form_data[0]["evid"].value);
-
-            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
-            // console.log($eid);
-            $.ajax({
-                url: "http://localhost:81/be-the-change/pages/includes/savefunction.php",
-                method:"POST",
-                data:{amount:$damt,name:$dtitle,desc:$desc},
-                dataType:"json",
-                success:function(response){
-                  if(response.done=="Donation Added")
-                  {
-                    //alert("You Have Succesfullty registered for this event");
-                      toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Donations");
-                      
-                  }
-                  
-                },
-                error: function () {
-                    toastr["error"]("There was some error, try again later", "Donations");
-                }  
-                    
-                
-            });
-        });
-        </script>   
-        </div>
-        </div>
-    </body>
+        
+    </body>    
+        
 </html>
 
  

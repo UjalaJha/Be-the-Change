@@ -27,7 +27,7 @@ $events=getngoevents();
     <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
     <link rel="stylesheet" href="css/volunteers.css">
     </head>
-    <body>
+    <body style="background-color: #eee">
         <div class="header-strip">
         <div class="dot">
         <span class="icon"><img src="img/call-answer%20(1).png" height="20px" width="20px"></span><span class="number">+88 0987654334567</span>
@@ -257,7 +257,7 @@ $events=getngoevents();
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "getResults.php",
+                url: "/getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",
@@ -274,7 +274,7 @@ $events=getngoevents();
                   
                 },
                 error: function () {
-                    alert("something went wrong");
+                    toastr["error"]("YOU HAVE ALREADY REGISTERED", "PARTICIPANTS");
                 }  
                     
                 

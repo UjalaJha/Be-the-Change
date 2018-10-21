@@ -68,9 +68,9 @@ function addngoevent($nid,$desc){
     return $resultset;
 }
 
-function addngodonation($damt,$nid,$decs){
+function addngodonation($dtitle,$damt,$nid,$decs){
     global $connection;
-    $query = "INSERT INTO donations (DAMOUNT, NID, D_DESCRIPTION) VALUES ($damt,$nid,'$decs')";
+    $query = "INSERT INTO donations (D_TITLE,DAMOUNT, NID, D_DESCRIPTION) VALUES ('$dtitle',$damt,$nid,'$decs')";
     $resultset = mysqli_query($connection,$query);
     checkQueryResult($resultset);
     return $resultset;
