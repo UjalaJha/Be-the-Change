@@ -18,17 +18,19 @@ if(!$connection){
 // }
 // print_r($_POST);
 
-if(!empty($_POST['amount']))
+if(!empty($_POST['req_reg']))
 {
 	// echo ("expression");
-	$damt=$_POST['amount'];
 	$nid=$_SESSION['nid'];
-	$dtitle=$_POST['name'];
-	$decs=$_POST['desc'];
-	$res=addngodonation($dtitle,$damt,$nid,$decs);
+    $etitle=$_POST['etitle'];
+    $location=$_POST['location'];
+    $desc=$_POST['desc'];
+    $req_reg=$_POST['req_reg'];
+    
+	$res=addngoevent($nid,$etitle,$desc,$location,$req_reg);
 	if($res==1)
 	{
-		$result["done"] = "Donation Added";
+		$result["done"] = "Event Added";
     	$result["success"]=true;
     	// convert the result array to json format
         echo json_encode($result);

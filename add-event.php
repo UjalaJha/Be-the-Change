@@ -1,13 +1,13 @@
 <?php
 require_once("pages/includes/functions.php");
-//session_start();
-//print_r($_SESSION);
-//if($_SESSION['nid']==NULL)
-//{
-//    header("Location: index.php");
-//}
+session_start();
+print_r($_SESSION);
+if($_SESSION['nid']==NULL)
+{
+   header("Location: index.php");
+}
 
-$donations=getngodonations();
+// $donations=getngodonations();
 // print_r($donations);
 ?>
 
@@ -130,14 +130,14 @@ $donations=getngodonations();
             <div class="card-container">
            <h1>ADD EVENT</h1>
            <hr class="rule">
-            <form>
+            <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
                 
-                Name of Event : <input type="text" class="form-control" id="name"><br>
-                Date of Event : <input type="date" class="form-control" id="name"><br>
-                Time of Event : <input type="text" class="form-control" id="name"><br>
-                Location of Event : <input type="text" class="form-control" id="name"><br>
-                Description of Event : <textarea type="text" class="form-control" cols=10 rows=10></textarea><br>
-                Limit of People : <input type="text" class="form-control" id="name"><br>
+                Name of Event : <input type="text" class="form-control" name="name" id="name"><br>
+                <!-- Date of Event : <input type="date" class="form-control" name="date" id="date"><br> -->
+                <!-- Time of Event : <input type="text" class="form-control" name="time" id="time"><br> -->
+                Location of Event : <input type="text" class="form-control" name="location" id="location"><br>
+                Description of Event : <textarea type="text" class="form-control" cols=10 rows=10 name="desc" id="desc"></textarea><br>
+                Limit of People : <input type="text" class="form-control" name="req_reg" id="req_reg"><br>
                 <button class="btn" style="background:#fda401;border-radius:0px;color:white;float:left;">ADD EVENT</button>
                 
                 
@@ -147,9 +147,8 @@ $donations=getngodonations();
                 </div>
     </div>
 </div>
-
-        
-       <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+ 
+<script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
         <!--END OF CORE JS-->
@@ -160,72 +159,51 @@ $donations=getngodonations();
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
+        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
+        <script src="vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
         <script src="js/script.js"></script>
-        
-        <script>
-            // Get the modal
-            var modal = document.getElementById('donorModal');
-
-            // Get the button that opens the modal
-            var btn = document.getElementById("Btn Donate");
-
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-
-            // When the user clicks the button, open the modal 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            // When the user clicks anywhere outside of the modal, close it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-
-        <script>
+        <script type="text/javascript">
+           
             $("form").submit(function(){
-                var form_data = $(this).closest("form");
-                $dnid = form_data[0]["dnid"].value;
-                $amnt = form_data[1]["amnt"].value;
-                    
-                var data = form_data.split("&");
-                console.log(form_data[0]["dnid"].value);
+            var form_data = $(this).closest("form");
+            $req_reg = form_data[0]["req_reg"].value;
+            $etitle = form_data[0]["etitle"].value;
+            $desc=form_data[0]["desc"].value;
+            $location=form_data[0]["desc"].value;
+            console.log("hello")
+            console.log(form_data);
+            // var data = form_data.split("&");
+            // console.log(form_data[0]["evid"].value);
 
-                //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
-                // console.log($eid);
-                $.ajax({
-                    url: "http://localhost/be-the-change/getDonations.php",
-                    method:"POST",
-                    data:{dnid:$dnid,amnt:$amnt},
-                    dataType:"json",
-                    success:function(response){
-                    if(response.done==true)
-                    {
-                        alert("You Have Succesfullty donated for this event");
-                    }else if(response.done==false){
-                        alert("something went wrong1");
-                    }else{
-                        alert(response.done);
-                    }
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "http://localhost:81/be-the-change/pages/includes/saveevent.php",
+                method:"POST",
+                data:{req_reg:$req_reg,etitle:$etitle,desc:$desc, location:$location},
+                dataType:"json",
+                success:function(response){
+                  if(response.done=="Event Added")
+                  {
+                    //alert("You Have Succesfullty registered for this event");
+                      toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+                      
+                  }
+                  
+                },
+                error: function () {
+                    toastr["error"]("There was some error, try again later", "Events");
+                }  
                     
-                    },
-                    error: function () {
-                        alert("something went wrong 2");
-                    }  
-                        
-                    
-                });
+                
             });
-        </script>
+        });
+        </script>   
+        </div>
+        </div>
+    </body>
 </html>
 
  
+     
     
