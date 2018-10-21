@@ -1,7 +1,7 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 if($_SESSION['nid']==NULL)
 {
    header("Location: index.php");
@@ -19,6 +19,7 @@ if($_SESSION['nid']==NULL)
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
+        <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
         <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
         
     
@@ -167,11 +168,11 @@ if($_SESSION['nid']==NULL)
             $("form").submit(function(){
             var form_data = $(this).closest("form");
             $req_reg = form_data[0]["req_reg"].value;
-            $etitle = form_data[0]["etitle"].value;
+            $etitle = form_data[0]["name"].value;
             $desc=form_data[0]["desc"].value;
-            $location=form_data[0]["desc"].value;
-            console.log("hello")
-            console.log(form_data);
+            $location=form_data[0]["location"].value;
+            // console.log("hello")
+            // console.log(form_data);
             // var data = form_data.split("&");
             // console.log(form_data[0]["evid"].value);
 
@@ -185,14 +186,21 @@ if($_SESSION['nid']==NULL)
                 success:function(response){
                   if(response.done=="Event Added")
                   {
-                    //alert("You Have Succesfullty registered for this event");
+                    // alert("You Have Succesfullty registered for this event");
                       toastr["success"]("YOU HAVE A SUCCCESFULLY REGISTERED", "Events");
+                      // $timeout(function() {
+                            // window.location='ngo.php'
+                        // }, 1000000);
+                      
                       
                   }
                   
                 },
                 error: function () {
                     toastr["error"]("There was some error, try again later", "Events");
+                    // $timeout(function() {
+                    //         window.location='ngo.php'
+                    //     }, 1000000);
                 }  
                     
                 

@@ -70,7 +70,8 @@ function getngodonations(){
 
 function addngoevent($nid,$etitle,$desc,$location,$req_reg){
     global $connection;
-    $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, 'location', REQ_REGISTERED) VALUES ($nid,'$etitle','$desc','$location',$req_reg)";
+    $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, location, REQ_REGISTERED) VALUES ($nid,'$etitle','$desc','$location',$req_reg)";
+    // print_r($query);
     $resultset = mysqli_query($connection,$query);
     checkQueryResult($resultset);
     return $resultset;
