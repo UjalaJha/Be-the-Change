@@ -70,8 +70,7 @@ function getngodonations(){
 
 function addngoevent($nid,$etitle,$desc,$location,$req_reg){
     global $connection;
-    $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, location, REQ_REGISTERED) VALUES ($nid,'$etitle','$desc','$location',$req_reg)";
-    // print_r($query);
+    $query = "INSERT INTO ngoevents (NID, E_TITLE, E_DESCRIPTION, 'location', REQ_REGISTERED) VALUES ($nid,'$etitle','$desc','$location',$req_reg)";
     $resultset = mysqli_query($connection,$query);
     checkQueryResult($resultset);
     return $resultset;
@@ -212,6 +211,44 @@ function getdonationscount($dnid){
         $result['result']=$row;
         return($result);
 
+    }
+}
+
+//getnago() already exists and returns all the ngos.
+
+// function getallngos(){
+//     global $connection;
+//     $query = "SELECT * FROM ngo";
+//     $ngo=mysqli_query($connection,$query);
+//     if($row=mysqli_fetch_all($ngo)){
+//         return($row);
+//     }
+// }
+
+function getalldonors(){
+    global $connection;
+    $query = "SELECT * FROM donors";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+
+function getallvolunteers(){
+    global $connection;
+    $query = "SELECT * FROM volunteers";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+
+function deleteuser($uid){
+    global $connection;
+    $query = "DELETE from users where UID=$uid";
+    $user=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($user)){
+        return($row);
     }
 }
 ?>
