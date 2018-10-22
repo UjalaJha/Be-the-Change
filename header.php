@@ -68,7 +68,7 @@
           <td><i class="fa fa-trash" aria-hidden="true"></i></td>
         </tr>
 
-</table> -->
+</table> 
 <table class="table table-striped" style="margin-top:40px;margin-left:220px;width:1000px;">
   <thead>
     <tr>
