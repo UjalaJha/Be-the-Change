@@ -9,9 +9,9 @@
     <body style="background-color:#fda401">
        <!-- <div id="box"> -->
        
-       <div id="main"></div>
+       <div id="main" style="margin:0 auto;left:50%;"></div>
        
-        <div id="login_form" style="text-align: center;">
+        <div id="login_form" style="left:58%;">
           <img src="css/img/black-logo.png" height="200px"; width="200px";>
            <h1>Admin Login</h1>
            <form action="header.php" method="POST">
