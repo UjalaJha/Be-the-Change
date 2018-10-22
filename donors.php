@@ -168,6 +168,66 @@ $donations=getngodonations();
         </div>
     </div>
 </div>
+       <section id="testimonials" style="margin-top:-18px;">
+           <div class="testimonial-cover bg-parallax">
+            <div class="content-box">
+                <div class="content-title wow animated fadeInDown">
+                    <h3 class="text-heading text-heading-white">What Our Volunteer Say</h3>
+                    <div class="content-title-underline"></div>
+                    
+                </div>
+                <div class="container">
+                    <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                        
+                    <div class="col-md-12">
+                            
+                            
+                     <div class="customer-testimonials owl-carousel owl-theme">
+                               <div class="testimonial">
+                                <img src="css/img/client/client-3.jpg" class="img-responsive img-circle">
+                                <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                   <p>
+                                       <strong>Sara Smith</strong>
+                                       <span>CEO &amp; Founder-Microsoft</span>
+                                   </p> 
+                                </div>
+                            </div>
+                            <div class="testimonial">
+                                <img src="css/img/client/client-2.jpg" class="img-responsive img-circle">
+                                <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                   <p>
+                                       <strong>Sara Smith</strong>
+                                       <span>CEO &amp; Founder-Microsoft</span>
+                                   </p> 
+                                </div>
+                            </div>
+                            <div class="testimonial">
+                                <img src="css/img/client/client-1.jpg" class="img-responsive img-circle">
+                                <blockquote>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, nostrum, laborum facilis eveniet iste, ducimus harum quasi officiis suscipit molestiae placeat enim ut saepe at architecto illo aperiam officia tempore</p>
+                                </blockquote>
+                                <div class="testimonial-author">
+                                   <p>
+                                       <strong>Sara Smith</strong>
+                                       <span>CEO &amp; Founder-Microsoft</span>
+                                   </p> 
+                                </div>
+                            </div>
+                            </div>
+                            </div>
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
 <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
