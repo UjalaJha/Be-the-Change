@@ -1,6 +1,6 @@
   <?php
   require_once("pages/includes/functions.php");
-  $vol=getallvolunteers();
+  $vol=getalldonors();
   // echo "<pre>";
   // print_r($vol);
   // exit;
@@ -54,9 +54,8 @@
         <!-- <th scope="col">#</th> -->
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-         <th scope="col">View</th>
+        <th scope="col">View</th>
         <th scope="col">Delete</th>
-       
       </tr>
     </thead>
     <tbody>

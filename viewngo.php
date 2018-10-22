@@ -1,6 +1,6 @@
   <?php
   require_once("pages/includes/functions.php");
-  $vol=getallvolunteers();
+  $vol=getngo();
   // echo "<pre>";
   // print_r($vol);
   // exit;
@@ -54,9 +54,8 @@
         <!-- <th scope="col">#</th> -->
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-         <th scope="col">View</th>
         <th scope="col">Delete</th>
-       
+        <th scope="col">View</th>
       </tr>
     </thead>
     <tbody>
@@ -65,9 +64,10 @@
         <tr>
           <!-- <th scope="row">1</th> -->
           <td><?php echo $value[1] ;?></td>
-          <td><?php echo $value[2] ;?></td>
+          <td><?php echo $value[3] ;?></td>
           <td><i class="fa fa-eye" aria-hidden="true"></i></td>
           <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+          
         </tr>
 
         <?php
