@@ -213,7 +213,7 @@ if($_SESSION['uid']==NULL)
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost:8888/be-the-change/pages/includes/updateprofile.php",
+                url: "http://localhost/be-the-change/pages/includes/updateprofile.php",
                 method:"POST",
                 data:{name:$name,email:$email,phone:$phone, pass:$pass},
                 dataType:"json",

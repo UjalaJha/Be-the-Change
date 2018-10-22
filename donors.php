@@ -228,7 +228,7 @@ $donations=getngodonations();
                 //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
                 // console.log($eid);
                 $.ajax({
-                    // url: "http://localhost:8888/be-the-change/getDonations.php",
+                    // url: "http://localhost/be-the-change/getDonations.php",
                     url : "getDonations.php",
                     method:"POST",
                     data:{dnid:$dnid,amnt:$amnt},

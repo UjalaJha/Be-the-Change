@@ -195,7 +195,7 @@ require_once("pages/includes/functions.php");
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost:8888/be-the-change/pages/includes/savefunction.php",
+                url: "http://localhost/be-the-change/pages/includes/savefunction.php",
                 method:"POST",
                 data:{amount:$damt,name:$dtitle,desc:$desc},
                 dataType:"json",
