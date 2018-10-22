@@ -26,6 +26,7 @@
    
     <div class="sidenav">
     <div class="top-wala">
+      <!-- <img src="css/img/black-logo.png" height="150px"; width="200px";> -->
     <a href="header.php">View Volunteer</a>
     <a href="viewdonor.php">View Donor</a>
     <a href="viewngo.php">View NGO</a>
