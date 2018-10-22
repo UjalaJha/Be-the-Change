@@ -45,12 +45,12 @@ $vol=getallvolunteers();
     </thead>
 
 </table> -->
-<table class="table table-striped" style="margin-top:50px;margin-left:220px;">
+<table class="table table-striped" style="margin-top:40px;margin-left:220px;width:1000px;">
   <thead>
     <tr>
       <!-- <th scope="col">#</th> -->
-      <th scope="col">Name</th>
-      <th scope="col">Email</th>
+      <th scope="col" style="width:150px;">Name</th>
+      <th scope="col" style="width:50px;">Email</th>
       <th scope="col">Phone</th>
     </tr>
   </thead>
@@ -90,6 +90,7 @@ $vol=getallvolunteers();
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">open</span>
     </body>
+    <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
     <script src="datatable.js"></script>
     <script src="vendors/datatables/datatables.min.js"></script>
     <script src="vendors/datatables/plugins/bootstrap/datatables.bootstrap.js"></script>
