@@ -6,7 +6,7 @@
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/login.js"></script>
     </head>
-    <body>
+    <body style="background:#fda401;">
        <div id="box">
        
            <div id="main"></div>
@@ -28,7 +28,18 @@
                     <input type="text" placeholder="Name" name="username" required=""><br>
                     <input type="email" placeholder="Email" name="email" required=""><br>
                     <input type="password" placeholder="Password" name="password" required=""><br>
-                    <input type="phone" placeholder="PhoneNumber" name="phone" required=""><br>
+                    <input type="phone" placeholder="PhoneNumber" name="phone" required=""><br><br>
+                    <div class="form-group">
+                        <select name="category_id" id="category_id" class="form-control" style="border:1px solid #454545;">
+                           <option>Choose Ur Role</option>
+                           <option>Volunteer</option>
+                           <option>Donor</option>
+                           <option>NGO</option>
+                            
+                        </select>
+                    </div>
+                
+                    
                     
 <!-- 
                     <span><input type="radio" value="1" name="role">Be A Donor<br>
