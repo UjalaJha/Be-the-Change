@@ -231,8 +231,9 @@ function updateprofile($uid, $name, $email, $phone, $pass){
     global $connection;
     $query = "update users set UNAME='$name', U_EMAIL='$email', U_PHONE=$phone, PASSWORD=$pass where UID=$uid";
     $user=mysqli_query($connection,$query);
-    if($row=mysqli_fetch_all($user)){
-        return($row);
+    if($user){
+        // console.log("In function $user");
+        return($user);
     }
 }
 
