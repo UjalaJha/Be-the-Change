@@ -214,18 +214,17 @@ function getdonationscount($dnid){
     }
 }
 
+//respective ngo events
+function ngoevents($nid){
+    global $connection;
+    $query = "SELECT * FROM ngoevents where NID=$nid";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+
 //getnago() already exists and returns all the ngos.
-
-// function getallngos(){
-//     global $connection;
-//     $query = "SELECT * FROM ngo";
-//     $ngo=mysqli_query($connection,$query);
-//     if($row=mysqli_fetch_all($ngo)){
-//         return($row);
-//     }
-// }
-
-
 //updateprfile
 function updateprofile($uid, $name, $email, $phone, $pass){
     global $connection;
