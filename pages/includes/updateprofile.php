@@ -28,7 +28,7 @@ if(!empty($_POST['name']))
     $pass=$_POST['pass'];
     
 	$res=updateprofile($uid,$name,$email,$phone,$pass);
-	if($res==1)
+	if($res)
 	{
 		$result["done"] = "Profile Updated";
     	$result["success"]=true;
@@ -38,7 +38,7 @@ if(!empty($_POST['name']))
 	}else
     {
     	$result["done"] = false;
-    	$result["success"]=true;
+    	$result["success"]=false;
     	echo json_encode($result);
     	exit;
     }
