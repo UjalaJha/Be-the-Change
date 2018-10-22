@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 21, 2018 at 02:19 PM
+-- Generation Time: Oct 21, 2018 at 08:20 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -164,6 +164,16 @@ INSERT INTO `ngo` (`NID`, `ORGNAME`, `OADDRESS`, `N_EMAIL`, `NPHNUMBER`) VALUES
 (3, 'YourStoryNGO', NULL, 'YourStoryNGO@gmail.com', '0'),
 (4, 'WeNGO', NULL, 'WeNGO@gmail.com', '0');
 
+--
+-- Triggers `ngo`
+--
+DELIMITER $$
+CREATE TRIGGER `DeleteEvents` BEFORE DELETE ON `ngo` FOR EACH ROW BEGIN
+DELETE FROM ngoevents WHERE NID=old.NID;
+END
+$$
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -219,7 +229,8 @@ INSERT INTO `ngoeventspartcpn` (`EPID`, `EID`, `VID`) VALUES
 (8, 2, 7),
 (9, 1, 10),
 (10, 4, 6),
-(11, 4, 7);
+(11, 4, 7),
+(12, 7, 6);
 
 --
 -- Triggers `ngoeventspartcpn`
@@ -291,11 +302,23 @@ INSERT INTO `users` (`UID`, `UNAME`, `U_EMAIL`, `PASSWORD`, `U_TYPE`, `U_PHONE`,
 (22, 'divya', 'divya@gmail.com', 'divya', '1', '8329090492', 0),
 (28, 'UJALA', 'J@JH.COM', '123456', '1', '9323048363', 0),
 (29, 'yu', 'yu@yu.com', '123456', '1', '9323048363', 0),
-(33, 'aa', 'aa@aa.com', '123456', '2', '9920697529', 0);
+(34, 'aa', 'aa@aa.com', '123456', '3', '9920697529', 0);
 
 --
 -- Triggers `users`
 --
+DELIMITER $$
+CREATE TRIGGER `DeleteUser` BEFORE DELETE ON `users` FOR EACH ROW BEGIN
+if(old.U_TYPE=1) THEN
+	DELETE from donors where DID=old.UID;
+ELSEIF(old.U_TYPE=2) THEN
+	DELETE from volunteers where VID=old.UID;
+ELSEIF(old.U_TYPE=3) THEN
+	DELETE from ngo where NID=old.UID;
+END IF;
+END
+$$
+DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `NewUser` AFTER INSERT ON `users` FOR EACH ROW begin
 if(new.U_TYPE=1) then
@@ -336,8 +359,7 @@ INSERT INTO `volunteers` (`VID`, `VNAME`, `V_EMAIL`, `VPHNUMBER`) VALUES
 (6, 'Althea', 'mauris.Morbi.non@nequeNullam.edu', '0'),
 (7, 'Aspen', 'Suspendisse.tristique@turpisegestasFusce.com', '0'),
 (8, 'Emmanuel', 'ipsum.nunc@sitamet.com', '0'),
-(10, 'Kenneth', 'egestas.ligula@infaucibus.edu', '0'),
-(33, 'aa', 'aa@aa.com', '9920697529');
+(10, 'Kenneth', 'egestas.ligula@infaucibus.edu', '0');
 
 -- --------------------------------------------------------
 
@@ -460,28 +482,28 @@ ALTER TABLE `donors`
 -- AUTO_INCREMENT for table `ngo`
 --
 ALTER TABLE `ngo`
-  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `ngoevents`
 --
 ALTER TABLE `ngoevents`
-  MODIFY `EID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `EID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `ngoeventspartcpn`
 --
 ALTER TABLE `ngoeventspartcpn`
-  MODIFY `EPID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `EPID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `UID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `volunteers`
 --
 ALTER TABLE `volunteers`
-  MODIFY `VID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `VID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
