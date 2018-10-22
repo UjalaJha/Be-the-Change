@@ -1,4 +1,4 @@
-  <?php
+<?php
   require_once("pages/includes/functions.php");
   $vol=getallvolunteers();
   // echo "<pre>";
@@ -26,6 +26,7 @@
    
     <div class="sidenav">
     <div class="top-wala">
+      <!-- <img src="css/img/black-logo.png" height="150px"; width="200px";> -->
     <a href="header.php">View Volunteer</a>
     <a href="viewdonor.php">View Donor</a>
     <a href="viewngo.php">View NGO</a>
@@ -67,50 +68,12 @@
           <td><i class="fa fa-eye" aria-hidden="true"></i></td>
           <td><i class="fa fa-trash" aria-hidden="true"></i></td>
         </tr>
-
-</table> 
-<table class="table table-striped" style="margin-top:40px;margin-left:220px;width:1000px;">
-  <thead>
-    <tr>
-      <!-- <th scope="col">#</th> -->
-      <th scope="col" style="width:150px;">Name</th>
-      <th scope="col" style="width:50px;">Email</th>
-      <th scope="col">Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($vol as $key => $value) {
-      ;?>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-
-      <?php
+          <?php
     } 
     ?>
-    <!-- <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr> -->
-  </tbody>
-</table>
+
+</table> 
+
 <!-- Use any element to open the sidenav -->
 <span onclick="openNav()">open</span>
     </body>

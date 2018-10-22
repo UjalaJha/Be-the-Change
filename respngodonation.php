@@ -8,7 +8,7 @@ if($_SESSION['nid']==NULL)
     header("Location: index.php");
 }
 
-$events=ngodonations($nid);
+$donate=ngodonations($nid);
 // echo "<pre>";
 // print_r($events);
 // exit;
@@ -131,7 +131,7 @@ $events=ngodonations($nid);
            <div class="right-wala">
               
            <?php 
-              foreach ($events as $key => $value) {
+              foreach ($donate as $key => $value) {
                 // print_r($value[2]);
                 ?>
                 <div class="first1">          
