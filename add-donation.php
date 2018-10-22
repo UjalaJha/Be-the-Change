@@ -13,7 +13,7 @@ require_once("pages/includes/functions.php");
 
 <html>
     <head>
-        <title>add donation</title>
+        <title>Add Donation</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">

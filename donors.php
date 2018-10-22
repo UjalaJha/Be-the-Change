@@ -14,7 +14,7 @@ $donations=getngodonations();
 
 <html>
     <head>
-        <title>blog</title>
+        <title>Donors</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
@@ -138,8 +138,8 @@ $donations=getngodonations();
                         <div class="modal fade" id="myModal<?php  echo ($value[0]) ?>" role="dialog">
                         <div class="modal-dialog">
                             <div class="modal-content">
-                            <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <div class="modal-header" style="background:#fda401;color:white;border:1px solid #fda401;">
+                              <button type="button" class="close" style="color:black;" data-dismiss="modal">&times;</button>
                               <h4 class="modal-title"><?php print_r($value[1]) ?></h4>
                             </div>
                             <div class="modal-body">  
@@ -154,7 +154,7 @@ $donations=getngodonations();
                                                                           
                                 </div>
                                 <div class="modal-footer">
-                                    <button class="btn pay" type="submit" id="contribute">Contribute</button>
+                                    <button class="btn pay" type="submit" id="contribute" style="background:#fda401;color:white;">Contribute</button>
                             </form>
                             </div>
 
