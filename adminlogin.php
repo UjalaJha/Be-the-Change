@@ -1,8 +1,7 @@
 <html>
     <head>
         <title>Forms</title>
-        <link rel="stylesheet" href="css/login1.css">
-        <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/login.css">
         <script src="js/jquery-3.3.1.min.js"></script>
         <script src="js/login.js"></script>
     </head>
@@ -12,7 +11,6 @@
            <div id="main"></div>
            
             <div id="login_form">
-              <img src="css/img/black-logo.png" height="200px"; width="200px";>
                <h1>Login</h1>
                <form action="pages/includes/loginfunction.php" method="POST">
                     <input type="email" placeholder="Email" name="email" required>
@@ -22,14 +20,12 @@
               
             </div>
             <div id="signup_form">
-               <img src="css/img/black-logo.png" height="200px"; width="200px";>
                 <h1>Sign Up</h1>
                 <form action="pages/includes/signupfunction.php" method="POST">
                     <input type="text" placeholder="Name" name="username" required=""><br>
                     <input type="email" placeholder="Email" name="email" required=""><br>
                     <input type="password" placeholder="Password" name="password" required=""><br>
                     <input type="phone" placeholder="PhoneNumber" name="phone" required=""><br>
-                    
 <!-- 
                     <span><input type="radio" value="1" name="role">Be A Donor<br>
                     <input type="radio" value="2" name="role">Be A Volunteer<br>

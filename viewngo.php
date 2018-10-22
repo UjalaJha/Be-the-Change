@@ -48,14 +48,15 @@
  <div class="container" style="
     margin-left: 0px;
 ">
-  <table class="table table-striped" style="margin-top:50px;margin-left:220px;">
+  <table class="table table-striped" style="margin-top:50px;margin-left:220px;width: 300px">
     <thead>
       <tr>
         <!-- <th scope="col">#</th> -->
         <th scope="col">Name</th>
         <th scope="col">Email</th>
+         <th scope="col">View</th>
         <th scope="col">Delete</th>
-        <th scope="col">View</th>
+       
       </tr>
     </thead>
     <tbody>
