@@ -46,7 +46,7 @@
 
   </table> -->
  <div class="container" style="margin-left: 0px;">
-  <table class="table table-striped" style="margin-top:50px;margin-left:220px;width: 300px">
+  <table class="table table-striped" style="margin-top:50px;margin-left:220px;">
     <thead>
       <tr>
         <!-- <th scope="col">#</th> -->
