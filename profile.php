@@ -95,7 +95,8 @@ if($_SESSION['uid']==NULL)
                 <!-- Address : <input type="text" class="name" id="name"><br> -->
                 Email : <input type="text" class="email" id="email"><br>
                 Phone : <input type="text" class="phone" id="phone"><br>
-                Password : <input type="password" placeholder="Password" name="password" required=""><br>
+                Password : <input type="password" name="password" required=""><br>
+                
                 <button class="btn" type="submit" style="background:#fda401;border-radius:0px;color:white;float:left;">UPDATE</button>
                 
             </form>
