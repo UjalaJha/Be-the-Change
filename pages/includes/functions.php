@@ -225,7 +225,7 @@ function ngoevents($nid){
 }
 
 //respective ngo donations
-function ngoevents($nid){
+function ngodonations($nid){
     global $connection;
     $query = "SELECT * FROM donations where NID=$nid";
     $ngo=mysqli_query($connection,$query);
