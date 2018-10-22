@@ -225,6 +225,18 @@ function getdonationscount($dnid){
 //     }
 // }
 
+
+//updateprfile
+function updateprofile($uid, $name, $email, $phone, $pass){
+    global $connection;
+    $query = "update users set UNAME='$name', U_EMAIL='$email', U_PHONE=$phone, PASSWORD=$pass where UID=$uid";
+    $user=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($user)){
+        return($row);
+    }
+}
+
+//admin functionality
 function getalldonors(){
     global $connection;
     $query = "SELECT * FROM donors";

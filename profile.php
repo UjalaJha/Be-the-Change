@@ -1,3 +1,15 @@
+<?php
+require_once("pages/includes/functions.php");
+session_start();
+//print_r($_SESSION);
+if($_SESSION['uid']==NULL)
+{
+   header("Location: index.php");
+}
+
+?>
+
+
 <html>
     <head>
         <title>blog</title>
@@ -6,6 +18,7 @@
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
         <link rel="stylesheet" href="vendors/assets/owl.theme.default.css">
+        <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
         <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/owl.carousel.min.js">
         
     
@@ -31,12 +44,17 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
 
                 <ul class="nav navbar-nav navbar-right change">
-
+                <?php if(empty($_SESSION['uid']))
+                    {
+                        ?>
                     <li class="big"><a href="volunteers.php" style="color:white;">HOME</a></li>
                      <li><a href="#" style="color:white;">ABOUT</a></li>
                     <li><a href="index.php" style="color:white;">LOGOUT</a></li>
                    
-                    
+                    <?php
+
+                    }
+                ?>
                     
 
 
@@ -71,13 +89,14 @@
           <div class="card-container">
            <h1>My Profile</h1>
            <hr class="rule">
-            <form>
+            <form method="POST" enctype="multipart/form-data" action="javascript:void(0)">
                 
                 Name : <input type="text" class="name" id="name"><br>
-                Address : <input type="text" class="name" id="name"><br>
-                Email : <input type="text" class="name" id="name"><br>
-                Phone : <input type="text" class="name" id="name">
-                
+                <!-- Address : <input type="text" class="name" id="name"><br> -->
+                Email : <input type="text" class="email" id="email"><br>
+                Phone : <input type="text" class="phone" id="phone"><br>
+                Password : <input type="password" placeholder="Password" name="password" required=""><br>
+                <button class="btn" type="submit" style="background:#fda401;border-radius:0px;color:white;float:left;">UPDATE</button>
                 
             </form>
             </div>
@@ -142,7 +161,7 @@
            </div>
         </section>         
 
-       <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
+        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
         <!--END OF CORE JS-->
@@ -153,9 +172,68 @@
         <script src="vendors/jquery.waypoints.min.js"></script>
         <script src="vendors/jquery.counterup.min.js"></script>
         <script src="vendors/jquery-ui.min.js"></script>
-        <script src="js/script.js"></script>
- 
         
+        <script src="vendors/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+        <script src="vendors/bootstrap-toastr/toastr.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+                toastr.options = {
+                  "closeButton": true,
+                  "debug": false,
+                  "newestOnTop": true,
+                  "progressBar": true,
+                  "positionClass": "toast-top-right",
+                  "preventDuplicates": false,
+                  "onclick": null,
+                  "showDuration": "300",
+                  "hideDuration": "1000",
+                  "timeOut": "5000",
+                  "extendedTimeOut": "1000",
+                  "showEasing": "swing",
+                  "hideEasing": "linear",
+                  "showMethod": "fadeIn",
+                  "hideMethod": "fadeOut"
+                }
+            
+        </script>
+ 
+        <script type="text/javascript">
+           
+            $("form").submit(function(){
+            var form_data = $(this).closest("form");
+            $name = form_data[0]["name"].value;
+            $email = form_data[0]["email"].value;
+            $phone=form_data[0]["phone"].value;
+            $pass=form_data[0]["password"].value;
+            console.log("aj")
+            console.log(form_data);
+            // var data = form_data.split("&");
+            // console.log(form_data[0]["evid"].value);
+
+            //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
+            // console.log($eid);
+            $.ajax({
+                url: "http://localhost:8888/be-the-change/pages/includes/updateprofile.php",
+                method:"POST",
+                data:{name:$name,email:$email,phone:$phone, pass:$pass},
+                dataType:"json",
+                success:function(response){
+                  if(response.done=="Profile Updated")
+                  {
+                    //alert("You Have Succesfullty registered for this event");
+                      toastr["success"]("YOU HAVE SUCCCESFULLY UPDATED YOUR PROFILE", "Donations");
+                      
+                  }
+                  
+                },
+                error: function () {
+                    toastr["error"]("There was some error, try again later", "Donations");
+                }  
+                    
+                
+            });
+        });
+        </script>   
  
     </body>
 </html>

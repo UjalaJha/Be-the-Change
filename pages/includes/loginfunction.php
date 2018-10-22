@@ -41,6 +41,7 @@ if(!empty($_POST["email"]))
         //session variable according to role
         if($role==1)
         {
+            $_SESSION['uid'] = $uid;
             $_SESSION['did'] = $uid;
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = NULL;
@@ -49,6 +50,7 @@ if(!empty($_POST["email"]))
         }
         elseif($role==2)
         {
+            $_SESSION['uid'] = $uid;
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = $uid;
             $_SESSION['nid'] = NULL;
@@ -56,6 +58,7 @@ if(!empty($_POST["email"]))
             header("Location: ../../volunteers.php");
         }
         else{
+            $_SESSION['uid'] = $uid;
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
