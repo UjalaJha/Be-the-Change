@@ -1,5 +1,12 @@
 <?php
   require_once("pages/includes/functions.php");
+  session_start();
+print_r($_SESSION);
+console.log($_SESSION);
+if($_SESSION['nid']!=NULL or $_SESSION['did']!=NULL or $_SESSION['vid']!=NULL)
+{
+    header("Location: index.php");
+}
   $vol=getallvolunteers();
   // echo "<pre>";
   // print_r($vol);
@@ -17,7 +24,7 @@
           <div class="topnav" id="myTopnav">
     <span class="logo">DASHBOARD</span>
     
-    <a href="index.php" class="pull-right">Logout</a>
+    <a href="pages/includes/logout.php" class="pull-right">Logout</a>
 
     <a href="javascript:void(0);" class="icon" onclick="myFunction()">
       <i class="fa fa-bars"></i>

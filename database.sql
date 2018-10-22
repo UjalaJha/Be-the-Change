@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 21, 2018 at 08:20 PM
+-- Generation Time: Oct 22, 2018 at 07:16 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -70,13 +70,13 @@ CREATE TABLE `donations` (
 --
 
 INSERT INTO `donations` (`DNID`, `DAMOUNT`, `COLLECTED_AMT`, `NID`, `D_TITLE`, `D_DESCRIPTION`, `D_IMAGE`, `STATUS_D`) VALUES
-(1, 1000, 95, 1, 'Educate poor', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation...', '', '1'),
+(1, 1000, 695, 2, 'Educate poor', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation...', '', '1'),
 (2, 2000, 2000, 2, 'Help students', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation...', '', '0'),
-(3, 3000, 564, 3, 'Awareness', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation.', '', '1'),
+(3, 3000, 864, 3, 'Awareness', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation.', '', '1'),
 (4, 1700, 0, 1, 'Help the Orphans', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation', '', '1'),
 (5, 3000, 3010, 4, 'Women Empowerment', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation', '', '1'),
-(6, 3000, 3100, 3, 'ABC', 'adefvnbjgkg ', '', '1'),
-(7, 3500, 3000, 2, 'XYZ', 'bfbhirihfjfnmsfdlkjewe', '', '1');
+(6, 3000, 3100, 3, 'Save Trees', 'Save trees is a slogan used to motivate people to save trees and plant more trees in the surrounding areas by spreading the importance of trees among people as well as reduce deforestation and cut down of trees.', '', '1'),
+(7, 3500, 3000, 2, 'Protect the Wildlife', 'Wildlife conservation is the practice of protecting wild plant and animal species and their habitat.', '', '1');
 
 -- --------------------------------------------------------
 
@@ -106,7 +106,10 @@ INSERT INTO `donationtransaction` (`DTID`, `DNID`, `DID`, `amount`) VALUES
 (66, 5, 1, 1010),
 (67, 1, 1, 300),
 (71, 7, 1, 510),
-(72, 2, 2, 2000);
+(72, 2, 2, 2000),
+(73, 1, 1, 300),
+(74, 3, 1, 300),
+(75, 1, 1, 300);
 
 --
 -- Triggers `donationtransaction`
@@ -268,7 +271,7 @@ CREATE TABLE `users` (
   `UNAME` varchar(50) DEFAULT NULL,
   `U_EMAIL` varchar(100) DEFAULT NULL,
   `PASSWORD` varchar(20) NOT NULL DEFAULT '123456',
-  `U_TYPE` enum('1','2','3') NOT NULL,
+  `U_TYPE` enum('1','2','3','4') NOT NULL,
   `U_PHONE` varchar(10) NOT NULL,
   `U_FIRST_LOGIN` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -278,10 +281,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`UID`, `UNAME`, `U_EMAIL`, `PASSWORD`, `U_TYPE`, `U_PHONE`, `U_FIRST_LOGIN`) VALUES
-(1, 'Nicholas', 'lacus.Mauris@auctornon.edu', '123456', '1', '9673334456', 0),
+(1, 'Nicholas', 'lacus.Mauris@auctornon.edu', '123456', '1', '9869038291', 0),
 (2, 'Bertha', 'Suspendisse.aliquet.sem@mauris.net', '123456', '3', '7744818656', 0),
 (3, 'Thomas', 'ut.mi.Duis@purusactellus.org', '123456', '2', '7021197094', 0),
-(4, 'Kim', 'pharetra.felis.eget@cursus.edu', '123456', '3', '', 0),
+(4, 'Kim', 'pharetra.felis.eget@cursus.edu', '123456', '3', '9869038291', 0),
 (5, 'Scott', 'feugiat.tellus@tellus.ca', '123456', '1', '', 0),
 (6, 'Althea', 'mauris.Morbi.non@nequeNullam.edu', '123456', '2', '', 0),
 (7, 'Aspen', 'Suspendisse.tristique@turpisegestasFusce.com', '123456', '2', '', 0),
@@ -302,7 +305,8 @@ INSERT INTO `users` (`UID`, `UNAME`, `U_EMAIL`, `PASSWORD`, `U_TYPE`, `U_PHONE`,
 (22, 'divya', 'divya@gmail.com', 'divya', '1', '8329090492', 0),
 (28, 'UJALA', 'J@JH.COM', '123456', '1', '9323048363', 0),
 (29, 'yu', 'yu@yu.com', '123456', '1', '9323048363', 0),
-(34, 'aa', 'aa@aa.com', '123456', '3', '9920697529', 0);
+(34, 'aa', 'aa@aa.com', '123456', '3', '9920697529', 0),
+(35, 'admin', 'admin@a.com', 'abcdefg', '4', '9920697529', 0);
 
 --
 -- Triggers `users`
@@ -470,7 +474,7 @@ ALTER TABLE `donations`
 -- AUTO_INCREMENT for table `donationtransaction`
 --
 ALTER TABLE `donationtransaction`
-  MODIFY `DTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `DTID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 
 --
 -- AUTO_INCREMENT for table `donors`
@@ -482,13 +486,13 @@ ALTER TABLE `donors`
 -- AUTO_INCREMENT for table `ngo`
 --
 ALTER TABLE `ngo`
-  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `NID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ngoevents`
 --
 ALTER TABLE `ngoevents`
-  MODIFY `EID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `EID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ngoeventspartcpn`
@@ -506,4 +510,4 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `volunteers`
 --
 ALTER TABLE `volunteers`
-  MODIFY `VID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `VID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;

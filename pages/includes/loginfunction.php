@@ -57,13 +57,21 @@ if(!empty($_POST["email"]))
             $_SESSION['uname'] = $uname;
             header("Location: ../../volunteers.php");
         }
-        else{
+        elseif($role==3){
             $_SESSION['uid'] = $uid;
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = NULL;
             $_SESSION['nid'] = $uid;
             $_SESSION['uname'] = $uname;
             header("Location: ../../ngo.php");
+        }
+        else{
+            $_SESSION['uid'] = $uid;
+            $_SESSION['did'] = NULL;
+            $_SESSION['vid'] = NULL;
+            $_SESSION['nid'] = NULL;
+            $_SESSION['uname'] = $uname;
+            header("Location: ../../header.php");
         }
     }
 
