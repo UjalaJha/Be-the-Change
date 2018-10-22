@@ -14,7 +14,7 @@ $events=getngoevents();
 ?>
 <html>
     <head>
-        <title>blog</title>
+        <title>Volunteers</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
