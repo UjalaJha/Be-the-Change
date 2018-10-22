@@ -71,7 +71,7 @@ if(!empty($_POST["email"]))
     else
     {
         $db_password="";
-       header("Location: ../../login.html");
+       header("Location: ../../login.php");
     }
 
 ?>

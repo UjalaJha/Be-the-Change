@@ -61,8 +61,8 @@ $donations=getngodonations();
                     {
                         ?>
 
-                            <li><a href="#" style="color:white;">PROFILE</a></li>
-                            <li><a href="#" style="color:white;">ABOUT</a></li>
+                            <li><a href="profile.php" style="color:white;">PROFILE</a></li>
+                            <li><a href="about.html" style="color:white;">ABOUT</a></li>
                             <li><a href="pages/includes/logout.php" style="color:white;" id="logout">LOGOUT</a></li>
                         <?php
 

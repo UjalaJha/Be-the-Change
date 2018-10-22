@@ -23,7 +23,7 @@ if($_SESSION['uid']==NULL)
         
     
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/profile.css">
+    <link rel="stylesheet" href="css/profile1.css">
     </head>
     <body>
         <div class="header-strip">

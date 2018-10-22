@@ -51,8 +51,8 @@ if($_SESSION['nid']==NULL)
                     {
                         ?>
 
-                            <li><a href="#" style="color:white;">PROFILE</a></li>
-                            <li><a href="#" style="color:white;">ABOUT</a></li>
+                            <li><a href="profile.php" style="color:white;">PROFILE</a></li>
+                            <li><a href="about.html" style="color:white;">ABOUT</a></li>
                             <li><a href="pages/includes/logout.php" style="color:white;" id="logout">LOGOUT</a></li>
                         <?php
 
@@ -179,7 +179,7 @@ if($_SESSION['nid']==NULL)
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost:81/be-the-change/pages/includes/saveevent.php",
+                url: "http://localhost:8888/be-the-change/pages/includes/saveevent.php",
                 method:"POST",
                 data:{req_reg:$req_reg,etitle:$etitle,desc:$desc, location:$location},
                 dataType:"json",
