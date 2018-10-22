@@ -26,7 +26,7 @@
 	    //     exit;
         // }
         
-        if($adduserdonation==="Amount Donated!")
+        if($adduserdonation=="Amount Donated!")
         {
             $result["done"] = $adduserdonation;
         	$result["success"]=true;

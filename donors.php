@@ -296,7 +296,7 @@ $donations=getngodonations();
                     success:function(response){
                         // print_r(response);
 
-                        if(response.done==true)
+                        if(response.done=="Amount Donated!")
                         {
                             toastr["success"]("YOU HAVE A SUCCCESFULLY DONATED");
                         }else if(response.done==false){
