@@ -1,25 +1,17 @@
 <?php
-require_once("pages/includes/ngofunction.php");
+require_once("pages/includes/functions.php");
 session_start();
-//print_r($_SESSION);
+// print_r($_SESSION);
+$nid=$_SESSION['nid'];
 if($_SESSION['nid']==NULL)
 {
     header("Location: index.php");
 }
-// echo "string";
-$ngo=getngo();
-$event=getngoevent();
-$donations=getngodonations();
 
-// print_r();
-// print_r($ngo['ORGNAME']);
-// print_r($_SESSION);
-//if($_SESSION['nid']==NULL)
-//{
-//    header("Location: index.php");
-//}
-//$donations=getngodonations();
-// print_r($donations);
+$events=ngodonations($nid);
+// echo "<pre>";
+// print_r($events);
+// exit;
 ?>
 <html>
     <head>
@@ -138,37 +130,39 @@ $donations=getngodonations();
         <div class="right-container pull-left">
            <div class="right-wala">
               
-               <h1 style="font-family:roboto;text-align:center;"><?php print_r($ngo['ORGNAME']) ;?></h1>
-               <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
-               <img src="css/img/ngo3.gif" class="img-responsive" style="width:1000px;height:400px;margin-left:30px;background-size:cover;background-position:center;">
-               <div class="description-section" style="border:2px solid #fda401;padding:10px;width:1000px;margin-left:30px;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet dicta eos id odit? Ipsam culpa ex, quo iusto vero repudiandae labore veritatis, adipisci, natus, fugit officiis aperiam. Totam, blanditiis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam, maxime beatae nulla totam 
-                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet,</p>
+           <?php 
+              foreach ($events as $key => $value) {
+                // print_r($value[2]);
+                ?>
+                <div class="first1">          
+                    <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
+                   <!-- <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div>  -->
+                    <img src="css/img/pic5.jpg" height="239px" width="330px">
+                   
+                   <div class="bottom-container">
+                       
+                       <p class="bold1"><?php print_r($value[4]) ?></p>
+                       
+                       <p class="bold2"><?php print_r($value[5]) ?></p>
+                       
+                        <?php 
+                             if($value[7]==1){
+                        ?>
+                            <span><a href="#"><label class="btn read-more">Ongoing donation</label></a></span> 
+                        <?php
+                            }
+                            else{
+                        ?>
+                            <span><a href="#"><label class="btn read-more">Donation successful</label></a></span> 
+                        <?php
+                            }
+                        ?>
+                   </div>
                </div>
-<section class="two-containers" style="margin-top:1%;">
-    <div class="col-md-5" style="margin-left:5%;">
-        <div class="card" style="height:250px;">
-            <h1 class="label1 text-center animated zoomIn wow"><a  href="respngoevent.php">NGO EVENT</a></h1>
-            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
-                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['accm']) ;?> Events Accomplished</p>
-                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($event['going']) ;?>  Events Ongoing</p>
-                <a href="add-event.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD EVENTS</button></a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-5">
-        <div class="card" style="height:250px;">
-            <h1 class="label1 text-center animated zoomIn wow"><a  href="respngodonation.php">NGO DONATION</a></h1>
-            <div class="inner-card animated fadeInLeft wow" style="padding:10px;">
-                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['accm']) ;?> Donations Accomplished</p>
-                <p style="font-family:roboto;font-size:25px;text-align:center;"><?php print_r($donations['going']) ;?> Donations Ongoing</p>
-                <a href="add-donation.php"><button class="btn" style="background:#fda401;color:white;margin-left:37%;height:40px;margin-top:5%;">ADD DONATIONS</button></a>
-            </div>
+                <?php
+              }
+              ?>
             
-        </div>
-        
-    </div>
-</section>
 </div>
     </div>  
      </div>
