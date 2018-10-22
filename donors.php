@@ -145,9 +145,13 @@ $donations=getngodonations();
                             <div class="modal-body">  
 
                             <form action="javascript:void(0);">
-                                    
-                                     Amount to be donated <input type="text" name="amnt" id="amnt" value="">
-                                    <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>                                      
+                                    <div class="form-group">
+                                      <label for="usr">Please Enter Amount to be Donated</label>
+                                      <input type="text" class="form-control" iname="amnt" id="amnt" value="">
+                                      <input type="hidden" name="dnid" id="dnid" value=<?php  echo ($value[0]) ?>>
+                                    </div>
+                                    <!--  Amount to be donated <input type="text" name="amnt" id="amnt" value=""> -->
+                                                                          
                                 </div>
                                 <div class="modal-footer">
                                     <button class="btn pay" type="submit" id="contribute">Contribute</button>
