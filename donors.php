@@ -132,8 +132,8 @@ $donations=getngodonations();
                                    
                         <p class="bold1"><?php print_r($value[1]) ?></p>
                         <p class="bold2"><?php print_r($value[2]) ?></p>
-                        <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
-                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Donate</button>
+                        <span><button type="button" class="btn read-more" data-toggle="modal" data-target="#readModal<?php  echo ($value[0]) ?>">Read More</button></span> 
+                        <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>">Donate</button>
 
                         <div class="modal fade" id="myModal<?php  echo ($value[0]) ?>" role="dialog">
                         <div class="modal-dialog">
@@ -161,7 +161,27 @@ $donations=getngodonations();
                             </div>
 
                         </div>
-                        </div>                                   
+                        
+                        </div>  
+                        <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                              </div>
+                              <div class="modal-body">
+                                ...
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                              </div>
+                            </div>
+                          </div>
+</div>                                 
                    </div>
                </div>
                <?php
