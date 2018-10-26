@@ -120,8 +120,28 @@ body{
     
     
 }
-
-
+.box1{
+    width:412px;
+    height:18px;
+    border-radius:25px;
+    background: #ccc;
+    margin-bottom:2%;
+    
+    
+}
+@keyframes ani1{
+    from{ width:0%; }
+    to{ width:90%;}
+}
+.box2{
+    width:90%;
+    height:18px;
+    background:#fc3;
+     border-radius:25px;
+    text-align:center;
+    color:white;
+    animation:ani1 2s linear;
+}
 
 all{
     position: absolute;

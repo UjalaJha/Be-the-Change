@@ -173,10 +173,11 @@ $donations=getngodonations();
                                 </button>
                               </div>
                               <div class="modal-body">
-                                ...
+                                <div class="box1">
+                                    <div class="box2"><span class="percent">90% Votes</span></div>
+                              </div>
                               </div>
                               <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-primary">Save changes</button>
                               </div>
                             </div>
