@@ -24,8 +24,9 @@
             <div id="signup_form">
                <img src="css/img/black-logo.png" height="200px"; width="200px";>
                 <h1>Sign Up</h1>
-                <form action="pages/includes/signupfunction.php" method="POST">
+                <form action="pages/includes/signupfunction.php" method="POST" id="login" name="login" onsubmit="return validateForm()" >
                     <input type="text" placeholder="Name" name="username" required=""><br>
+                    <!-- <input type="text" placeholder="age" name="age" required=""><br> -->
                     <input type="email" placeholder="Email" name="email" required=""><br>
                     <input type="password" placeholder="Password" name="password" required=""><br>
                     <input type="phone" placeholder="PhoneNumber" name="phone" required=""><br><br>
@@ -57,3 +58,12 @@
         
     </body>
 </html>
+<!-- <script>
+  function validateForm() {
+    var x = document.forms["login"]["age"].value;
+    if (x > 100) {
+        alert("Please Enter Valid Age");
+        return false;
+    }
+  }
+</script> -->
