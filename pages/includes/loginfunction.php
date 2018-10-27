@@ -6,8 +6,8 @@ session_start();
 if(!empty($_POST["email"]))
 {
     //echo "hello";
-    $email=$_POST['email'];
-    $password=$_POST['password'];
+    $email=test_input($_POST['email']);
+    $password=test_input($_POST['password']);
     
     $email=mysqli_real_escape_string($connection,$email);
     $password=mysqli_real_escape_string($connection,$password);
@@ -76,10 +76,17 @@ if(!empty($_POST["email"]))
     }
 
 }
-    else
-    {
-        $db_password="";
-       header("Location: ../../login.php");
-    }
+else
+{
+    $db_password="";
+   header("Location: ../../login.php");
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
 ?>
