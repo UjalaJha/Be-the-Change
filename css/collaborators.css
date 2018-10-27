@@ -120,28 +120,8 @@ body{
     
     
 }
-.box1{
-    width:412px;
-    height:18px;
-    border-radius:25px;
-    background: #ccc;
-    margin-bottom:2%;
-    
-    
-}
-@keyframes ani1{
-    from{ width:0%; }
-    to{ width:90%;}
-}
-.box2{
-    width:90%;
-    height:18px;
-    background:#fc3;
-     border-radius:25px;
-    text-align:center;
-    color:white;
-    animation:ani1 2s linear;
-}
+
+
 
 all{
     position: absolute;
@@ -200,7 +180,9 @@ all{
 
     float:left;
     margin-right: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 15px
+
+
     
 }
 .second{
@@ -288,12 +270,12 @@ text font size : 16
     height:950px;
 }
 .right-container{
-    background:#eee;
+    background:white;
     width:75%;
     height:800px;
 }
 .right-wala{
-    margin-left:3%;
+    margin-left:1.5%;
     margin-top:3%;
     
 }
@@ -318,72 +300,27 @@ text font size : 16
     padding: 3%;
     color:white;
 }
-.modal-main {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+.box1{
+    width:412px;
+    height:18px;
+    border-radius:25px;
+    background: #ccc;
+    margin-bottom:2%;
+    
+    
 }
-/*===============================================================================================
-                                TESTIMONIAL SECTION CSS
-===============================================================================================*/
-.testimonial-cover{
-    background-image: url("img/bg-testimonials.jpg");
+@keyframes ani1{
+    from{ width:0%; }
+    to{ width:90%;}
 }
-.customers-testimonials{
-    padding: 50px 0;
-}
-.testimonial{
-    margin-bottom: 30px;
-}
-.testimonial img{
-    max-width: 120px;
-    margin: 0 auto;
-}
-.testimonial blockquote{
-    border: 0;
-    color:#fff;
-    text-align: center;
-    padding: 6px 150px;
-    font-family: Georgia,Times,serif;
-    font-style:italic;
-    font-size: 16px;
-    position: relative;
-}
-.testimonial blockquote:before,
-.testimonial blockquote:after{
-    font-size: 80px;
-    position: absolute;
-    font-style: normal;
-    line-height: 1;
-    width:30px;
-    height:30px;
-}
-.testimonial blockquote:before{
-    content:"\201C";
-    top:0;
-    left:100;
-}
-.testimonial blockquote:after{
-    content:"\201D";
-    right:100;
-    bottom:0;
-}
-.testimonial-author{
+.box2{
+    width:90%;
+    height:18px;
+    background:#fc3;
+     border-radius:25px;
     text-align:center;
-}
-.testimonial-author p{
-    color:#fff;
-    font-size:16px;
-}
-.testimonial-author p strong{
-    display:block;
+    color:white;
+    animation:ani1 2s linear;
 }
 .text-heading{
     color:#fda401;
