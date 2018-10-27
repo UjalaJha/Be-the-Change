@@ -2,19 +2,46 @@
 require_once("pages/includes/functions.php");
 session_start();
 // print_r($_SESSION);
-if($_SESSION['vid']==NULL)
-{
-    header("Location: index.php");
-}
+// if($_SESSION['vid']==NULL)
+// {
+//     header("Location: index.php");
+// }
 
 
-$events=getngoevents();
+// $events=getngoevents();
 // echo "<pre>";
 // print_r($events);
+  if (isset($_GET['pageno'])) {
+            $pageno = $_GET['pageno'];
+        } else {
+            $pageno = 1;
+        }
+        $no_of_records_per_page = 6;
+        $offset = ($pageno-1) * $no_of_records_per_page;
+
+        global $connection;
+        // Check connection
+        if (mysqli_connect_errno()){
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            die();
+        }
+
+        $total_pages_sql = "SELECT COUNT(*) FROM ngoevents";
+        $result = mysqli_query($connection,$total_pages_sql);
+        $total_rows = mysqli_fetch_array($result)[0];
+        $total_pages = ceil($total_rows / $no_of_records_per_page);
+
+        $sql = "SELECT * FROM ngoevents LIMIT $offset, $no_of_records_per_page";
+        $res_data = mysqli_query($connection,$sql);
+        while($row = mysqli_fetch_array($res_data)){
+         
+            $events[]=$row;
+          
+        }
 ?>
 <html>
     <head>
-        <title>Volunteers</title>
+        <title>blog</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i" rel="stylesheet">
     <link rel="stylesheet" href="vendors/bootstrap/css/bootstrap.min.css">
@@ -119,7 +146,7 @@ $events=getngoevents();
             
         </div>
         <div class="right-container pull-left">
-             <div class="right-wala">
+             <div class="right-wala" >
               <?php 
               foreach ($events as $key => $value) {
                 // print_r($value[2]);
@@ -128,24 +155,81 @@ $events=getngoevents();
                     <!-- <img src="css/img/img3phone.jpg" height="239px" width="330px"> -->
                    <div class="mapouter"><div class="gmap_canvas"><iframe width="330" height="239" id="gmap_canvas" src="https://maps.google.com/maps?q=.'<?php print_r($value[4]) ?>'.&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.pureblack.de">webdesign agentur</a></div><style>.mapouter{text-align:right;height:239px;width:330px;}.gmap_canvas {overflow:hidden;background:none!important;height:239px;width:330px;}</style></div> 
                    
-                   <div class="bottom-container">
+                   <div class="bottom-container" style="height: 160px">
                        
-                       <p class="bold1"><?php print_r($value[1]) ?></p>
+                       <p class="bold1"><?php print_r($value[2]) ?></p>
                        
-                       <p class="bold2"><?php print_r($value[2]) ?></p>
-                       <form action="javascript:void(0);" >
-                          <span><a href="#"><button class="btn read-more">Read More</button></a></span> 
+                       <p class="bold2"><?php print_r($value[3]) ?></p>
+
+
+                        <span style="float:left;">
+                       <form action="javascript:void(0);"  >
+                        <input type="hidden" name="dtitle" id="dtitle" value="<?php echo $value[2] ?>">
+                        
+                        <input type="hidden" name="per" id="per" 
+                        value="<?php
+                                $score=($value[6]/$value[5])*100;
+                                echo $score."%";
+                                ?>"
+                        >
+
+                        <input type="hidden" name="desc" id="desc" value="<?php echo $value[3] ?>">
+                          <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit"">Read More</button></a></span>
+                        </form>
+                      </span>
+                      <span style="float:right;">
+                        <form action="javascript:void(0);" name="thisform" id="thisform"> 
                           <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
                           <input type="hidden" name="vid" id="vid" value="8">
-                          <button class="btn read-more mores" type="submit">Participate</button></span> 
+                          <button class="btn read-more mores" type="submit" style="margin-right: 30px">Participate</button></span> 
                         </form>
-                       
+                      </span>
+                       <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    <div class="modal-header" style=" height: 61px;">
+                      <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
+                      
+                    </div>
+                    <div class="modal-body">
+                      <h4>Progress Status</h4>
+                      
+                      <div class="box1">
+
+                        <div class="box2" name="per2" id="per2"><span class="percent">
+                          
+
+                        </span></div>
+                      </div>
+                      <div>
+                        
+                        <p class="bold2" name="desc2" id="desc2"></p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
                    </div>
                </div>
                 <?php
               }
               ?>
-            
+              <ul class="pagination" style="text-align: center;padding-left: 40%;" >
+              <li><a href="?pageno=1">First</a></li>
+              <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+              </li>
+              <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+              </li>
+              <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+            </ul>
           </div>
       </div>
 </div>
@@ -230,7 +314,7 @@ $events=getngoevents();
                   "debug": false,
                   "newestOnTop": true,
                   "progressBar": true,
-                  "positionClass": "toast-top-right",
+                  "positionClass": "toast-top-center",
                   "preventDuplicates": false,
                   "onclick": null,
                   "showDuration": "300",
@@ -245,19 +329,38 @@ $events=getngoevents();
             
         </script>
         <script type="text/javascript">
-           
-            $("form").submit(function(){
+           $(document).on("click", ".open-AddDialog", function () {
+           var form = $(this).closest("form");
+           // console.log("h");
+           var dtitle= form[0]["dtitle"].value;
+           console.log(dtitle);
+           var desc= form[0]["desc"].value;
+           console.log(desc);
+           var per= form[0]["per"].value;
+           console.log(per);
+
+
+           // console.log(dtitle);
+           $("#dtitle2").html(dtitle);
+           $("#desc2").html(desc);
+           $("#per2").html(per);
+           document.getElementById('per2').style.width = per;
+           document.getElementById('per2').style.animation.to = per;
+
+      });
+            $("form#thisform").submit(function(){
+            console.log("g");
+
             var form_data = $(this).closest("form");
             $eid = form_data[0]["evid"].value;
             $vid = form_data[0]["vid"].value;
             
             // var data = form_data.split("&");
-            // console.log(form_data[0]["evid"].value);
 
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "/getResults.php",
+                url: "getResults.php",
                 method:"POST",
                 data:{eid:$eid,vid:$vid},
                 dataType:"json",

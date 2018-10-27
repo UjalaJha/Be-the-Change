@@ -16,6 +16,12 @@ function checkQueryResult($resultset){
     
 }
 
+function convertHtmlTime($date,$time){
+    $newDate = date($date);
+    $newTime = date($time);
+    $datetime = new DateTime($newDate.$newTime);
+    return date_format($datetime, 'YmdHis');
+}
 
 function getngo(){
     global $connection;
@@ -25,18 +31,32 @@ function getngo(){
         return($row);
     }
 }
+function getngoevents(){
+    global $connection;
+    $query = "SELECT * FROM ngoevents";
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+
 // function getngoevents(){
 //     global $connection;
-//     $query = "SELECT * FROM ngoevents";
+//     $query = "SELECT * FROM activengoevents";
 //     $ngo=mysqli_query($connection,$query);
 //     if($row=mysqli_fetch_all($ngo)){
 //         return($row);
 //     }
 // }
 
-function getngoevents(){
+function getngodonations(){
+
+
+
+
+    
     global $connection;
-    $query = "SELECT * FROM activengoevents";
+    $query = "SELECT * FROM donations";
     $ngo=mysqli_query($connection,$query);
     if($row=mysqli_fetch_all($ngo)){
         return($row);
@@ -45,21 +65,14 @@ function getngoevents(){
 
 // function getngodonations(){
 //     global $connection;
-//     $query = "SELECT * FROM donations";
+//     $query = "SELECT * FROM DONATIONS";
 //     $ngo=mysqli_query($connection,$query);
 //     if($row=mysqli_fetch_all($ngo)){
 //         return($row);
+//         print_r($row);
+//         exit;
 //     }
 // }
-
-function getngodonations(){
-    global $connection;
-    $query = "SELECT * FROM REQ_DONATIONS";
-    $ngo=mysqli_query($connection,$query);
-    if($row=mysqli_fetch_all($ngo)){
-        return($row);
-    }
-}
 
 
 function addngoevent($nid,$etitle,$desc,$location,$req_reg){
@@ -116,7 +129,7 @@ function adduserdonation($dnid,$did,$amnt){
     $did=$_SESSION['did'];
     $queryd ="INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
     // $queryd = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    // echo $queryd;
+    echo $queryd;
     $resultset = mysqli_query($connection,$queryd);
     checkQueryResult($resultset);
     echo checkQueryResult($resultset);

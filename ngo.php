@@ -2,10 +2,10 @@
 require_once("pages/includes/ngofunction.php");
 session_start();
 //print_r($_SESSION);
-if($_SESSION['nid']==NULL)
-{
-    header("Location: index.php");
-}
+// if($_SESSION['nid']==NULL)
+// {
+//     header("Location: index.php");
+// }
 // echo "string";
 $ngo=getngo();
 $event=getngoevent();

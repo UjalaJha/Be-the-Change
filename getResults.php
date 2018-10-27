@@ -1,10 +1,10 @@
+
 <?php
 	require_once("pages/includes/functions.php");
     if(isset($_POST["eid"])&&isset($_POST["vid"])){
 	    $eid = $_POST["eid"];
 	    $vid = $_POST["vid"];
 	    $addusertoevent=addusertoevent($eid,$vid);
-	    // echo "string";
 	    // print_r($addusertoevent);
 	    // exit;
 	    if($addusertoevent==="Already Registered")
