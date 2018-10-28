@@ -1,6 +1,6 @@
 <?php
   require_once("pages/includes/functions.php");
-  session_start();
+  // session_start();
   // print_r($_SESSION);
   // if($_SESSION['did']==NULL)
   // {

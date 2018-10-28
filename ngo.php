@@ -1,6 +1,6 @@
 <?php
 require_once("pages/includes/ngofunction.php");
-session_start();
+// session_start();
 //print_r($_SESSION);
 // if($_SESSION['nid']==NULL)
 // {
@@ -142,8 +142,7 @@ $donations=getngodonations();
                <hr style="background:#fda401;width:100px;height:5px;border-radius:25px;">
                <img src="css/img/ngo3.gif" class="img-responsive" style="width:1000px;height:400px;margin-left:30px;background-size:cover;background-position:center;">
                <div class="description-section" style="border:2px solid #fda401;padding:10px;width:1000px;margin-left:30px;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, amet dicta eos id odit? Ipsam culpa ex, quo iusto vero repudiandae labore veritatis, adipisci, natus, fugit officiis aperiam. Totam, blanditiis Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi numquam, maxime beatae nulla totam 
-                    ipsum sed. Nisi eos ducimus laboriosam cumque officiis, deserunt modi blanditiis a veritatis, iusto ut magni Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi ab in voluptatum quidem amet quisquam blanditiis, ratione aliquam, ipsum quia reprehenderit quae delectus, eius quibusdam sequi incidunt commodi at cum Lorem ipsum dolor sit amet,</p>
+                    <p style="font-family: nunito;font-size: 22px">We value the trust our donors place in us. Our partner nonprofits are thoroughly checked to ensure credibility of operations. We also ensure that your money is put to the right use by conducting periodic visits to the end beneficiaries of the donations. GiveAssured is our seal of trust built over 18 years of operations</p>
                </div>
 <section class="two-containers" style="margin-top:1%;">
     <div class="col-md-5" style="margin-left:5%;">

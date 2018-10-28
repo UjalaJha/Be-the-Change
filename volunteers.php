@@ -1,6 +1,6 @@
 <?php
 require_once("pages/includes/functions.php");
-session_start();
+// session_sta\rt();
 // print_r($_SESSION);
 // if($_SESSION['vid']==NULL)
 // {
@@ -185,36 +185,36 @@ session_start();
                         
                       
                        <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                      </button>
-                    <div class="modal-header" style=" height: 61px;">
-                      <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
-                      
-                    </div>
-                    <div class="modal-body">
-                      <h4>Progress Status</h4>
-                      
-                      <div class="box1">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                              <div class="modal-header" style=" height: 61px;">
+                                <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
+                                
+                              </div>
+                              <div class="modal-body">
+                                <h4>Progress Status</h4>
+                                
+                                <div class="box1">
 
-                        <div class="box2" name="per2" id="per2"><span class="percent">
-                          
+                                  <div class="box2" name="per2" id="per2"><span class="percent">
+                                    
 
-                        </span></div>
-                      </div>
-                      <div>
-                        
-                        <p class="bold2" name="desc2" id="desc2"></p>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                  </span></div>
+                                </div>
+                                <div>
+                                  
+                                  <p class="bold2" name="desc2" id="desc2"></p>
+                                </div>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                    </div>
                </div>
                 <?php

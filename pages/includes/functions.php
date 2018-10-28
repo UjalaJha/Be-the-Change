@@ -311,4 +311,29 @@ function deleteuser($uid){
         return($row);
     }
 }
+
+function getallvolunteersparticipated($eid){
+    global $connection;
+
+
+    $query = "SELECT users.* from ngoeventspartcpn
+INNER JOIN users ON ngoeventspartcpn.vid=users.uid where eid=$eid";
+    // print_r($query);
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
+function getalldonorparticipated($dnid){
+    global $connection;
+
+
+    $query = "SELECT users.uname,users.u_email,donationtransaction.amount from donationtransaction
+INNER JOIN users ON donationtransaction.did=users.uid where dnid=$dnid";
+    // print_r($query);
+    $ngo=mysqli_query($connection,$query);
+    if($row=mysqli_fetch_all($ngo)){
+        return($row);
+    }
+}
 ?>

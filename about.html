@@ -31,17 +31,13 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
 
                 <ul class="nav navbar-nav navbar-right change">
-
-                    <li class="big"><a href="index.php" style="color:white;">HOME</a></li>
-                    
-                    <li><a href="login.html" style="color:white;">LOGIN</a></li>
-                    <li><a href="profile.html" style="color:white;">PROFILE</a></li>
-                   
-                    
-                    
-
-
-                </ul>
+                  <li class="big"><a href="index.php" style="color:white;font-family: nunito">HOME</a></li>
+                  <!-- <li><a href="profile.html" style="color:white;">PROFILE</a></li> -->
+                  <li><a href="collaborators.html" style="color:white;font-family: nunito">COLLABORATORS</a></li>
+                  <li><a href="about.html" style="color:white;font-family: nunito">ABOUT US</a></li>
+                  <li><a href="login.php" style="color:white;font-family: nunito">LOGIN</a></li>
+                  
+               </ul>
 
 
             </div>
@@ -70,7 +66,7 @@
 
 <div class="mapouter" style="margin-left :18%;margin-top: 3%">
     <div class="gmap_canvas">
-        <iframe width="985" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=vivekanand%20education%20society%20%20institute%20of%20technology&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        <iframe width="985" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=kurla&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         <a href="https://www.embedgooglemap.net"></a>
     </div>
     <style>.mapouter{text-align:right;height:500px;width:985px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100%;}</style>
@@ -96,7 +92,7 @@
           </div>
         </section> -->
   <div class="clearfix"></div>
-   <section id="team">
+   <!-- <section id="team">
            <div class="content-box">
                <div class="content-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".3s">
                    <h2 class="text-heading text-center">NGO's Associated With</h2>
@@ -113,36 +109,36 @@
                               <h4 class="team-member-name">Your NGO</h4>
                               
                               
-                          </div><!--.team-member-info-->
+                          </div>
                            
-                       </div><!--.team-member-->
+                       </div>
                        <div class="team-member">
                           <img src="css/img/ngo3.gif" alt="Team Member 1" width="300px" height="250px">
                           <div class="team-member-info text-center">
                               <h4 class="team-member-name">YourStory NGO</h4>
                               
                               
-                          </div><!--.team-member-info-->
+                          </div>
                            
-                       </div><!--.team-member-->
+                       </div>
                        <div class="team-member">
                           <img src="css/img/ngo2.jpg" alt="Team Member 1" width="300px" height="250px">
                           <div class="team-member-info text-center">
                               <h4 class="team-member-name">We NGO</h4>
                               
                               
-                          </div><!--.team-member-info-->
+                          </div>
                            
-                       </div><!--.team-member-->
+                       </div>
                        <div class="team-member">
                           <img src="css/img/ngo1.JPG" alt="Team Member 1" width="300px" height="250px">
                           <div class="team-member-info text-center">
                               <h4 class="team-member-name">Kranti NGO</h4>
                               
                               
-                          </div><!--.team-member-info-->
+                          </div>
                            
-                       </div><!--.team-member-->
+                       </div>
                        
                        </div>
                    </div>
@@ -150,7 +146,74 @@
                 </div>
                </div>
            </div>
-        </section>         
+        </section>     -->     
+
+<div class="container" style="width: 65%">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">Query</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Career</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-warning pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <!-- <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Our office</legend>
+            <address>
+                <strong>Twitter, Inc.</strong><br>
+                795 Folsom Ave, Suite 600<br>
+                San Francisco, CA 94107<br>
+                <abbr title="Phone">
+                    P:</abbr>
+                (123) 456-7890
+            </address>
+            <address>
+                <strong>Full Name</strong><br>
+                <a href="mailto:#">first.last@example.com</a>
+            </address>
+            </form>
+        </div> -->
+    </div>
+</div>
 
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->

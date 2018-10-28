@@ -287,6 +287,11 @@ text font size : 16
     width:25%;
     height:950px;
 }
+@media screen and (max-width: 1024px) {
+    .sidebar-container {
+        display: none !important;
+    }
+}
 .right-container{
     background:#eee;
     width:75%;

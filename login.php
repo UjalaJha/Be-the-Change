@@ -12,7 +12,7 @@
            <div id="main"></div>
            
             <div id="login_form">
-              <img src="css/img/black-logo.png" height="200px"; width="200px";>
+              <a href='index.php'><img src="css/img/black-logo.png" height="200px"; width="200px";></a>
                <h1>Login</h1>
                <form action="pages/includes/loginfunction.php" method="POST">
                     <input type="email" placeholder="Email" name="email" required>
@@ -22,7 +22,7 @@
               
             </div>
             <div id="signup_form">
-               <img src="css/img/black-logo.png" height="200px"; width="200px";>
+               <a href='index.php'><img src="css/img/black-logo.png" height="200px"; width="200px";></a>
                 <h1>Sign Up</h1>
                 <form action="pages/includes/signupfunction.php" method="POST" id="login" name="login" onsubmit="return validateForm()" >
                     <input type="text" placeholder="Name" name="username" required=""><br>

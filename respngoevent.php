@@ -1,6 +1,6 @@
 <?php
 require_once("pages/includes/functions.php");
-session_start();
+// session_start();
 // print_r($_SESSION);
 $nid=$_SESSION['nid'];
 if($_SESSION['nid']==NULL)
@@ -48,7 +48,7 @@ $events=ngoevents($nid);
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
+                    <li class="big"><a href="ngo.php" style="color:white;">HOME</a></li>
                     <?php if(!empty($_SESSION['nid']))
                     {
                         ?>
@@ -152,12 +152,13 @@ $events=ngoevents($nid);
                         <?php 
                              if($value[7]==1){
                         ?>
-                            <span><a href="#"><label class="btn read-more">Ongoing event</label></a></span> 
+
+                            <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Ongoing event</label></a></span> 
                         <?php
                             }
                             else{
                         ?>
-                            <span><a href="#"><label class="btn read-more">Successful event</label></a></span> 
+                            <span><a href="#"><label class="btn read-more" onclick="getpart('<?php  echo ($value[2]) ?>'+','+<?php  echo ($value[0]) ?>)" data-toggle="modal" data-target="#readModal" >Successful event</label></a></span> 
                         <?php
                             }
                         ?>
@@ -166,11 +167,73 @@ $events=ngoevents($nid);
                 <?php
               }
               ?>
+              <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                    <div class="modal-header" style=" height: 61px;">
+                      <h5 class="modal-title" id="exampleModalLongTitle" style="margin: 0px;padding:0px"><p class="bold1" style="margin: 0px;padding:0px" name="dtitle2" id="dtitle2"></p></h5>
+                      
+                    </div>
+                    <div class="modal-body">
+                      <!-- <h4></h4> -->
+                      
+                      
+                      <div>
+                        
+                        <p class="bold2" name="desc2" id="desc2"></p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             
 </div>
     </div>  
      </div>
         </div>   
+        <script>
+          function getpart(object) {
+            var array = object.split(',');
+            $("#dtitle2").html(array[0]);
+            var id=array[1];
+            $.ajax({
+                url: "getvolunteerspart.php",
+                method:"POST",
+                data:{eid:id},
+                dataType:"json",
+                success:function(response){
+                  if(response.done)
+                  {
+                    //alert("You Have Succesfullty registered for this event");
+                    var table='<table class=" table table-striped"><th>Volunteers Name</th><th>Email</th><th>Phone</th>'
+                    for (var i = 0; i < response.done.length; i++) {
+                      table=table+'<tr><td>'+response.done[i][1]+'</td>'+'<td>'+response.done[i][2]+'</td>'+'<td>'+response.done[i][3]+'</td></tr>';
+                        //Do something
+                    }
+                    table=table+'</table>'
+                      $("#desc2").html(table);
+
+                  }else if(response.done==false){
+                    $("#desc2").html("Volunteers Participated : None Yet");
+                  }
+                  
+                },
+                error: function () {
+                    $("#desc2").html("Volunteers Participated : None Yet");
+                }  
+                    
+                
+            });
+            
+
+          }
+        </script>
        <script src="vendors/jquery/jquery-3.3.1.min.js"></script>
         <!--Bootstrap Script-->
         <script src="vendors/bootstrap/js/bootstrap.min.js"></script>
