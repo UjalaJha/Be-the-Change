@@ -15,7 +15,7 @@
           <img src="css/img/black-logo.png" height="200px"; width="200px";>
            <h1>Admin Login</h1>
            <form action="pages/includes/loginfunction.php" method="POST">
-                <input type="email" placeholder="Email" name="email" required>
+                <input type="email" placeholder="Email" name="email" required><br>
                 <input type="password" placeholder="Password" name="password" required><br>
                <button type="submit" style="text-align: center;">LOGIN</button>
            </form>

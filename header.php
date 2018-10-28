@@ -1,12 +1,12 @@
 <?php
   require_once("pages/includes/functions.php");
   session_start();
-print_r($_SESSION);
-console.log($_SESSION);
-if($_SESSION['nid']!=NULL or $_SESSION['did']!=NULL or $_SESSION['vid']!=NULL)
-{
-    header("Location: index.php");
-}
+    // print_r($_SESSION);
+    // console.log($_SESSION);
+    if($_SESSION['uid']==NULL or $_SESSION['nid']!=NULL or $_SESSION['did']!=NULL or $_SESSION['vid']!=NULL)
+    {
+        header("Location: index.php");
+    }
   $vol=getallvolunteers();
   // echo "<pre>";
   // print_r($vol);

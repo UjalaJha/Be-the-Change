@@ -65,7 +65,7 @@ if(!empty($_POST["email"]))
             $_SESSION['uname'] = $uname;
             header("Location: ../../ngo.php");
         }
-        else{
+        elseif($role==4){
             $_SESSION['uid'] = $uid;
             $_SESSION['did'] = NULL;
             $_SESSION['vid'] = NULL;
