@@ -111,35 +111,66 @@ function addusertoevent($eid,$vid){
 }
 
 
-function adduserdonation($dnid,$did,$amnt){
+// function adduserdonation($dnid,$did,$amnt){
 
-    // echo "In function";
-    // global $connection;
-    // $query = $connection->prepare("INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES (?,?,?)");
-    // $query->bind_param('iii', $dnid, $did, $amnt);
-    // echo $query;
-    // $query->execute();
-    // $query->close();
-    // $resultset = mysqli_query($connection,$query);
-    // checkQueryResult($resultset);
-    // return $resultset;
-    // $resultset="Amount Donated!";
-    // return $resultset;
+//     // echo "In function";
+//     // global $connection;
+//     // $did=$_SESSION['did'];
+//     // $query = $connection->prepare("INSERT INTO  donationtransaction (DNID,DID,AMOUNT) VALUES (:dnid, :did, :amnt)");
+//     // //$query->bindValue('iii', $dnid, $did, $amnt);
+//     // // $query->bindParam(1, $dnid, PDO::PARAM_INT);
+//     // // $query->bindParam(2, $did, PDO::PARAM_INT);
+//     // // $query->bindParam(3, $amnt, PDO::PARAM_INT);
+//     // echo $query;
+//     // $query->execute(array(':dnid' => $dnid, ':did' => $did, ':amnt' => $amnt));
+//     // // $query->execute();
+//     // // $query->close();
+//     // // $resultset = mysqli_query($connection,$query);
+//     // // checkQueryResult($resultset);
+//     // // return $resultset;
+//     // $resultset="Amount Donated!";
+//     // return $resultset;
+    
+//     global $connection;
+//     $did=$_SESSION['did'];
+//     $queryd ="INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
+//     // $queryd = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
+//     echo $queryd;
+//     $resultset = mysqli_query($connection,$queryd);
+//     checkQueryResult($resultset);
+//     echo checkQueryResult($resultset);
+//     if($resultset==true)
+//     {
+//         $resultset="Amount Donated!";
+//         return $resultset;
+//     }
+    
+// }
+
+function adduserdonation($dnid, $did, $amnt){
     global $connection;
-    $did=$_SESSION['did'];
-    $queryd ="INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    // $queryd = "INSERT INTO donationtransaction (DNID,DID,AMOUNT) VALUES ($dnid,$did,$amnt)";
-    echo $queryd;
-    $resultset = mysqli_query($connection,$queryd);
-    checkQueryResult($resultset);
-    echo checkQueryResult($resultset);
-    if($resultset==true)
-    {
+
+    // Prepare an insert statement
+    $sql = "INSERT INTO donationtransaction (DNID, DID, AMOUNT) VALUES (?, ?, ?)";
+    
+    if($stmt = mysqli_prepare($connection, $sql)){
+        // Bind variables to the prepared statement as parameters
+        mysqli_stmt_bind_param($stmt, "iii", $dnid, $did, $amnt);
+        
+        mysqli_stmt_execute($stmt);
+        
         $resultset="Amount Donated!";
         return $resultset;
+        echo "Records inserted successfully.";
+    } else{
+        echo "ERROR: Could not prepare query: $sql. " . mysqli_error($link);
     }
+    // Close statement
+    mysqli_stmt_close($stmt);
+    
     
 }
+
 
 function geteventsexe($nid=null,$vid=null){
     global $connection;
