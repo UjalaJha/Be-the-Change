@@ -1,14 +1,14 @@
 <?php
 require_once("pages/includes/functions.php");
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 if($_SESSION['vid']==NULL)
 {
     header("Location: index.php");
 }
 
 
-$events=getngoevents();
+// $events=getngoevents();
 // echo "<pre>";
 // print_r($events);
   if (isset($_GET['pageno'])) {

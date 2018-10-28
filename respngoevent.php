@@ -213,7 +213,7 @@ $events=ngoevents($nid);
                     //alert("You Have Succesfullty registered for this event");
                     var table='<table class=" table table-striped"><th>Volunteers Name</th><th>Email</th><th>Phone</th>'
                     for (var i = 0; i < response.done.length; i++) {
-                      table=table+'<tr><td>'+response.done[i][1]+'</td>'+'<td>'+response.done[i][2]+'</td>'+'<td>'+response.done[i][3]+'</td></tr>';
+                      table=table+'<tr><td>'+response.done[i][1]+'</td>'+'<td>'+response.done[i][2]+'</td>'+'<td>'+response.done[i][5]+'</td></tr>';
                         //Do something
                     }
                     table=table+'</table>'
