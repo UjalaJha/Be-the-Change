@@ -1,6 +1,6 @@
 <?php
 require_once("pages/includes/functions.php");
-session_start();
+// session_start();
 // print_r($_SESSION);
 if($_SESSION['nid']==NULL)
 {
@@ -46,8 +46,8 @@ if($_SESSION['nid']==NULL)
 
                 <ul class="nav navbar-nav navbar-right change">
 
-                    <li class="big"><a href="#" style="color:white;">HOME</a></li>
-                    <?php if(empty($_SESSION['nid']))
+                    <li class="big"><a href="ngo.php" style="color:white;">HOME</a></li>
+                    <?php if(!empty($_SESSION['nid']))
                     {
                         ?>
 
@@ -179,7 +179,7 @@ if($_SESSION['nid']==NULL)
             //fetching all the other values from database using ajax ans loading them onto their respective edit fields!
             // console.log($eid);
             $.ajax({
-                url: "http://localhost:8888/be-the-change/pages/includes/saveevent.php",
+                url: "pages/includes/saveevent.php",
                 method:"POST",
                 data:{req_reg:$req_reg,etitle:$etitle,desc:$desc, location:$location},
                 dataType:"json",

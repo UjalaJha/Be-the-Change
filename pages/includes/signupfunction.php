@@ -29,10 +29,20 @@ session_start();
     $u_email=$_POST['email'];
     $password=$_POST['password'];
     $u_phone = $_POST['phone'];
+    if($_POST['category_id']=='NGO')
+    {
+        $u_type=3;
+    }elseif($_POST['category_id']=='Donor')
+    {
+        $u_type=1;
+    }else
+    {
+        $u_type=2;
+    }
     
     
-    $stmt= $connection->prepare("INSERT INTO users (UNAME, U_EMAIL, PASSWORD,U_PHONE) VALUES (?,?,?,?);");
-    $stmt->bind_param('sssi', $uname, $u_email, $password,$u_phone);
+    $stmt= $connection->prepare("INSERT INTO users (UNAME, U_EMAIL, PASSWORD,U_PHONE,U_TYPE) VALUES (?,?,?,?,?);");
+    $stmt->bind_param('sssii', $uname, $u_email, $password,$u_phone,$u_type);
     $stmt->execute();
     $stmt->close();
     $_SESSION["phone_number"] = $u_phone;

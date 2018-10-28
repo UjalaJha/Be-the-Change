@@ -180,8 +180,9 @@ require_once("pages/includes/functions.php");
                       <span style="float:right;">
                         <form action="javascript:void(0);" name="thisform" id="thisform"> 
                           <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?>>
-                          <input type="hidden" name="vid" id="vid" value="8"></form></span>
+                          <input type="hidden" name="vid" id="vid" value=<?php  echo $_SESSION['vid'] ?>></span>
                           <button class="btn read-more mores" type="submit" style="margin-right: 30px;">Participate</button> 
+                          </form>
                         
                       
                        <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">

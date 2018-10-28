@@ -230,15 +230,15 @@
             }
             ?>
             <ul class="pagination" style="text-align: center;padding-left: 40%;" >
-          <li><a href="?pageno=1">First</a></li>
-          <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
-          </li>
-          <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
-          </li>
-          <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
-        </ul>
+              <li><a href="?pageno=1">First</a></li>
+              <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+              </li>
+              <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+              </li>
+              <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+            </ul>
       </div>
           <div class="clearfix"></div>
         </div>

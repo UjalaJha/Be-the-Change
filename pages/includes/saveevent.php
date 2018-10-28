@@ -1,6 +1,7 @@
 <?php
 require_once("db.php");
 // session_start();
+// header('Access-Control-Allow-Origin: *');
 require_once("constants.php");
 require_once("functions.php");
 
