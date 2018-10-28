@@ -52,6 +52,7 @@ require_once("pages/includes/functions.php");
                     <li class="big"><a href="#" style="color:white;">HOME</a></li>
                     <li><a href="login.php" style="color:white;">LOGIN</a></li>
                     <!-- <li><a href="profile.html" style="color:white;">PROFILE</a></li> -->
+                    <li><a href="collaborators.html" style="color:white;">COLLABORATORS</a></li>
                     <li><a href="about.html" style="color:white;">ABOUT US</a></li>
                 </ul>
 
