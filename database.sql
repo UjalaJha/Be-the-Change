@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 28, 2018 at 12:33 PM
+-- Generation Time: Oct 28, 2018 at 12:39 PM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.8
 
@@ -70,12 +70,12 @@ CREATE TABLE `donations` (
 --
 
 INSERT INTO `donations` (`DNID`, `DAMOUNT`, `COLLECTED_AMT`, `NID`, `D_TITLE`, `D_DESCRIPTION`, `D_IMAGE`, `STATUS_D`) VALUES
-(1, 1000, 695, 2, 'Educate poor', 'A charitable donation is a gift made by an individual or an organization to a nonprofit organization, charity or private foundation.Help pay for the books, stationery and the tuition fees of those who can not afford it.\r\n', '', '1'),
+(1, 1000, 695, 2, 'Educate poor', 'Help pay for the books, stationery and the tuition fees of those who can not afford it.\r\n', '', '1'),
 (2, 2000, 2000, 2, 'Help students', 'Help students by paying for their college/school fees, books and their travel expenses.', '', '0'),
 (3, 3000, 864, 3, 'Ban plastic', 'Create awareness and motivate the citizens to stop using plastic in their day to day lives.', '', '1'),
 (4, 1700, 147, 1, 'Help the Orphans', 'Help the orphans get all the basic facilities and amenities that you grew up with.', '', '1'),
 (5, 3000, 3010, 4, 'Women Empowerment', 'Empower women and give them an opportunity to live fuller, happier and independent lives.', '', '1'),
-(6, 3000, 3100, 3, 'Save Trees', 'Save trees is a slogan used to motivate people to save trees and plant more trees in the surrounding areas by spreading the importance of trees among people as well as reduce deforestation and cut down of trees.', '', '1'),
+(6, 3000, 3100, 3, 'Save Trees', 'Save trees is a slogan used to motivate people to save trees and plant more trees in the surrounding areas by spreading the importance of trees among people and reduce deforestation.', '', '1'),
 (7, 3500, 3000, 2, 'Protect the Wildlife', 'Wildlife conservation is the practice of protecting wild plant and animal species and their habitat.', '', '1');
 
 -- --------------------------------------------------------
