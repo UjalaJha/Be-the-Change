@@ -174,16 +174,16 @@ session_start();
                         >
 
                         <input type="hidden" name="desc" id="desc" value="<?php echo $value[3] ?>">
-                          <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit"">Read More</button></a></span>
+                          <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit">Read More</button></a></span>
                         </form>
                       </span>
                       <span style="float:right;">
                         <form action="javascript:void(0);" name="thisform" id="thisform"> 
-                          <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?> >
-                          <input type="hidden" name="vid" id="vid" value="8">
-                          <button class="btn read-more mores" type="submit" style="margin-right: 30px">Participate</button></span> 
-                        </form>
-                      </span>
+                          <input type="hidden" name="evid" id="evid" value=<?php  echo ($value[0]) ?>>
+                          <input type="hidden" name="vid" id="vid" value="8"></form></span>
+                          <button class="btn read-more mores" type="submit" style="margin-right: 30px;">Participate</button> 
+                        
+                      
                        <div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">

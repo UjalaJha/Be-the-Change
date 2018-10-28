@@ -55,7 +55,7 @@
     <link rel="stylesheet" href="vendors/OwlCarousel2-2.3.4/dist/assets/owl.theme.blue.css">
     <link rel="stylesheet" href="vendors/bootstrap-toastr/toastr.min.css">
     <link href="vendors/WOW-master/dist/wow.min.js">
-    <link rel="stylesheet" href="css/donors.css">
+    <link rel="stylesheet" href="css/donors1.css">
   </head>
   <body style="background-color: #eee">
     <div class="header-strip">
