@@ -158,10 +158,10 @@
                   <input type="hidden" name="per" id="per" 
                   value="<?php
                           $score=($value[2]/$value[1])*100;
-                          echo $score."%";
+                          echo(round($score, 2))."%";
                           ?>"
                   >
-
+                  <input type="hidden" name="pled" id="pled" value="<?php echo $value[1] ?>">
                   <input type="hidden" name="desc" id="desc" value="<?php echo $value[5] ?>">
                   <span><button type="button" class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit">Read More</button></span>
                   <button type="button" class="btn read-more mores" data-toggle="modal" data-target="#myModal<?php  echo ($value[0]) ?>" >Donate</button>
@@ -204,6 +204,8 @@
                       
                     </div>
                     <div class="modal-body">
+                       
+
                       <h4>Progress Status</h4>
                       
                       <div class="box1">
@@ -214,7 +216,7 @@
                         </span></div>
                       </div>
                       <div>
-                        
+                        <p class="bold2" name="ple" id="ple"></p>
                         <p class="bold2" name="desc2" id="desc2"></p>
                       </div>
                     </div>
@@ -342,13 +344,16 @@
            var form = $(this).closest("form");
            var dtitle= form[0]["dtitle"].value;
            var desc= form[0]["desc"].value;
-           console.log(desc);
+           // console.log(desc);
            var per= form[0]["per"].value;
-           console.log(per);
+           var ple= form[0]["pled"].value;
+
+           // console.log(per);
 
 
            // console.log(dtitle);
            $("#dtitle").html(dtitle);
+           $("#ple").html("Pledge Amount - "+ple);
            $("#desc2").html(desc);
            $("#per2").html(per);
            document.getElementById('per2').style.width = per;

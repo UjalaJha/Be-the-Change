@@ -169,10 +169,10 @@ if($_SESSION['vid']==NULL)
                         <input type="hidden" name="per" id="per" 
                         value="<?php
                                 $score=($value[6]/$value[5])*100;
-                                echo $score."%";
+                                echo(round($score, 2))."%";
                                 ?>"
                         >
-
+                        <input type="hidden" name="pled" id="pled" value="<?php echo $value[5] ?>">
                         <input type="hidden" name="desc" id="desc" value="<?php echo $value[3] ?>">
                           <span><a href="#"><button  class="btn read-more open-AddDialog" data-toggle="modal" data-target="#readModal" type="submit">Read More</button></a></span>
                         </form>
@@ -206,7 +206,7 @@ if($_SESSION['vid']==NULL)
                                   </span></div>
                                 </div>
                                 <div>
-                                  
+                                  <p class="bold2" name="ple" id="ple"></p>
                                   <p class="bold2" name="desc2" id="desc2"></p>
                                 </div>
                               </div>
@@ -336,16 +336,18 @@ if($_SESSION['vid']==NULL)
            var form = $(this).closest("form");
            // console.log("h");
            var dtitle= form[0]["dtitle"].value;
-           console.log(dtitle);
+           // console.log(dtitle);
            var desc= form[0]["desc"].value;
-           console.log(desc);
+           // console.log(desc);
            var per= form[0]["per"].value;
-           console.log(per);
+           // console.log(per);
+           var ple= form[0]["pled"].value;
 
 
            // console.log(dtitle);
            $("#dtitle2").html(dtitle);
            $("#desc2").html(desc);
+           $("#ple").html("Pledge Volunteer - "+ple);
            $("#per2").html(per);
            document.getElementById('per2').style.width = per;
            document.getElementById('per2').style.animation.to = per;
