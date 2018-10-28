@@ -221,19 +221,21 @@ require_once("pages/includes/functions.php");
                 <?php
               }
               ?>
-              <ul class="pagination" style="text-align: center;padding-left: 40%;" >
-              <li><a href="?pageno=1">First</a></li>
-              <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
-                <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
-              </li>
-              <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
-                <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
-              </li>
-              <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
-            </ul>
+              
           </div>
       </div>
 </div>
+<ul class="pagination" style="text-align: center;padding-left: 30%;" >
+          <li><a href="?pageno=1">First</a></li>
+          <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?>">
+            <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>">Prev</a>
+          </li>
+          <li class="<?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
+            <a href="<?php if($pageno >= $total_pages){ echo '#'; } else { echo "?pageno=".($pageno + 1); } ?>">Next</a>
+          </li>
+          <li><a href="?pageno=<?php echo $total_pages; ?>">Last</a></li>
+        </ul>
+          <div class="clearfix"></div>
 
 <section id="testimonials" style="margin-top:-18px;">
            <div class="testimonial-cover bg-parallax">

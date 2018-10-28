@@ -290,7 +290,7 @@ text font size : 16
 .sidebar-container{
     background: #fc3;
     width:25%;
-    height:950px;
+    height:1050px;
 }
 @media screen and (max-width: 1024px) {
     .sidebar-container {
