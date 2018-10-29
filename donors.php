@@ -140,6 +140,19 @@
       </div>
       <div class="right-container pull-left">
         <div class="right-wala">
+          <?php img[0]='css/img/pic1.jpg';?>
+          <?php img[1]='css/img/pic2.jpg';?>
+          <?php img[2]='css/img/pic3.jpg';?>
+          <?php img[3]='css/img/pic4.jpg';?>
+          <?php img[4]='css/img/pic5.jpg';?>
+          <?php img[5]='css/img/pic6.jpg';?>
+          <?php img[6]='css/img/pic1.jpg';?>
+          <?php img[7]='css/img/pic2.jpg';?>
+          <?php img[8]='css/img/pic3.jpg';?>
+          <?php img[9]='css/img/pic4.jpg';?>
+          <?php $i=0;?>
+
+
           <?php 
             foreach($donations as $value)
             {
@@ -147,7 +160,8 @@
             
             ?>
           <div class="first1">
-            <img src="css/img/pic5.jpg" height="220px" width="330px">
+            <img src="<?php echo $img[i];?>" height="220px" width="330px">
+            <?php $i++;?>
             <div class="bottom-container">
               <p class="bold1"><?php print_r($value[4]) ?></p>
               <p class="bold2"><?php print_r($value[5]) ?></p>
